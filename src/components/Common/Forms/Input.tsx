@@ -1,26 +1,29 @@
 import { PropsWithChildren } from 'react';
-import { InputStyle } from './InputStyle';
+import * as Styled from './InputStyle';
 
 interface IInputProps {
   value?: string;
   placeholder: string;
   type: 'single' | 'multi';
   maxLength?: number;
-  _onChange?: () => void;
+  _onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const Input = (props: PropsWithChildren<IInputProps>) => {
   const { _onChange, value, placeholder, maxLength } = props;
   return (
-    <>
-      <InputStyle
+    <Styled.InputWrapper>
+      <Styled.InputStyle
         {...props}
         value={value}
         placeholder={placeholder}
         onChange={_onChange}
         maxLength={maxLength}
       />
-    </>
+      <Styled.TextLength>
+        {value ? value.length : 0}/{maxLength}
+      </Styled.TextLength>
+    </Styled.InputWrapper>
   );
 };
 
