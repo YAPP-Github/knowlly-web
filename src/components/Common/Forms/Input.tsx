@@ -10,16 +10,10 @@ interface IInputProps {
 }
 
 const Input = (props: PropsWithChildren<IInputProps>) => {
-  const { _onChange, value, placeholder, maxLength } = props;
+  const { _onChange, value, maxLength, ...rest } = props;
   return (
     <Styled.InputWrapper>
-      <Styled.InputStyle
-        {...props}
-        value={value}
-        placeholder={placeholder}
-        onChange={_onChange}
-        maxLength={maxLength}
-      />
+      <Styled.InputStyle {...rest} value={value} maxLength={maxLength} onChange={_onChange} />
       <Styled.TextLength>
         {value ? value.length : 0}/{maxLength}
       </Styled.TextLength>
