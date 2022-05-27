@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Button, FabButton, TextMoreButton } from '@components/Common';
-import Input from '@components/Common/Forms/Input';
+import { Input } from '@components/Common';
 
 const Home: NextPage = () => {
   const handleTestButton = () => {
