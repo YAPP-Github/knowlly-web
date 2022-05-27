@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
-import { Button, FabButton, TextMoreButton } from '@components/Common';
-import { Input } from '@components/Common';
+import { Button, FabButton, TextMoreButton, Input, TextArea } from '@components/Common';
 
 const Home: NextPage = () => {
   const handleTestButton = () => {
@@ -14,7 +13,8 @@ const Home: NextPage = () => {
       </Button>
       <TextMoreButton _onClick={handleTestButton} />
       <FabButton _onClick={handleTestButton} />
-      <Input placeholder="default" type="single" maxLength={10} />
+      <Input placeholder="default" maxLength={10} />
+      <TextArea placeholder="default" maxLength={300} />
     </>
   );
 };
