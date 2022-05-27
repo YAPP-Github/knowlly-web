@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const InputStyle = styled.textarea<{ type: string }>`
+export const InputStyle = styled.input`
   width: 31.2rem;
-  height: ${(props) => (props.type === 'single' ? `4.4rem` : `18.4rem`)};
+  height: 4.4rem;
   padding: 1.2rem 1.6rem;
   border: 0.1rem solid #cccccc;
   border-radius: 0.8rem;
@@ -26,6 +26,6 @@ export const InputWrapper = styled.div`
 `;
 
 export const TextLength = styled.p`
-  font-size: 12px;
+  font-size: 1.2rem;
   color: #8f8f8f;
 `;

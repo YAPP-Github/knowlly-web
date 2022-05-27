@@ -4,9 +4,8 @@ import * as Styled from './InputStyle';
 interface IInputProps {
   value?: string;
   placeholder: string;
-  type: 'single' | 'multi';
   maxLength?: number;
-  _onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  _onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Input = (props: PropsWithChildren<IInputProps>) => {
