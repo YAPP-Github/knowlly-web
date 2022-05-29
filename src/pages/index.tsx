@@ -6,6 +6,7 @@ import {
   Input,
   TextArea,
   ContainedBadge,
+  OutlinedBadge,
 } from '@components/Common';
 
 const Home: NextPage = () => {
@@ -28,7 +29,6 @@ const Home: NextPage = () => {
       <FabButton _onClick={handleTestButton} />
       <Input placeholder="default" maxLength={10} />
       <TextArea placeholder="default" maxLength={300} />
-      <ContainedBadge type={'keyword'}>외국/언어</ContainedBadge>
     </>
   );
 };

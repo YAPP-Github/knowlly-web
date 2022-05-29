@@ -3,7 +3,7 @@ const color = {
   /* primary */
   primary: {
     basic: '#FF9534',
-    dark: 'FF7A00',
+    dark: '#FF7A00',
     light: '#FFF4EB',
   },
   /* secondary */
