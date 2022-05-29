@@ -28,7 +28,7 @@ const Home: NextPage = () => {
       <FabButton _onClick={handleTestButton} />
       <Input placeholder="default" maxLength={10} />
       <TextArea placeholder="default" maxLength={300} />
-      <ContainedBadge type={'category'}>외국/언어</ContainedBadge>
+      <ContainedBadge type={'keyword'}>외국/언어</ContainedBadge>
     </>
   );
 };
