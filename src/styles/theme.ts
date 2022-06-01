@@ -1,32 +1,31 @@
 import { DefaultTheme } from 'styled-components';
 const color = {
   /* primary */
-  orange: {
+  primary: {
     basic: '#FF9534',
     dark: 'FF7A00',
     light: '#FFF4EB',
   },
   /* secondary */
-  lime: {
-    basic: '#C7E02A',
-    dark: '#A5BB1B',
-    light: '#F4F9D4',
+  secondary: {
+    lime: '#C7E02A',
+    limeLight: '#F4F9D4',
+    limeDark: '#A5BB1B',
+    indigo: '#172351',
+    indigoLight: '#F0F4FF',
   },
-  indigo: {
-    basic: '#172351',
-    light: '#F0F4FF',
-  },
+
   /* grayscale */
   gray: {
-    grayFF: '#FFFFFF',
-    grayF7: '#F7F7F7',
-    grayEF: '#EFEFEF',
-    grayDD: '#DDDDDD',
-    grayCC: '#CCCCCC',
-    gray8F: '#8F8F8F',
-    gray6B: '#6B6B6B',
-    gray44: '#444444',
-    gray00: '#000000',
+    FF: '#FFFFFF',
+    F7: '#F7F7F7',
+    EF: '#EFEFEF',
+    DD: '#DDDDDD',
+    CC: '#CCCCCC',
+    '8F': '#8F8F8F',
+    '6B': '#6B6B6B',
+    '44': '#444444',
+    '00': '#000000',
   },
   /* system color */
   system: {

@@ -3,32 +3,30 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     color: {
       /* primary */
-      orange: {
+      primary: {
         basic: string;
         dark: string;
         light: string;
       };
       /* secondary */
-      lime: {
-        basic: string;
-        dark: string;
-        light: string;
-      };
-      indigo: {
-        basic: string;
-        light: string;
+      secondary: {
+        lime: string;
+        limeLight: string;
+        limeDark: string;
+        indigo: string;
+        indigoLight: string;
       };
       /* grayscale */
       gray: {
-        grayFF: string;
-        grayF7: string;
-        grayEF: string;
-        grayDD: string;
-        grayCC: string;
-        gray8F: string;
-        gray6B: string;
-        gray44: string;
-        gray00: string;
+        FF: string;
+        F7: string;
+        EF: string;
+        DD: string;
+        CC: string;
+        '8F': string;
+        '6B': string;
+        '44': string;
+        '00': string;
       };
       /* system color */
       system: {
