@@ -2,8 +2,9 @@ import { PropsWithChildren } from 'react';
 import * as Styled from './ButtonStyle';
 
 interface IButtonProps {
-  variant: 'contained' | 'enabled' | 'outlined';
-  size?: 'x-small' | 'small' | 'middle' | 'big';
+  variant: 'contained' | 'outlined';
+  size?: 'xx-small' | 'x-small' | 'small' | 'middle' | 'big';
+  disabled?: boolean;
   type: 'button' | 'submit' | 'reset';
   _onClick?: () => void;
 }
@@ -16,6 +17,11 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
       {children}
     </Styled.ButtonStyle>
   );
+};
+
+Button.defaultProps = {
+  variant: 'contained',
+  type: 'button',
 };
 
 export default Button;

@@ -1,11 +1,14 @@
 import styled, { css } from 'styled-components';
 
-export const ButtonStyle = styled.button<{ variant: string; size?: string }>`
-  ${({ variant, size }) => {
+export const ButtonStyle = styled.button<{ variant: string; size?: string; disabled?: boolean }>`
+  ${({ variant, size, disabled }) => {
     return css`
-      ${handleVariant(variant)}
-      ${handleSize(size)}
+      ${handleVariant(variant)};
+      ${handleSize(size)};
+      color: ${disabled && '#ffffff'};
       font-size: 1.4rem;
+      background-color: ${disabled && '#dddddd'};
+      border-color: ${disabled && '#dddddd'};
       border-radius: 10px;
     `;
   }}
@@ -17,11 +20,6 @@ const handleVariant = (variant: string) => {
       return css`
         color: #ffffff;
         background-color: #ff8e4d;
-      `;
-    case 'enabled':
-      return css`
-        color: #8f8f8f;
-        background-color: #ffd5ae;
       `;
     case 'outlined':
       return css`
@@ -35,6 +33,13 @@ const handleVariant = (variant: string) => {
 
 const handleSize = (size: string | undefined) => {
   switch (size) {
+    case 'xx-small':
+      return css`
+        width: 8.5rem;
+        height: 2.4rem;
+        font-size: 1.2rem !important;
+        border-radius: 20px !important;
+      `;
     case 'x-small':
       return css`
         width: 12.9rem;

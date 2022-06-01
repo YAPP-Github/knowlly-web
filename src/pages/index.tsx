@@ -8,7 +8,13 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Button variant="contained" type="button" size="big" _onClick={handleTestButton}>
+      <Button
+        variant="contained"
+        type="button"
+        size="xx-small"
+        disabled={true}
+        _onClick={handleTestButton}
+      >
         test button
       </Button>
       <TextMoreButton _onClick={handleTestButton} />
