@@ -50,6 +50,7 @@ const Home: NextPage = () => {
       <SvgIcon type="category-1" />
       <SvgIcon type="category-2" />
       <SvgIcon type="category-3" />
+      <p>글로벌 폰트 테스트</p>
     </>
   );
 };
