@@ -4,6 +4,7 @@ import { RecoilRoot } from 'recoil';
 import Theme from '@styles/theme';
 import GlobalStyle from '@styles/global-style';
 import { ThemeProvider } from 'styled-components';
+import Font from '@styles/font';
 import SvgSprite from '@components/Common/Svg/SvgSprite';
 
 const queryClient = new QueryClient();
@@ -14,8 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={Theme}>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <Font />
           <SvgSprite />
+          <Component {...pageProps} />
         </ThemeProvider>
       </QueryClientProvider>
     </RecoilRoot>
