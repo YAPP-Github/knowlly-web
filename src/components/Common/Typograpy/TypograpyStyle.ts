@@ -15,7 +15,7 @@ export const Headline2 = styled.h2`
 
 export const Headline3 = styled.h3`
   font-family: 'SUIT-Bold';
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   line-height: 3.4rem;
 `;
 
