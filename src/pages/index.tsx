@@ -8,6 +8,7 @@ import {
   ContainedBadge,
   OutlinedBadge,
   SvgIcon,
+  Typograpy,
 } from '@components/Common';
 
 const Home: NextPage = () => {
@@ -51,6 +52,12 @@ const Home: NextPage = () => {
       <SvgIcon type="category-2" />
       <SvgIcon type="category-3" />
       <p>글로벌 폰트 테스트</p>
+      <Typograpy variant="headline-1">헤더-1</Typograpy>
+      <Typograpy variant="subtitle-3">서브헤더-3</Typograpy>
+      <Typograpy variant="body-2">바디-2</Typograpy>
+      <Button size="x-small" type="button">
+        <Typograpy variant="button-1">버튼-1</Typograpy>
+      </Button>
     </>
   );
 };
