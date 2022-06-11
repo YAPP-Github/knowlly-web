@@ -27,7 +27,7 @@ const handleBadgeType = (type: string) => {
       `;
     case 'keyword':
       return css`
-        color: ${color.gray['6B']};
+        color: ${color.gray['44']};
         background-color: ${color.gray['F7']};
       `;
     case 'player':

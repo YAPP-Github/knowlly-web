@@ -6,9 +6,9 @@ interface IOutlinedBadgeProps {
   written?: boolean;
 }
 
-const ContainedBadge = (props: PropsWithChildren<IOutlinedBadgeProps>) => {
+const OutlinedBadge = (props: PropsWithChildren<IOutlinedBadgeProps>) => {
   const { children, ...rest } = props;
   return <Styled.OutlinedBadgeStyle {...rest}>{children}</Styled.OutlinedBadgeStyle>;
 };
 
-export default ContainedBadge;
+export default OutlinedBadge;
