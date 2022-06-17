@@ -1,20 +1,24 @@
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useState } from 'react';
 import * as Styled from './TextAreaStyle';
 
 interface ITextAreaProps {
-  value?: string;
   placeholder: string;
   maxLength?: number;
-  _onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextArea = (props: PropsWithChildren<ITextAreaProps>) => {
-  const { _onChange, value, maxLength, ...rest } = props;
+  const { maxLength, ...rest } = props;
+  const [text, setText] = useState('');
+
+  const _onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setText(e.target.value);
+  };
+
   return (
     <Styled.TextAreaWrapper>
-      <Styled.TextAreaStyle {...rest} value={value} maxLength={maxLength} onChange={_onChange} />
+      <Styled.TextAreaStyle {...rest} maxLength={maxLength} onChange={_onChange} />
       <Styled.TextLength>
-        {value ? value.length : 0}/{maxLength}
+        {text.length}/{maxLength}
       </Styled.TextLength>
     </Styled.TextAreaWrapper>
   );

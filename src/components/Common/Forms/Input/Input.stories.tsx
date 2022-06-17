@@ -9,8 +9,9 @@ export default {
 
 const InputStory: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Default = InputStory.bind({});
-Default.args = {
+export const InputDefault = InputStory.bind({});
+InputDefault.args = {
   placeholder: '텍스트를 입력하세요',
+  maxLength: 10,
 };
-Default.storyName = 'Input';
+InputDefault.storyName = 'Input';
