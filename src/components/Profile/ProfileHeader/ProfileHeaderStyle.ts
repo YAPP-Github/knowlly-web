@@ -19,3 +19,11 @@ export const ProfileWrapper = styled.div`
     margin-bottom: 0.7rem;
   }
 `;
+
+export const ProfileLink = styled.div`
+  display: flex;
+  align-items: flex-end;
+  &>: first-child {
+    margin-right: 0.4rem;
+  }
+`;
