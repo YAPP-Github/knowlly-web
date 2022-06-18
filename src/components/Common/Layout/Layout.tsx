@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import * as Styled from './LayoutStyle';
 
 interface ILayout {
-  children: React.ReactChild;
+  children: React.ReactChild | React.ReactChild[];
 }
 
 const Layout = ({ children }: PropsWithChildren<ILayout>) => {
