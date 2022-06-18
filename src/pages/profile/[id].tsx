@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import Layout from '@components/Common/Layout/Layout';
-import ProfileHeader from '@components/Profile/ProfileHeader/ProfileHeader';
-import Introduction from '@components/Profile/Introduction/Introduction';
+import { Layout } from '@components/Common';
+import { Introduction, ProfileHeader } from '@components/Profile';
+
 const Profile: NextPage = () => {
   return (
     <Layout>
