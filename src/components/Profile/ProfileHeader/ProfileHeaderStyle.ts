@@ -7,7 +7,7 @@ export const ProfileImg = styled.img`
 
 export const ProfileContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 1.2rem;
 `;
 
@@ -15,4 +15,7 @@ export const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 1.6rem;
+  & > * {
+    margin-bottom: 0.7rem;
+  }
 `;

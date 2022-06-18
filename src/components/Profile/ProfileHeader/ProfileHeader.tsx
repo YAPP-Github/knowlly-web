@@ -5,7 +5,7 @@ import Link from 'next/link';
 const ProfileHeader = () => {
   return (
     <Styled.ProfileContainer>
-      <Styled.ProfileImg src="" />
+      <Styled.ProfileImg src={`/img/profile.png`} />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">유지민</Typograpy>
         <ContainedBadge type="player">플레이어</ContainedBadge>
