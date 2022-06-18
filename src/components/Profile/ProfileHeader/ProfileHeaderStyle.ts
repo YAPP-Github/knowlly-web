@@ -8,6 +8,7 @@ export const ProfileImg = styled.img`
 export const ProfileContainer = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 1.2rem;
 `;
 
 export const ProfileWrapper = styled.div`
