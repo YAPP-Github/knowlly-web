@@ -1,17 +1,22 @@
 import type { NextPage } from 'next';
 import { Layout, SvgIcon, Typograpy } from '@components/Common';
 import * as Styled from '@components/Review/ReviewStyle';
+import { useState } from 'react';
 
 const Review: NextPage = () => {
-  const clicked = true;
+  const [checkBoxClicked, setCheckBoxClicked] = useState(false);
+  const handleCheckBoxClick = () => {
+    setCheckBoxClicked(!checkBoxClicked);
+  };
+
   return (
     <>
       <Layout>
         <Typograpy variant="headline-3">$username님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
         <Styled.ReviewTextArea maxLength={500} placeholder="생생한 후기를 남겨주세요." />
-        <Styled.CheckBox>
-          {clicked ? (
+        <Styled.CheckBox onClick={handleCheckBoxClick}>
+          {checkBoxClicked ? (
             <SvgIcon type="checkbox-checked" size={20} />
           ) : (
             <SvgIcon type="checkbox-default" size={20} />
@@ -20,7 +25,7 @@ const Review: NextPage = () => {
         </Styled.CheckBox>
       </Layout>
       <Styled.ReviewButton variant="contained" size="big">
-        후기 등록하기
+        <Typograpy variant="button-1">후기 등록하기 </Typograpy>
       </Styled.ReviewButton>
     </>
   );
