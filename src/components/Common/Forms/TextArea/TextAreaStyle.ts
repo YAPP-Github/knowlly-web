@@ -1,20 +1,22 @@
 import styled from 'styled-components';
+import theme from '@styles/theme';
 
 export const TextAreaStyle = styled.textarea`
   width: 31.2rem;
   height: 18.4rem;
   padding: 1.2rem 1.6rem;
-  border: 0.1rem solid #cccccc;
+  border: 0.1rem solid ${theme.color.gray['DD']};
   border-radius: 0.8rem;
+  font-family: 'SUIT-Regular';
 
   &:focus {
-    border: 0.1rem solid #779dff;
-    outline-color: #779dff;
+    border: 0.1rem solid ${theme.color.system['blue']};
+    outline-color: ${theme.color.system['blue']};
   }
 
   ::placeholder {
-    color: #8f8f8f;
-    font-size: 1.4rem;
+    color: ${theme.color.gray['CC']};
+    font-size: 1.2rem;
   }
 `;
 
@@ -27,5 +29,5 @@ export const TextAreaWrapper = styled.div`
 
 export const TextLength = styled.p`
   font-size: 1.2rem;
-  color: #8f8f8f;
+  color: ${theme.color.gray['8F']};
 `;
