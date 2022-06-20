@@ -8,10 +8,11 @@ type Button = 'button-1' | 'button-2';
 
 export interface ITypograpyProps {
   variant: Headline | Subtitle | Body | Button | 'caption' | 'overline';
+  textColor?: string;
 }
 
 const Typograpy = (props: PropsWithChildren<ITypograpyProps>) => {
-  const { variant, children } = props;
+  const { variant, children, ...rest } = props;
 
   const paragraphVariants = [
     'subtitle-1',
@@ -31,11 +32,15 @@ const Typograpy = (props: PropsWithChildren<ITypograpyProps>) => {
       {variant === 'headline-4' && <Styled.Headline4>{children}</Styled.Headline4>}
 
       {paragraphVariants.includes(variant) && (
-        <Styled.ParagraphElementStyle variant={variant}>{children}</Styled.ParagraphElementStyle>
+        <Styled.ParagraphElementStyle {...rest} variant={variant}>
+          {children}
+        </Styled.ParagraphElementStyle>
       )}
 
       {spanVariants.includes(variant) && (
-        <Styled.SpanElementStyle variant={variant}>{children}</Styled.SpanElementStyle>
+        <Styled.SpanElementStyle {...rest} variant={variant}>
+          {children}
+        </Styled.SpanElementStyle>
       )}
     </>
   );

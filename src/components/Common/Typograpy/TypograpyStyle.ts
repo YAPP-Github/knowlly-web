@@ -26,17 +26,19 @@ export const Headline4 = styled.h4`
 `;
 
 export const ParagraphElementStyle = styled.p<ITypograpyProps>`
-  ${({ variant }) => {
+  ${({ textColor, variant }) => {
     return css`
       ${getParagraphStyle(variant)};
+      color: ${textColor};
     `;
   }}
 `;
 
 export const SpanElementStyle = styled.span<ITypograpyProps>`
-  ${({ variant }) => {
+  ${({ textColor, variant }) => {
     return css`
       ${getSpanElementStyle(variant)};
+      color: ${textColor};
     `;
   }}
 `;

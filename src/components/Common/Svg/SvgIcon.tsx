@@ -21,7 +21,8 @@ interface ISvgIconProps {
     | 'chevron-right'
     | 'category-1'
     | 'category-2'
-    | 'category-3';
+    | 'category-3'
+    | 'link';
   size: number;
 }
 
