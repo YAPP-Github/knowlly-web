@@ -1,16 +1,20 @@
 import theme from '@styles/theme';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const ClassContainer = styled.div<{ time?: boolean }>`
-  margin-bottom: 4rem;
-  ${({ time }) => {
-    if (time) {
-      return css`
-        padding: 1.8rem 0 2.4rem 2.4rem;
-        background-color: ${theme.color.primary['light']};
-      `;
-    }
-  }}
+export const Container = styled.div`
+  & > :first-child {
+    margin-top: 2.4rem;
+  }
+  & > :not(first-child) {
+    margin: 0 2.4rem;
+    margin-bottom: 4rem;
+  }
+
+  & > :nth-child(2) {
+    margin: 0 0 4rem 0 !important;
+    padding: 1.8rem 0 2.4rem 2.4rem;
+    background-color: ${theme.color.primary['light']};
+  }
 `;
 
 export const ClassInfoTitle = styled.p`
