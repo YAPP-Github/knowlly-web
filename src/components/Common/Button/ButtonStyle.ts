@@ -1,37 +1,44 @@
 import styled, { css } from 'styled-components';
+import theme from '@styles/theme';
 
-export const ButtonStyle = styled.button<{ variant: string; size?: string; disabled?: boolean }>`
+export const ButtonStyle = styled.button<{ variant: string; size: string; disabled?: boolean }>`
   ${({ variant, size, disabled }) => {
+    const { color } = theme;
+
     return css`
       ${handleVariant(variant)};
       ${handleSize(size)};
-      color: ${disabled && '#ffffff'};
+      color: ${disabled && color.gray['FF']};
+      font-family: 'SUIT-Medium';
       font-size: 1.4rem;
-      background-color: ${disabled && '#dddddd'};
-      border-color: ${disabled && '#dddddd'};
+      line-height: 1.6rem;
+      background-color: ${disabled && color.gray['DD']};
+      border-color: ${disabled && color.gray['DD']};
       border-radius: 10px;
     `;
   }}
 `;
 
 const handleVariant = (variant: string) => {
+  const { color } = theme;
+
   switch (variant) {
     case 'contained':
       return css`
-        color: #ffffff;
-        background-color: #ff8e4d;
+        color: ${color.gray['FF']};
+        background-color: ${color.primary.basic};
       `;
     case 'outlined':
       return css`
-        color: #ff7a00;
-        border: 1px solid #ff7a00;
-        background-color: #ffffff;
+        color: ${color.primary.dark};
+        border: 1px solid ${color.primary.dark};
+        background-color: ${color.gray['FF']};
       `;
     // no default
   }
 };
 
-const handleSize = (size: string | undefined) => {
+const handleSize = (size: string) => {
   switch (size) {
     case 'xx-small':
       return css`
