@@ -10,6 +10,3 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args}>매칭 신청하기</Button>;
 
 export const Default = Template.bind({});
-Default.args = {
-  size: 'x-small',
-};
