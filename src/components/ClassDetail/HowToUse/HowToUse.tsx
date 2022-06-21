@@ -1,5 +1,6 @@
 import { Typograpy } from '@components/Common';
 import React from 'react';
+import * as Styled from './HowToUseStyle';
 
 const HowToUse = () => {
   const INSTRUCTIONS = [
@@ -10,14 +11,15 @@ const HowToUse = () => {
     { idx: '05', text: '코치의 수락 이후 클래스 진행' },
   ];
   return (
-    <div>
+    <Styled.Container>
       <Typograpy variant="subtitle-2">이용 방법</Typograpy>
       {INSTRUCTIONS.map(({ idx, text }) => (
-        <div key={idx}>
-          {idx} {text}
-        </div>
+        <Styled.Wrapper key={idx}>
+          <Typograpy variant="subtitle-4">{idx}.</Typograpy>
+          <Typograpy variant="body-1">{text}</Typograpy>
+        </Styled.Wrapper>
       ))}
-    </div>
+    </Styled.Container>
   );
 };
 
