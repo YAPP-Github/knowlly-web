@@ -3,7 +3,8 @@ import theme from '@styles/theme';
 
 export const CoachProfileContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 2rem;
 `;
 
 export const CoachProfileImg = styled.img`
@@ -14,12 +15,14 @@ export const CoachProfileImg = styled.img`
 export const CoachProfileContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 1.8rem;
+  margin: 0 0 1.8rem 2rem;
   color: ${theme.color.gray['44']};
+
+  & > :first-child {
+    margin-bottom: 0.4rem;
+  }
 `;
 
-export const CoachNickname = styled.p`
-  margin-bottom: 0.4rem;
+export const Line = styled.hr`
+  border: 0.1rem solid ${theme.color.gray['EF']};
 `;
-
-export const CoachIntro = styled.div``;
