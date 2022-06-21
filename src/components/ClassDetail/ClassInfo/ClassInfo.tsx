@@ -1,6 +1,7 @@
 import React from 'react';
 import * as Styled from './ClassInfoStyle';
 import { ContainedBadge, Typograpy } from '@components/Common';
+import ClassImages from './ClassImages';
 
 const ClassInfo = () => {
   return (
@@ -24,6 +25,7 @@ const ClassInfo = () => {
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
         {/* TODO: 클래스 사진 컨테이너 구현 */}
+        <ClassImages />
       </Styled.Section>
 
       <Styled.Section>
