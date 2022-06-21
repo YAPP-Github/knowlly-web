@@ -19,7 +19,7 @@ Default.args = {
 };
 
 export const headline1: ComponentStory<typeof Typograpy> = () => (
-  <Typograpy variant="overline">헤더-1</Typograpy>
+  <Typograpy variant="headline-1">헤더-1</Typograpy>
 );
 
 export const subtitle3: ComponentStory<typeof Typograpy> = () => (
