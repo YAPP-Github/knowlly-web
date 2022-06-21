@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import theme from '@styles/theme';
 import { ITypograpyProps } from './Typograpy';
 
 export const Headline1 = styled.h1`
@@ -29,7 +30,7 @@ export const ParagraphElementStyle = styled.p<ITypograpyProps>`
   ${({ textColor, variant }) => {
     return css`
       ${getParagraphStyle(variant)};
-      color: ${textColor};
+      ${getColorStyle(textColor)};
     `;
   }}
 `;
@@ -38,7 +39,7 @@ export const SpanElementStyle = styled.span<ITypograpyProps>`
   ${({ textColor, variant }) => {
     return css`
       ${getSpanElementStyle(variant)};
-      color: ${textColor};
+      ${getColorStyle(textColor)};
     `;
   }}
 `;
@@ -85,6 +86,7 @@ const getParagraphStyle = (variant: string) => {
         line-height: 1.8rem;
         letter-spacing: -0.25px;
       `;
+    // no default
   }
 };
 
@@ -114,5 +116,46 @@ const getSpanElementStyle = (variant: string) => {
         font-size: 1rem;
         line-height: 0.2px;
       `;
+    // no default
+  }
+};
+
+const getColorStyle = (textColor: string) => {
+  const color = theme.color;
+
+  switch (textColor) {
+    case 'default':
+      return css`
+        color: ${color.gray['00']};
+      `;
+    case 'primary':
+      return css`
+        color: ${color.primary.dark};
+      `;
+    case 'secondary':
+      return css`
+        color: ${color.secondary.limeDark};
+      `;
+    case 'indigo':
+      return css`
+        color: ${color.secondary.indigo};
+      `;
+    case 'warning':
+      return css`
+        color: ${color.system.red};
+      `;
+    case 'gray8F':
+      return css`
+        color: ${color.gray['8F']};
+      `;
+    case 'gray6B':
+      return css`
+        color: ${color.gray['6B']};
+      `;
+    case 'gray44':
+      return css`
+        color: ${color.gray['44']};
+      `;
+    // no default
   }
 };

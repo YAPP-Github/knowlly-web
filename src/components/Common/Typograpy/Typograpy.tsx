@@ -8,7 +8,15 @@ type Button = 'button-1' | 'button-2';
 
 export interface ITypograpyProps {
   variant: Headline | Subtitle | Body | Button | 'caption' | 'overline';
-  textColor?: string;
+  textColor:
+    | 'default'
+    | 'primary'
+    | 'secondary'
+    | 'indigo'
+    | 'warning'
+    | 'gray8F'
+    | 'gray6B'
+    | 'gray44';
 }
 
 const Typograpy = (props: PropsWithChildren<ITypograpyProps>) => {
@@ -44,6 +52,10 @@ const Typograpy = (props: PropsWithChildren<ITypograpyProps>) => {
       )}
     </>
   );
+};
+
+Typograpy.defaultProps = {
+  textColor: 'default',
 };
 
 export default Typograpy;

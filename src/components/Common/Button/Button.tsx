@@ -3,7 +3,7 @@ import * as Styled from './ButtonStyle';
 
 interface IButtonProps {
   variant: 'contained' | 'outlined';
-  size?: 'xx-small' | 'x-small' | 'small' | 'middle' | 'big';
+  size: 'xx-small' | 'x-small' | 'small' | 'middle' | 'big';
   disabled?: boolean;
   type: 'button' | 'submit' | 'reset';
   _onClick?: () => void;
@@ -21,6 +21,7 @@ const Button = (props: PropsWithChildren<IButtonProps>) => {
 
 Button.defaultProps = {
   variant: 'contained',
+  size: 'big',
   type: 'button',
 };
 

@@ -27,6 +27,7 @@ const Home: NextPage = () => {
       >
         test button
       </Button>
+      <Button>Default</Button>
       <TextMoreButton _onClick={handleTestButton} />
       <FabButton _onClick={handleTestButton} />
       <Input placeholder="default" maxLength={10} />
@@ -52,9 +53,21 @@ const Home: NextPage = () => {
       <SvgIcon type="category-2" />
       <SvgIcon type="category-3" />
       <p>글로벌 폰트 테스트</p>
-      <Typograpy variant="headline-1">헤더-1</Typograpy>
-      <Typograpy variant="subtitle-3">서브헤더-3</Typograpy>
-      <Typograpy variant="body-2">바디-2</Typograpy>
+      <Typograpy variant="headline-1" textColor="default">
+        헤더-1
+      </Typograpy>
+      <Typograpy variant="subtitle-3" textColor="primary">
+        서브헤더-3
+      </Typograpy>
+      <Typograpy variant="subtitle-3" textColor="indigo">
+        서브헤더-3
+      </Typograpy>
+      <Typograpy variant="body-2" textColor="warning">
+        바디-2
+      </Typograpy>
+      <Typograpy variant="body-2" textColor="gray8F">
+        바디-2
+      </Typograpy>
       <Button size="x-small" type="button">
         <Typograpy variant="button-1">버튼-1</Typograpy>
       </Button>
