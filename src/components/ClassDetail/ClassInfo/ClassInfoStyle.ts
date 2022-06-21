@@ -1,7 +1,7 @@
 import theme from '@styles/theme';
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const ClassInfoContainer = styled.div`
   & > :first-child {
     margin-top: 2.4rem;
   }
@@ -17,7 +17,18 @@ export const Container = styled.div`
   }
 `;
 
-export const ClassInfoTitle = styled.p`
-  margin-bottom: 0.8rem;
-  color: ${theme.color.gray['44']};
+export const Section = styled.section`
+  & > :first-child {
+    margin-bottom: 1.2rem;
+    color: ${theme.color.gray['44']};
+  }
+`;
+
+export const AvailableTime = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > :first-child {
+    margin-right: 2rem;
+  }
 `;

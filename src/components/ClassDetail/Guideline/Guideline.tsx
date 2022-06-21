@@ -1,5 +1,5 @@
+import { Typograpy } from '@components/Common';
 import React from 'react';
-import { ClassInfoTitle } from '../ClassInfo/ClassInfoStyle';
 import * as Styled from './GuidelineStyle';
 const Guideline = () => {
   const GUIDELINES = [
@@ -19,7 +19,7 @@ const Guideline = () => {
   ];
   return (
     <Styled.GuidelineContainer>
-      <ClassInfoTitle>안내 사항</ClassInfoTitle>
+      <Typograpy variant="subtitle-2">안내 사항</Typograpy>
       {GUIDELINES.map(({ question, answer }) => (
         <Styled.QAContainer key={question}>
           <p>{question}</p>
