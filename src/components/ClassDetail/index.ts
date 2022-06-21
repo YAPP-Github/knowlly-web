@@ -1,0 +1,1 @@
+export {default as CoachProfile} from './CoachProfile/CoachProfile';
