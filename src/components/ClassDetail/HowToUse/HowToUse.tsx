@@ -12,11 +12,15 @@ const HowToUse = () => {
   ];
   return (
     <Styled.Container>
-      <Typograpy variant="subtitle-2">이용 방법</Typograpy>
+      <Typograpy variant="subtitle-2" textColor="gray44">
+        이용 방법
+      </Typograpy>
       {INSTRUCTIONS.map(({ idx, text }) => (
         <Styled.Wrapper key={idx}>
           <Typograpy variant="subtitle-4">{idx}.</Typograpy>
-          <Typograpy variant="body-1">{text}</Typograpy>
+          <Typograpy variant="body-1" textColor="gray6B">
+            {text}
+          </Typograpy>
         </Styled.Wrapper>
       ))}
     </Styled.Container>
