@@ -19,11 +19,17 @@ const Guideline = () => {
   ];
   return (
     <Styled.GuidelineContainer>
-      <Typograpy variant="subtitle-2">안내 사항</Typograpy>
+      <Typograpy variant="subtitle-2" textColor="gray44">
+        안내 사항
+      </Typograpy>
       {GUIDELINES.map(({ question, answer }) => (
         <Styled.QAContainer key={question}>
-          <Typograpy variant="body-1">{question}</Typograpy>
-          <Typograpy variant="body-1">{answer}</Typograpy>
+          <Typograpy variant="body-1" textColor="indigo">
+            {question}
+          </Typograpy>
+          <Typograpy variant="body-1" textColor="gray6B">
+            {answer}
+          </Typograpy>
         </Styled.QAContainer>
       ))}
     </Styled.GuidelineContainer>
