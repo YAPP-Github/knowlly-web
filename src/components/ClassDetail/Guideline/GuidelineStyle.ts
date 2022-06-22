@@ -1,0 +1,19 @@
+import theme from '@styles/theme';
+import styled from 'styled-components';
+
+export const GuidelineContainer = styled.div`
+  padding: 2.4rem;
+  background-color: ${theme.color.gray['F7']};
+
+  & > :first-child {
+    margin-bottom: 2.4rem;
+  }
+`;
+
+export const QAContainer = styled.div`
+  margin-bottom: 2.4rem;
+
+  & > :first-child {
+    margin-bottom: 0.8rem;
+  }
+`;
