@@ -60,3 +60,11 @@ export const Contents = styled.div`
     margin-bottom: 0.6rem;
   }
 `;
+
+export const ShowMore = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8.8rem;
+  pointer: cursor;
+`;
