@@ -33,6 +33,7 @@ export const Section = styled.section`
 export const AvailableTime = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 1.4rem;
 
   & > :first-child {
     margin-right: 2rem;
@@ -50,4 +51,12 @@ export const ClassImg = styled.img`
   height: 15rem;
   margin-right: 1.2rem;
   border-radius: 0.8rem;
+`;
+
+export const ClassTag = styled.div`
+  display: flex;
+
+  & > * {
+    margin-right: 0.6rem;
+  }
 `;

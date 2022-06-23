@@ -32,7 +32,10 @@ const ClassInfo = () => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 태그</Typograpy>
-        <ContainedBadge type="keyword">#프랑스어</ContainedBadge>
+        <Styled.ClassTag>
+          <ContainedBadge type="keyword">#기초</ContainedBadge>
+          <ContainedBadge type="keyword">#프랑스어회화</ContainedBadge>
+        </Styled.ClassTag>
       </Styled.Section>
     </Styled.ClassInfoContainer>
   );
