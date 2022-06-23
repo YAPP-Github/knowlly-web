@@ -16,6 +16,11 @@ const Guideline = () => {
       question: '볼은 언제 차감되나요?',
       answer: '코치가 매칭을 수락한 이후 차감됩니다.',
     },
+    {
+      question: '클래스는 어떤 방식으로 진행되나요?',
+      answer:
+        '매칭 완료 이후 카카오톡 ID를 전달해드려요. \n 카카오톡으로 코치와 함께 수업 방식을 정해보세요.',
+    },
   ];
   return (
     <Styled.GuidelineContainer>
