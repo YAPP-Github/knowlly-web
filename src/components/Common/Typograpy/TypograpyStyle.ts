@@ -67,9 +67,10 @@ const getParagraphStyle = (variant: string) => {
       `;
     case 'subtitle-4':
       return css`
-        font-family: 'SUIT-Regular';
-        font-size: 1.6rem;
-        line-height: 2.2rem;
+        font-family: 'SUIT-Semibold';
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 2rem;
         letter-spacing: -0.25px;
       `;
     case 'body-1':

@@ -20,7 +20,15 @@ export const ProfileWrapper = styled.div`
   }
 `;
 
-export const ProfileLink = styled.div`
+export const PlayerType = styled.div`
+  display: flex;
+
+  & > :first-child {
+    margin-right: 0.4rem;
+  }
+`;
+
+export const IconWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   &>: first-child {
