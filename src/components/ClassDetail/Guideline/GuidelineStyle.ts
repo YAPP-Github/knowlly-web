@@ -13,6 +13,7 @@ export const GuidelineContainer = styled.div`
 
 export const QAContainer = styled.div`
   margin-bottom: 2.4rem;
+  white-space: pre-line;
 
   & > :first-child {
     margin-bottom: 0.8rem;
