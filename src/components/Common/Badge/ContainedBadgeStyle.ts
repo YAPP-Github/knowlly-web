@@ -1,5 +1,6 @@
 import theme from '@styles/theme';
 import styled, { css } from 'styled-components';
+import Typograpy from '../Typograpy/Typograpy';
 
 export const ContainedBadgeStyle = styled.div<{ type: string }>`
   ${({ type }) => {
@@ -42,3 +43,7 @@ const handleBadgeType = (type: string) => {
       `;
   }
 };
+
+export const BadgeText = styled(Typograpy)`
+  color: inherit;
+`;
