@@ -1,10 +1,20 @@
 import { TextMoreButton, Typograpy } from '@components/Common';
+import { useState } from 'react';
 import * as Styled from './ClassReviewStyle';
 
 const Review = () => {
-  const handleTextMore = () => {
-    console.log();
+  const LENGTH = 110;
+  const text =
+    '모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다.';
+
+  const [review, setReview] = useState(text.slice(0, LENGTH) + '...');
+  const [isLong, setIsLong] = useState(false);
+
+  const toggleTextMore = () => {
+    setReview(text);
+    setIsLong(!isLong);
   };
+
   return (
     <Styled.ReviewWrapper>
       <Styled.Profile>
@@ -23,11 +33,9 @@ const Review = () => {
       </Styled.Profile>
       <Styled.Contents>
         <Typograpy variant="body-2" textColor="gray6B">
-          모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는
-          최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다 이렇게붙여주세요 더보기를
-          붙입니다 이렇게 붙...
+          {review}
         </Typograpy>
-        <TextMoreButton _onClick={handleTextMore} />
+        {!isLong && <TextMoreButton _onClick={toggleTextMore} />}
       </Styled.Contents>
     </Styled.ReviewWrapper>
   );
