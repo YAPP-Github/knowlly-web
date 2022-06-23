@@ -28,7 +28,7 @@ export const PlayerType = styled.div`
   }
 `;
 
-export const ProfileLink = styled.div`
+export const IconWrapper = styled.div`
   display: flex;
   align-items: flex-end;
   &>: first-child {
