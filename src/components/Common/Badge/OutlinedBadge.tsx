@@ -8,7 +8,11 @@ interface IOutlinedBadgeProps {
 
 const OutlinedBadge = (props: PropsWithChildren<IOutlinedBadgeProps>) => {
   const { children, ...rest } = props;
-  return <Styled.OutlinedBadgeStyle {...rest}>{children}</Styled.OutlinedBadgeStyle>;
+  return (
+    <Styled.OutlinedBadgeStyle {...rest}>
+      <Styled.BadgeText variant="button-2">{children}</Styled.BadgeText>
+    </Styled.OutlinedBadgeStyle>
+  );
 };
 
 export default OutlinedBadge;

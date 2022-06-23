@@ -7,7 +7,11 @@ interface IContainedBadgeProps {
 
 const ContainedBadge = (props: PropsWithChildren<IContainedBadgeProps>) => {
   const { children, ...rest } = props;
-  return <Styled.ContainedBadgeStyle {...rest}>{children}</Styled.ContainedBadgeStyle>;
+  return (
+    <Styled.ContainedBadgeStyle {...rest}>
+      <Styled.BadgeText variant="button-2">{children}</Styled.BadgeText>
+    </Styled.ContainedBadgeStyle>
+  );
 };
 
 export default ContainedBadge;

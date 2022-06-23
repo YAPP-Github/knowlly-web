@@ -1,5 +1,6 @@
 import theme from '@styles/theme';
 import styled, { css } from 'styled-components';
+import Typograpy from '../Typograpy/Typograpy';
 
 export const OutlinedBadgeStyle = styled.div<{ type: string; written?: boolean }>`
   ${({ type, written }) => {
@@ -30,3 +31,7 @@ const handleBadgeType = (type: string, written?: boolean) => {
       `;
   }
 };
+
+export const BadgeText = styled(Typograpy)`
+  color: inherit;
+`;
