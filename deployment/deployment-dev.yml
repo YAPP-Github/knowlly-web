@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: knowlly-web-dev-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: knowlly-web-dev
+  template:
+    metadata:
+      labels:
+        app: knowlly-web-dev
+    spec:
+      containers:
+        - name: knowlly-web-dev
+          image: <IMAGE>
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "512m"
+            limits:
+              memory: "512Mi"
+              cpu: "512m"
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 5
