@@ -17,16 +17,16 @@ spec:
           image: <IMAGE>
           resources:
             requests:
-              memory: "512Mi"
-              cpu: "512m"
+              memory: "128Mi"
+              cpu: "128m"
             limits:
-              memory: "512Mi"
-              cpu: "512m"
+              memory: "128Mi"
+              cpu: "128m"
           ports:
             - containerPort: 3000
           readinessProbe:
             httpGet:
               path: /
               port: 3000
-            initialDelaySeconds: 30
+            initialDelaySeconds: 10
             periodSeconds: 5
