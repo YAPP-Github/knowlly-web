@@ -19,9 +19,12 @@ interface ISvgIconProps {
     | 'chevron-down'
     | 'chevron-up'
     | 'chevron-right'
-    | 'category-1'
-    | 'category-2'
-    | 'category-3'
+    | 'category-service-planning'
+    | 'category-design'
+    | 'category-develop'
+    | 'category-marketing'
+    | 'category-language'
+    | 'category-etc'
     | 'link';
   size: number;
 }
