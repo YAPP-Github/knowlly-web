@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
-export const LayoutContainer = styled.main<{ hasSpacing?: boolean }>`
-  ${({ hasSpacing }) => {
+export const LayoutContainer = styled.main<{ spacing?: boolean }>`
+  ${({ spacing }) => {
     return css`
-      margin: ${hasSpacing && '0 2.4rem'};
+      margin: ${spacing && '0 2.4rem'};
     `;
   }}
 `;

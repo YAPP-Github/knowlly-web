@@ -3,7 +3,7 @@ import * as Styled from './LayoutStyle';
 
 interface ILayoutProps {
   children: ReactNode;
-  hasSpacing?: boolean;
+  spacing?: boolean;
 }
 
 const Layout = (props: ILayoutProps) => {
