@@ -8,7 +8,7 @@ const Category: NextPage = () => {
   const categoryId = router.query.id;
 
   return (
-    <Layout spacing>
+    <Layout isSpacing>
       <Typograpy variant="headline-3">{categoryId}</Typograpy>
     </Layout>
   );

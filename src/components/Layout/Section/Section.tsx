@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import * as Styled from './SectionStyle';
 
 export interface ISectionProps {
-  spacing?: boolean;
+  isSpacing?: boolean;
   start?: 1 | 2 | 3 | 4;
   end?: 1 | 2 | 3 | 4;
 }

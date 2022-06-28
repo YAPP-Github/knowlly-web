@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components';
 import { ISectionProps } from './Section';
 
 export const SectionStyle = styled.section<ISectionProps>`
-  ${({ spacing, start, end }) => {
+  ${({ isSpacing, start, end }) => {
     return css`
-      margin: ${spacing && '0 2.4rem'};
+      margin: ${isSpacing && '0 2.4rem'};
       margin-top: ${start && getVerticalMarginValue(start)};
       mpargin-bottom: ${end && getVerticalMarginValue(end)};
     `;

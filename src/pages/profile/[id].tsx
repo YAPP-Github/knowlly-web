@@ -4,7 +4,7 @@ import { ClassReview, Introduction, ProfileHeader } from '@components/Profile';
 
 const Profile: NextPage = () => {
   return (
-    <Layout spacing>
+    <Layout isSpacing>
       <ProfileHeader />
       <Introduction />
       <ClassReview />

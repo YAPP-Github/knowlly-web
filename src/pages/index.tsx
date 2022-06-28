@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   return (
-    <Layout spacing>
+    <Layout isSpacing>
       <SearchBar placeholder="어떤 클래스를 찾고 싶으신가요?" setSearchValue={setSearchValue} />
       <Section start={2}>
         <Category />
