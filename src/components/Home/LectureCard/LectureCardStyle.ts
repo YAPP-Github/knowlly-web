@@ -7,7 +7,7 @@ export const LectureCardContainer = styled.li`
 
     return css`
       display: flex;
-      padding-bottom: 1.4rem;
+      padding: 1.4rem 0;
       border-bottom: 1px solid ${color.gray['EF']};
     `;
   }}
