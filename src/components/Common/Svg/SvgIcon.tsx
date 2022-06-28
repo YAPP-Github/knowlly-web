@@ -1,31 +1,33 @@
 import React from 'react';
 
+export type SvgIconType =
+  | 'checkbox-checked'
+  | 'checkbox-default'
+  | 'clear'
+  | 'k_class'
+  | 'review'
+  | 'previous'
+  | 'indicator-1-active'
+  | 'indicator-1-inactive'
+  | 'indicator-2-active'
+  | 'indicator-2-inactive'
+  | 'list-checkbox-checked'
+  | 'list-checkbox-default'
+  | 'search'
+  | 'chevron-down-fill'
+  | 'chevron-down'
+  | 'chevron-up'
+  | 'chevron-right'
+  | 'category-service-planning'
+  | 'category-design'
+  | 'category-develop'
+  | 'category-marketing'
+  | 'category-language'
+  | 'category-etc'
+  | 'link';
+
 interface ISvgIconProps {
-  type:
-    | 'checkbox-checked'
-    | 'checkbox-default'
-    | 'clear'
-    | 'k_class'
-    | 'review'
-    | 'previous'
-    | 'indicator-1-active'
-    | 'indicator-1-inactive'
-    | 'indicator-2-active'
-    | 'indicator-2-inactive'
-    | 'list-checkbox-checked'
-    | 'list-checkbox-default'
-    | 'search'
-    | 'chevron-down-fill'
-    | 'chevron-down'
-    | 'chevron-up'
-    | 'chevron-right'
-    | 'category-service-planning'
-    | 'category-design'
-    | 'category-develop'
-    | 'category-marketing'
-    | 'category-language'
-    | 'category-etc'
-    | 'link';
+  type: SvgIconType;
   size: number;
 }
 
