@@ -6,7 +6,7 @@ const LectureCard = () => {
   return (
     <Styled.LectureCardContainer>
       <Styled.LectureImageWrapper>
-        <Image src={'/img/profile.png'} width={88} height={88} />
+        <Image src="/img/profile.png" width={88} height={88} />
       </Styled.LectureImageWrapper>
       <Styled.LectureInfoWrapper>
         <Styled.LectureTopic variant="subtitle-2">JAVA 코딩 기초</Styled.LectureTopic>
