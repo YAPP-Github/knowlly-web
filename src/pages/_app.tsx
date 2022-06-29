@@ -15,9 +15,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={Theme}>
           <GlobalStyle />
+          <Component {...pageProps} />
           <Font />
           <SvgSprite />
-          <Component {...pageProps} />
         </ThemeProvider>
       </QueryClientProvider>
     </RecoilRoot>
