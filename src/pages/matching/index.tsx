@@ -1,11 +1,11 @@
 import { Layout } from '@components/Common';
-import { FirstStep, Title } from '@components/Matching';
+import { FirstStep, SecondStep, Title } from '@components/Matching';
 import { NextPage } from 'next';
 
 const Matching: NextPage = () => {
   return (
     <Layout>
-      <FirstStep />
+      <SecondStep />
     </Layout>
   );
 };

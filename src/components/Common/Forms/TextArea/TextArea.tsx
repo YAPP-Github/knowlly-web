@@ -2,7 +2,7 @@ import { PropsWithChildren, useState } from 'react';
 import * as Styled from './TextAreaStyle';
 
 interface ITextAreaProps {
-  placeholder: string;
+  placeholder?: string;
   maxLength?: number;
 }
 
