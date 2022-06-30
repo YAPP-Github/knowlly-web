@@ -3,8 +3,13 @@ import { ClassInfo, CoachProfile, Guideline, HowToUse } from '@components/ClassD
 import { Typograpy } from '@components/Common';
 import { Layout } from '@components/Common/Layout';
 import * as Styled from '@components/ClassDetail/ClassDetailStyle';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const ClassDetail: NextPage = () => {
+  const router = useRouter();
+  const lectureId = router.query.id;
+
   return (
     <>
       <Layout isSpacing>
@@ -17,9 +22,13 @@ const ClassDetail: NextPage = () => {
         <HowToUse />
       </Layout>
       <Guideline />
-      <Styled.MatchingButton variant="contained" size="big">
-        매칭 신청하기
-      </Styled.MatchingButton>
+      <Link href={{ pathname: '/matching', query: { id: lectureId } }}>
+        <a>
+          <Styled.MatchingButton variant="contained" size="big">
+            매칭 신청하기
+          </Styled.MatchingButton>
+        </a>
+      </Link>
     </>
   );
 };
