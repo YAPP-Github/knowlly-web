@@ -12,6 +12,7 @@ const Matching: NextPage = () => {
   const lectureId = router.query.id;
 
   const [step, setStep] = useState(0);
+  const [disabled, setDisabled] = useState(false);
   const buttonText = ['다음', '신청하기', '확인'];
 
   const handleNextButtonClick = () => {
@@ -25,7 +26,7 @@ const Matching: NextPage = () => {
   const setPage = (step: number) => {
     switch (step) {
       case 0:
-        return <FirstStep />;
+        return <FirstStep setDisabled={setDisabled} />;
       case 1:
         return <SecondStep />;
       case 2:
@@ -37,7 +38,7 @@ const Matching: NextPage = () => {
     switch (step) {
       case 0:
         return (
-          <Styled.MatchingButton _onClick={handleNextButtonClick} disabled={true}>
+          <Styled.MatchingButton _onClick={handleNextButtonClick} disabled={disabled}>
             {buttonText[step]}
           </Styled.MatchingButton>
         );

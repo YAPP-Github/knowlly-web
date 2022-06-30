@@ -1,10 +1,29 @@
 import { Typograpy } from '@components/Common';
-import React from 'react';
+import { useSelect } from '@hooks';
+import React, { useEffect } from 'react';
 import ScheduleBox from '../ScheduleBox/ScheduleBox';
 import Title from '../Title/Title';
 import * as Styled from './FirstStepStyle';
 
-const FirstStep = () => {
+// API 연동 전 임시 Array Type
+export interface ISchedule {
+  id: number;
+  day: string;
+  time: string;
+}
+
+const FirstStep = ({ setDisabled }: any) => {
+  const schedules = [
+    { id: 0, day: '6월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
+    { id: 1, day: '5월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
+  ];
+
+  const { selectedIndex, setSelectedIndex } = useSelect(schedules);
+
+  useEffect(() => {
+    setDisabled(selectedIndex < 0);
+  });
+
   return (
     <>
       <Title />
@@ -14,8 +33,14 @@ const FirstStep = () => {
           코치가 보낸 일정 중 한가지만 선택해주세요.
         </Typograpy>
       </Styled.TextWrapper>
-      <ScheduleBox />
-      <ScheduleBox />
+      {schedules.map((schedule) => (
+        <ScheduleBox
+          key={schedule.id}
+          schedule={schedule}
+          isSelected={selectedIndex === schedule.id}
+          _onClick={() => setSelectedIndex(schedule.id)}
+        />
+      ))}
     </>
   );
 };
