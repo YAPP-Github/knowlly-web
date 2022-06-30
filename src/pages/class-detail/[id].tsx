@@ -7,13 +7,13 @@ import * as Styled from '@components/ClassDetail/ClassDetailStyle';
 const ClassDetail: NextPage = () => {
   return (
     <>
-      <Layout>
+      <Layout isSpacing>
         <Styled.CategoryBadge type="category">외국/영어</Styled.CategoryBadge>
         <Typograpy variant="headline-3">프랑스어 기초</Typograpy>
         <CoachProfile />
       </Layout>
       <ClassInfo />
-      <Layout>
+      <Layout isSpacing>
         <HowToUse />
       </Layout>
       <Guideline />
