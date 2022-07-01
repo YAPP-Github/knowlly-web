@@ -3,8 +3,6 @@ import useLectureInfo from '@components/Home/hooks/useLectureInfo';
 import * as Styled from './LectureListStyle';
 
 const LectureList = () => {
-  const test = ['1', '2', '3'];
-
   const lectureInfoList = useLectureInfo('');
 
   return (
