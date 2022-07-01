@@ -20,8 +20,7 @@
     "prettier",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:testing-library/react",
-    "react-app/jest"
+    "plugin:testing-library/react"
   ],
   "globals": {
     "Atomics": "readonly",
