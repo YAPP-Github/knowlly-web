@@ -6,7 +6,7 @@ import Home from '@pages';
 import { screen } from '@testing-library/react';
 import { renderHook, WrapperComponent } from '@testing-library/react-hooks';
 import { createQueryClientWrapper, renderWithQueryClient } from '@test-utils';
-import useLectureInfo from '../hooks/useLectureInfo';
+import useLectureInfo from '../../../hooks/home/useLectureInfo';
 
 test('클래스 카테고리 목록', () => {
   renderWithQueryClient(<Home />);

@@ -1,5 +1,5 @@
 import { LectureCard } from '@components/Home';
-import useLectureInfo from '@components/Home/hooks/useLectureInfo';
+import useLectureInfo from '@hooks/home/useLectureInfo';
 import * as Styled from './LectureListStyle';
 
 const LectureList = () => {
