@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
-import { Layout, SvgIcon, Typograpy } from '@components/Common';
+import { SvgIcon, Typograpy } from '@components/Common';
+import { Layout } from '@components/Common/Layout';
 import * as Styled from '@components/Review/ReviewStyle';
 import { useState } from 'react';
 

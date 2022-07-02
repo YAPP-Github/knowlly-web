@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
 import { SearchBar, Typograpy } from '@components/Common';
-import { Layout, Section } from '@components/Layout';
+import { Layout, Section } from '@components/Common/Layout';
 import { Category, LectureList } from '@components/Home';
 
 const Home: NextPage = () => {

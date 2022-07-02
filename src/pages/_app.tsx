@@ -1,13 +1,14 @@
 import type { AppProps } from 'next/app';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClientProvider } from 'react-query';
+import { queryClient } from '@react-query/queryClient';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
-import Theme from '@styles/theme';
-import GlobalStyle from '@styles/global-style';
-import { ThemeProvider } from 'styled-components';
-import Font from '@styles/font';
-import SvgSprite from '@components/Common/Svg/SvgSprite';
 
-const queryClient = new QueryClient();
+import SvgSprite from '@components/Common/Svg/SvgSprite';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '@styles/global-style';
+import Theme from '@styles/theme';
+import Font from '@styles/font';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -19,6 +20,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Font />
           <SvgSprite />
         </ThemeProvider>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </RecoilRoot>
   );

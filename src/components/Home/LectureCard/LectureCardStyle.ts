@@ -19,7 +19,7 @@ export const LectureImageWrapper = styled.div`
 
 export const LectureInfoWrapper = styled.div``;
 
-export const LectureTopic = styled(Typograpy)`
+export const LectureIntroduce = styled(Typograpy)`
   margin-bottom: 0.4rem;
 `;
 

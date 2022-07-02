@@ -1,13 +1,14 @@
 import { LectureCard } from '@components/Home';
+import useLectureInfo from '@hooks/home/useLectureInfo';
 import * as Styled from './LectureListStyle';
 
 const LectureList = () => {
-  const test = ['1', '2', '3'];
+  const lectureInfoList = useLectureInfo();
 
   return (
     <Styled.LectureListContainer>
-      {test.map((lecture) => (
-        <LectureCard key={lecture} />
+      {lectureInfoList.data?.map((lecture, index) => (
+        <LectureCard key={index} lectureData={lecture} />
       ))}
     </Styled.LectureListContainer>
   );
