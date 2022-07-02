@@ -3,7 +3,7 @@ import useLectureInfo from '@components/Home/hooks/useLectureInfo';
 import * as Styled from './LectureListStyle';
 
 const LectureList = () => {
-  const lectureInfoList = useLectureInfo('');
+  const lectureInfoList = useLectureInfo();
 
   return (
     <Styled.LectureListContainer>
