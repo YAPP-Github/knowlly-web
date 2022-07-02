@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import { ClassInfo, CoachProfile, Guideline, HowToUse } from '@components/ClassDetail';
 import { Typograpy } from '@components/Common';
-import { Layout } from '@components/Layout';
+import { Layout } from '@components/Common/Layout';
 import * as Styled from '@components/ClassDetail/ClassDetailStyle';
 
 const ClassDetail: NextPage = () => {

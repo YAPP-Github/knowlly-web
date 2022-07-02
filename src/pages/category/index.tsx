@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
-import { Layout } from '@components/Layout';
+import { Layout } from '@components/Common/Layout';
 
 const Category: NextPage = () => {
   const router = useRouter();
