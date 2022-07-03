@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import { QueryClientProvider } from 'react-query';
+import { Hydrate, QueryClientProvider } from 'react-query';
 import { queryClient } from '@react-query/queryClient';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { RecoilRoot } from 'recoil';
@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={Theme}>
           <GlobalStyle />
-          <Component {...pageProps} />
+          <Hydrate state={pageProps.dehydratedState}>
+            <Component {...pageProps} />
+          </Hydrate>
           <Font />
           <SvgSprite />
         </ThemeProvider>
