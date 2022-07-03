@@ -28,3 +28,18 @@ export interface ILectureInfoData {
     categoryName: '기타';
   };
 }
+
+export interface ILectureInfiniteList {
+  pageParams: (string | undefined)[];
+  pages: ILecturePages[];
+}
+
+export interface ILecturePages {
+  currentPage: number;
+  data: ILectureInfoData[];
+  message: string;
+  pageSize: number;
+  timestamp: number;
+  totalElements: number;
+  totalPage: number;
+}

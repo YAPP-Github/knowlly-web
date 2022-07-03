@@ -20,6 +20,10 @@ export const LectureImageWrapper = styled.div`
 export const LectureInfoWrapper = styled.div``;
 
 export const LectureIntroduce = styled(Typograpy)`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
   margin-bottom: 0.4rem;
 `;
 

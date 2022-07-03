@@ -1,7 +1,7 @@
 import createAxiosWithTestToken from './customAxios';
 
 class HttpAPI {
-  async fetchLectureInfo(params: string) {
+  async fetchLectureInfo(params = '') {
     const { data } = await createAxiosWithTestToken('lectureinfo').get(params);
 
     return data;
