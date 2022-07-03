@@ -9,7 +9,7 @@ COPY package-lock.json .
 
 # 필수 패키지 파일을 이미지 내부로 복사하고, npm 명령어로 설치합니다
 COPY package.json ./app
-RUN npm install
+RUN npm install --force
 
 COPY . .
 RUN npx next build
