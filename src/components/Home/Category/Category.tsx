@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { SvgIcon, Typograpy } from '@components/Common';
-import CATEGORY_LIST from './CategoryList';
+import CATEGORY_LIST from '@constants/categoryList';
 import * as Styled from './CategoryStyle';
 
 const Category = () => {
