@@ -20,7 +20,7 @@
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
       "@components/*": ["components/*"],
-      "@constatns/*": ["constatns/*"],
+      "@constants/*": ["constants/*"],
       "@hooks/*": ["hooks/*"],
       "@types/*": ["types/*"]
     }
