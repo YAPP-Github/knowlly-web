@@ -1,6 +1,8 @@
 import { Typograpy } from '@components/Common';
 import { useSelect } from '@hooks';
+import { matchingStepState } from '@store/atoms/matchingStepState';
 import React, { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import ScheduleBox from '../ScheduleBox/ScheduleBox';
 import Title from '../Title/Title';
 import * as Styled from './FirstStepStyle';
@@ -12,17 +14,19 @@ export interface ISchedule {
   time: string;
 }
 
-const FirstStep = ({ setDisabled }: any) => {
+const FirstStep = () => {
   const schedules = [
     { id: 0, day: '6월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
     { id: 1, day: '5월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
   ];
 
   const { selectedIndex, setSelectedIndex } = useSelect(schedules);
+  const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
 
-  useEffect(() => {
-    setDisabled(selectedIndex < 0);
-  });
+  const handleScheduleClick = (id: number) => {
+    setSelectedIndex(id);
+    setTimeout(() => setMatchingStep(matchingStep + 1), 500);
+  };
 
   return (
     <>
@@ -38,7 +42,7 @@ const FirstStep = ({ setDisabled }: any) => {
           key={schedule.id}
           schedule={schedule}
           isSelected={selectedIndex === schedule.id}
-          _onClick={() => setSelectedIndex(schedule.id)}
+          _onClick={() => handleScheduleClick(schedule.id)}
         />
       ))}
     </>

@@ -1,32 +1,35 @@
 import { Button } from '@components/Common';
-import { Layout } from '@components/Layout';
+import { Layout } from '@components/Common/Layout';
 import { FirstStep, LastStep, SecondStep } from '@components/Matching';
+import { matchingStepState } from '@store/atoms/matchingStepState';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import * as Styled from '../../components/Matching/MatchingStyle';
 
 const Matching: NextPage = () => {
   const router = useRouter();
   const lectureId = router.query.id;
 
-  const [step, setStep] = useState(0);
   const [disabled, setDisabled] = useState(false);
   const buttonText = ['다음', '신청하기', '확인'];
+
+  const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
 
   const handleNextButtonClick = () => {
     nextStep();
   };
 
   const nextStep = () => {
-    setStep(step + 1);
+    setMatchingStep(matchingStep + 1);
   };
 
   const setPage = (step: number) => {
     switch (step) {
       case 0:
-        return <FirstStep setDisabled={setDisabled} />;
+        return <FirstStep />;
       case 1:
         return <SecondStep />;
       case 2:
@@ -36,12 +39,6 @@ const Matching: NextPage = () => {
 
   const setButton = (step: number) => {
     switch (step) {
-      case 0:
-        return (
-          <Styled.MatchingButton _onClick={handleNextButtonClick} disabled={disabled}>
-            {buttonText[step]}
-          </Styled.MatchingButton>
-        );
       case 1:
         return (
           <Styled.MatchingButton _onClick={handleNextButtonClick} disabled={true}>
@@ -63,8 +60,8 @@ const Matching: NextPage = () => {
 
   return (
     <>
-      <Layout isSpacing>{setPage(step)}</Layout>
-      {setButton(step)}
+      <Layout isSpacing>{setPage(matchingStep)}</Layout>
+      {setButton(matchingStep)}
     </>
   );
 };
