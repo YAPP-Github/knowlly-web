@@ -1,5 +1,7 @@
 import { Typograpy } from '@components/Common';
+import { Layout } from '@components/Common/Layout';
 import { useSelect } from '@hooks';
+import { matchingState } from '@store/atoms/matchingState';
 import { matchingStepState } from '@store/atoms/matchingStepState';
 import React, { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
@@ -22,14 +24,16 @@ const FirstStep = () => {
 
   const { selectedIndex, setSelectedIndex } = useSelect(schedules);
   const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
+  const [matching, setMatching] = useRecoilState(matchingState);
 
   const handleScheduleClick = (id: number) => {
     setSelectedIndex(id);
     setTimeout(() => setMatchingStep(matchingStep + 1), 500);
+    setMatching({ ...matching, time: 'time' });
   };
 
   return (
-    <>
+    <Layout isSpacing>
       <Title />
       <Styled.TextWrapper>
         <Typograpy variant="subtitle-2">일정 선택</Typograpy>
@@ -45,7 +49,7 @@ const FirstStep = () => {
           _onClick={() => handleScheduleClick(schedule.id)}
         />
       ))}
-    </>
+    </Layout>
   );
 };
 

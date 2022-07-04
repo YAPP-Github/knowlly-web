@@ -2,6 +2,7 @@ import { PropsWithChildren, useEffect, useState } from 'react';
 import * as Styled from './TextAreaStyle';
 
 interface ITextAreaProps {
+  value: string;
   placeholder?: string;
   maxLength?: number;
   _onInputEntered: (value: string) => void;
@@ -17,13 +18,11 @@ const TextArea = (props: PropsWithChildren<ITextAreaProps>) => {
 
   useEffect(() => {
     if (_onInputEntered) _onInputEntered(text);
-  }, [_onInputEntered]);
-
-  console.log(text);
+  });
 
   return (
     <Styled.TextAreaWrapper>
-      <Styled.TextAreaStyle {...rest} maxLength={maxLength} onChange={_onChange} />
+      <Styled.TextAreaStyle {...rest} value={text} maxLength={maxLength} onChange={_onChange} />
       <Styled.TextLength>
         {text.length}/{maxLength}
       </Styled.TextLength>
