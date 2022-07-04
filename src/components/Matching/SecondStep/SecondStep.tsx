@@ -29,7 +29,6 @@ const SecondStep = () => {
   return (
     <>
       <Layout isSpacing>
-        <Title />
         <Styled.TextWrapper>
           <Typograpy variant="subtitle-2">소개 작성</Typograpy>
           <Typograpy variant="body-2" textColor="gray8F">

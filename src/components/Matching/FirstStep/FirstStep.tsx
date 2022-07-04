@@ -28,13 +28,12 @@ const FirstStep = () => {
 
   const handleScheduleClick = (id: number) => {
     setSelectedIndex(id);
-    setTimeout(() => setMatchingStep(matchingStep + 1), 500);
+    setTimeout(() => setMatchingStep(matchingStep + 1), 300);
     setMatching({ ...matching, time: 'time' });
   };
 
   return (
     <Layout isSpacing>
-      <Title />
       <Styled.TextWrapper>
         <Typograpy variant="subtitle-2">일정 선택</Typograpy>
         <Typograpy variant="body-2" textColor="gray8F">
