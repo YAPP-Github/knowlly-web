@@ -1,12 +1,13 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import * as Styled from './PageLayoutStyle';
 
-interface IPageLayoutProps {
-  children: ReactNode;
+export interface IPageLayoutProps {
   isSpacing?: boolean;
+  start?: 1 | 2 | 3 | 4;
+  end?: 1 | 2 | 3 | 4;
 }
 
-const PageLayout = (props: IPageLayoutProps) => {
+const PageLayout = (props: PropsWithChildren<IPageLayoutProps>) => {
   const { children, ...rest } = props;
 
   return <Styled.PageLayoutContainer {...rest}>{children}</Styled.PageLayoutContainer>;
