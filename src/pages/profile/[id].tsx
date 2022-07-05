@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import { Layout } from '@components/Common/Layout';
-import { ClassReview, Introduction, ProfileHeader } from '@components/Profile';
+import { LectureReview, Introduction, ProfileHeader } from '@components/Profile';
 
 const Profile: NextPage = () => {
   return (
     <Layout isSpacing>
       <ProfileHeader />
       <Introduction />
-      <ClassReview />
+      <LectureReview />
     </Layout>
   );
 };

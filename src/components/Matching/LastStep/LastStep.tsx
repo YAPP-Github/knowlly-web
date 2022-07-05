@@ -25,7 +25,7 @@ const LastStep = () => {
 
       <>
         <Styled.MatchingSuccessImg src={`/img/matching.png`} />
-        <Link href="/class-detail/1">
+        <Link href="/lecture-detail/1">
           <a>
             <MatchingButton>확인</MatchingButton>
           </a>

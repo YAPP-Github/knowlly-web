@@ -1,7 +1,7 @@
 import theme from '@styles/theme';
 import styled from 'styled-components';
 
-export const ClassInfoContainer = styled.div`
+export const LectureInfoContainer = styled.div`
   & > :first-child {
     margin-top: 2.4rem;
   }
@@ -40,20 +40,20 @@ export const AvailableTime = styled.div`
   }
 `;
 
-export const PictureWrapper = styled.div`
+export const LectureImageWrapper = styled.div`
   width: 100%;
   overflow: auto;
   white-space: nowrap;
 `;
 
-export const ClassImg = styled.img`
+export const LectureImage = styled.img`
   width: 15rem;
   height: 15rem;
   margin-right: 1.2rem;
   border-radius: 0.8rem;
 `;
 
-export const ClassTag = styled.div`
+export const LectureTag = styled.div`
   display: flex;
 
   & > * {

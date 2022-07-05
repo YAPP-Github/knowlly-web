@@ -1,6 +1,6 @@
 import { TextMoreButton, Typograpy } from '@components/Common';
 import { useState } from 'react';
-import * as Styled from './ClassReviewStyle';
+import * as Styled from './LectureReviewStyle';
 
 const Review = () => {
   const LENGTH = 110;

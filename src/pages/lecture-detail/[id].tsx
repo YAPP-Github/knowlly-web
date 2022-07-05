@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
-import { ClassInfo, CoachProfile, Guideline, HowToUse } from '@components/ClassDetail';
+import { LectureInfo, CoachProfile, Guideline, HowToUse } from '@components/LectureDetail';
 import { Typograpy } from '@components/Common';
 import { Layout } from '@components/Common/Layout';
-import * as Styled from '@components/ClassDetail/ClassDetailStyle';
+import * as Styled from '@components/LectureDetail/LectureDetailStyle';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const ClassDetail: NextPage = () => {
+const LectureDetail: NextPage = () => {
   const router = useRouter();
   const lectureId = router.query.id;
 
@@ -17,7 +17,7 @@ const ClassDetail: NextPage = () => {
         <Typograpy variant="headline-3">프랑스어 기초</Typograpy>
         <CoachProfile />
       </Layout>
-      <ClassInfo />
+      <LectureInfo />
       <Layout isSpacing>
         <HowToUse />
       </Layout>
@@ -32,4 +32,4 @@ const ClassDetail: NextPage = () => {
     </>
   );
 };
-export default ClassDetail;
+export default LectureDetail;

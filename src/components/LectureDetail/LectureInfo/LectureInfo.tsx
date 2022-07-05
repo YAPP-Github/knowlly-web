@@ -1,11 +1,11 @@
 import React from 'react';
-import * as Styled from './ClassInfoStyle';
+import * as Styled from './LectureInfoStyles';
 import { ContainedBadge, Typograpy } from '@components/Common';
-import ClassImages from './ClassImages';
+import LectureImages from './LectureImages';
 
-const ClassInfo = () => {
+const LectureInfo = () => {
   return (
-    <Styled.ClassInfoContainer>
+    <Styled.LectureInfoContainer>
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 소개</Typograpy>
         <Typograpy variant="body-1" textColor="gray6B">
@@ -26,19 +26,18 @@ const ClassInfo = () => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
-        {/* TODO: 클래스 사진 컨테이너 구현 */}
-        <ClassImages />
+        <LectureImages />
       </Styled.Section>
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 태그</Typograpy>
-        <Styled.ClassTag>
+        <Styled.LectureTag>
           <ContainedBadge type="keyword">#기초</ContainedBadge>
           <ContainedBadge type="keyword">#프랑스어회화</ContainedBadge>
-        </Styled.ClassTag>
+        </Styled.LectureTag>
       </Styled.Section>
-    </Styled.ClassInfoContainer>
+    </Styled.LectureInfoContainer>
   );
 };
 
-export default ClassInfo;
+export default LectureInfo;

@@ -1,9 +1,9 @@
 import { SvgIcon, Typograpy } from '@components/Common';
 import { useState } from 'react';
-import * as Styled from './ClassReviewStyle';
+import * as Styled from './LectureReviewStyle';
 import Review from './Review';
 
-const ClassReview = () => {
+const LectureReview = () => {
   const [endIdx, setEndIdx] = useState(0);
 
   const toggleReviewList = () => {
@@ -11,7 +11,7 @@ const ClassReview = () => {
   };
 
   return (
-    <Styled.ClassReviewContainer>
+    <Styled.LectureReviewContainer>
       <Typograpy variant="subtitle-1">플레이어 후기</Typograpy>
       <Styled.NoReview>
         <Typograpy variant="body-1" textColor="gray8F">
@@ -25,8 +25,8 @@ const ClassReview = () => {
         </Typograpy>
         <SvgIcon type="chevron-down" />
       </Styled.ShowMore>
-    </Styled.ClassReviewContainer>
+    </Styled.LectureReviewContainer>
   );
 };
 
-export default ClassReview;
+export default LectureReview;
