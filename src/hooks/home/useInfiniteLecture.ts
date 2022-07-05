@@ -18,9 +18,9 @@ interface IUseInfiniteLecture {
   isFetching: boolean;
 }
 
-const useInfiniteLecture = (categoryId: string): IUseInfiniteLecture => {
-  const getQueryString = (page = 0, category = categoryId) => {
-    return `?categoryId=${category}&page=${page}&size=10`;
+const useInfiniteLecture = (queryKey: string, queryValue: string): IUseInfiniteLecture => {
+  const getQueryString = (page = 0, value = queryValue) => {
+    return `${queryKey}=${value}&page=${page}&size=10`;
   };
 
   const {
@@ -33,7 +33,7 @@ const useInfiniteLecture = (categoryId: string): IUseInfiniteLecture => {
     [queryKeys.lectureInfo, getQueryString()],
     ({ pageParam = getQueryString() }) => api.fetchLectureInfo(pageParam),
     {
-      enabled: !!categoryId,
+      enabled: !!queryValue,
       getNextPageParam: (lastPage) => {
         if (lastPage.currentPage === lastPage.totalPage) {
           return undefined;
