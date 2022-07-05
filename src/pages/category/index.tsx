@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
-import { LectureCard } from '@components/Home';
+import { LectureList } from '@components/Home';
 import useInfiniteLecture from '@hooks/home/useInfiniteLecture';
 import CATEGORY_LIST from '@constants/categoryList';
 import { useInView } from 'react-intersection-observer';
@@ -13,6 +13,7 @@ const Category: NextPage = () => {
   const categoryId = router.query.id;
 
   const { lectureInfoList, fetchNextPage, isLoading, isFetching } = useInfiniteLecture(
+    '?categoryId',
     categoryId as string
   );
 
@@ -38,7 +39,7 @@ const Category: NextPage = () => {
   }
 
   return (
-    <PageLayout isSpacing>
+    <PageLayout isSpacing start={1} end={4}>
       <Typograpy variant="headline-3">{setCategoryTitle}</Typograpy>
       <Section start={2}>
         {/* TODO: fetching UI 변경 예정 */}
@@ -46,9 +47,7 @@ const Category: NextPage = () => {
         {lectureInfoList &&
           lectureInfoList.pages.map((pageData) => (
             <Fragment key={pageData.currentPage}>
-              {pageData.data.map((lecture, index) => (
-                <LectureCard key={index} lectureData={lecture} />
-              ))}
+              <LectureList lectureInfoList={pageData} />
             </Fragment>
           ))}
       </Section>

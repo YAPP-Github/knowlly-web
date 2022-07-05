@@ -1,15 +1,17 @@
 import { GetStaticProps } from 'next';
 import { LectureCard } from '@components/Home';
-import useLectureInfo from '@hooks/home/useLectureInfo';
+import { ILectureInfo, ILecturePages } from '@/types/lectureInfo';
 import * as Styled from './LectureListStyle';
 
 import api from '@api';
 import { dehydrate, QueryClient } from 'react-query';
 import queryKeys from '@react-query/keys';
 
-const LectureList = () => {
-  const lectureInfoList = useLectureInfo();
+interface ILectureList {
+  lectureInfoList: ILectureInfo | ILecturePages;
+}
 
+const LectureList = ({ lectureInfoList }: ILectureList) => {
   return (
     <Styled.LectureListContainer>
       {lectureInfoList.data?.map((lecture, index) => (
