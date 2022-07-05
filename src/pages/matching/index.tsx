@@ -1,7 +1,7 @@
 import { SvgIcon } from '@components/Common';
 import { Layout } from '@components/Common/Layout';
 import { FirstStep, LastStep, SecondStep, Title } from '@components/Matching';
-import { matchingStepState } from '@store/atoms/matchingStepState';
+import { matchingStepState } from '@store';
 import { NextPage } from 'next';
 import { useRecoilValue } from 'recoil';
 import { IndicatorWrapper } from '@components/Matching/MatchingStyle';

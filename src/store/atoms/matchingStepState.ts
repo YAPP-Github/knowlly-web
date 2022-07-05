@@ -1,6 +1,8 @@
 import { atom } from 'recoil';
 
-export const matchingStepState = atom({
+const matchingStepState = atom({
   key: 'matchingStep',
   default: 0,
 });
+
+export default matchingStepState;

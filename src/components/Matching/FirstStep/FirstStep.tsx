@@ -1,12 +1,10 @@
 import { Typograpy } from '@components/Common';
 import { Layout } from '@components/Common/Layout';
 import { useSelect } from '@hooks';
-import { matchingState } from '@store/atoms/matchingState';
-import { matchingStepState } from '@store/atoms/matchingStepState';
-import React, { useEffect } from 'react';
+import { matchingStepState, playerMatchingState } from '@store';
+import React from 'react';
 import { useRecoilState } from 'recoil';
 import ScheduleBox from '../ScheduleBox/ScheduleBox';
-import Title from '../Title/Title';
 import * as Styled from './FirstStepStyle';
 
 // API 연동 전 임시 Array Type
@@ -24,12 +22,12 @@ const FirstStep = () => {
 
   const { selectedIndex, setSelectedIndex } = useSelect(schedules);
   const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
-  const [matching, setMatching] = useRecoilState(matchingState);
+  const [playerMatching, setPlayerMatching] = useRecoilState(playerMatchingState);
 
   const handleScheduleClick = (id: number) => {
     setSelectedIndex(id);
     setTimeout(() => setMatchingStep(matchingStep + 1), 300);
-    setMatching({ ...matching, time: 'time' });
+    setPlayerMatching({ ...playerMatching, schedule: 'schedule' }); //TODO: 일정 parsing
   };
 
   return (

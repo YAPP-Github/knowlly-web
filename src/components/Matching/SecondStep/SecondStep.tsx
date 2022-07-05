@@ -1,16 +1,14 @@
-import { Button, TextArea, Typograpy } from '@components/Common';
-import { matchingState } from '@store/atoms/matchingState';
-import { matchingStepState } from '@store/atoms/matchingStepState';
+import { TextArea, Typograpy } from '@components/Common';
+import { matchingStepState, playerMatchingState } from '@store';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
-import Title from '../Title/Title';
 import * as Styled from './SecondStepStyle';
 import { MatchingButton } from '../MatchingStyle';
 import { Layout } from '@components/Common/Layout';
 
 const SecondStep = () => {
   const [introduction, setIntroduction] = useState('');
-  const [matching, setMatching] = useRecoilState(matchingState);
+  const [playerMatching, setPlayerMatching] = useRecoilState(playerMatchingState);
   const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
 
   const handleIntroductionText = (value: string) => {
@@ -19,7 +17,8 @@ const SecondStep = () => {
 
   const handleNextButtonClick = () => {
     nextStep();
-    setMatching({ ...matching, introduction: introduction });
+    setPlayerMatching({ ...playerMatching, introduction: introduction });
+    //TODO: 매칭신청서 POST 요청
   };
 
   const nextStep = () => {
