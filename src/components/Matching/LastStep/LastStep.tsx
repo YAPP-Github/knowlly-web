@@ -12,7 +12,6 @@ const LastStep = () => {
         <Styled.Title>
           <Typograpy variant="headline-3">매칭 신청 완료!</Typograpy>
         </Styled.Title>
-
         <Typograpy variant="body-1" textColor="gray8F">
           클래스 매칭 신청이 완료되었습니다.
         </Typograpy>
@@ -23,11 +22,15 @@ const LastStep = () => {
           매칭 결과를 푸시 알림으로 알려드려요!
         </Typograpy>
       </Layout>
-      <Link href="/class-detail/1">
-        <a>
-          <MatchingButton>확인</MatchingButton>
-        </a>
-      </Link>
+
+      <>
+        <Styled.MatchingSuccessImg src={`/img/matching.png`} />
+        <Link href="/class-detail/1">
+          <a>
+            <MatchingButton>확인</MatchingButton>
+          </a>
+        </Link>
+      </>
     </>
   );
 };
