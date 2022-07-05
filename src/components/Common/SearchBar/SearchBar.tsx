@@ -12,11 +12,12 @@ import * as Styled from './SearchBarStyle';
 
 interface ISearchBarProps {
   placeholder: string;
-  setSearchValue: Dispatch<SetStateAction<string>>;
+  setSearchValue?: Dispatch<SetStateAction<string>>;
+  _onClickSeachBar?: () => void;
 }
 
 const SearchBar = memo((props: ISearchBarProps) => {
-  const { setSearchValue, ...rest } = props;
+  const { setSearchValue, _onClickSeachBar, ...rest } = props;
   const [value, setValue] = useState<string>('');
 
   const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -30,17 +31,17 @@ const SearchBar = memo((props: ISearchBarProps) => {
   const handleEnterSubmitValue = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      setSearchValue(value);
+      setSearchValue && setSearchValue(value);
     }
   };
 
   const handleSubmitValue = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    setSearchValue(value);
+    setSearchValue && setSearchValue(value);
   };
 
   return (
-    <Styled.SearchBarContainer>
+    <Styled.SearchBarContainer onClick={_onClickSeachBar}>
       <Styled.SearchBarStyle
         {...rest}
         value={value}
