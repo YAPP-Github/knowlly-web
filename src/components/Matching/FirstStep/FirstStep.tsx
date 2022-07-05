@@ -1,7 +1,7 @@
 import { Typograpy } from '@components/Common';
 import { Layout } from '@components/Common/Layout';
 import { useSelect } from '@hooks';
-import { matchingStepState, playerMatchingState } from '@store';
+import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import ScheduleBox from '../ScheduleBox/ScheduleBox';

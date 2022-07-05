@@ -1,16 +1,19 @@
 import { atom } from 'recoil';
 
+export const matchingStepState = atom({
+  key: 'matchingStep',
+  default: 0,
+});
+
 interface IPlayerMatching {
   schedule: string;
   introduction: string;
 }
 
-const playerMatchingState = atom<IPlayerMatching>({
+export const playerMatchingState = atom<IPlayerMatching>({
   key: 'playerMatching',
   default: {
     schedule: '',
     introduction: '',
   },
 });
-
-export default playerMatchingState;

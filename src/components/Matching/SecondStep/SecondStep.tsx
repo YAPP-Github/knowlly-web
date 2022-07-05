@@ -1,5 +1,5 @@
 import { Button, TextArea, Typograpy } from '@components/Common';
-import { matchingStepState, playerMatchingState } from '@store';
+import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import * as Styled from './SecondStepStyle';
