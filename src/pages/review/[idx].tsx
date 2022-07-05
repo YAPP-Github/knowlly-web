@@ -12,7 +12,7 @@ const Review: NextPage = () => {
 
   return (
     <>
-      <Layout>
+      <Layout isSpacing>
         <Typograpy variant="headline-3">$username님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
         <Styled.ReviewTextArea maxLength={500} placeholder="생생한 후기를 남겨주세요." />

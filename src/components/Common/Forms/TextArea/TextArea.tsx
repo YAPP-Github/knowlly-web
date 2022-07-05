@@ -2,10 +2,10 @@ import { PropsWithChildren, useEffect, useState } from 'react';
 import * as Styled from './TextAreaStyle';
 
 interface ITextAreaProps {
-  value: string;
+  value?: string;
   placeholder?: string;
   maxLength?: number;
-  _onInputEntered: (value: string) => void;
+  _onInputEntered?: (value: string) => void;
 }
 
 const TextArea = (props: PropsWithChildren<ITextAreaProps>) => {
