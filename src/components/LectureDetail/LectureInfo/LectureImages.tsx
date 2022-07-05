@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
-import * as Styled from './ClassInfoStyle';
+import * as Styled from './LectureInfoStyles';
 
-const ClassImages = () => {
+const LectureImages = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState(false);
   const [X, setX] = useState(0);
@@ -23,18 +23,18 @@ const ClassImages = () => {
   };
 
   return (
-    <Styled.PictureWrapper
+    <Styled.LectureImageWrapper
       ref={scrollRef}
       onMouseDown={onDragStart}
       onMouseMove={onDragMove}
       onMouseUp={onDragEnd}
       onMouseLeave={onDragEnd}
     >
-      <Styled.ClassImg />
-      <Styled.ClassImg />
-      <Styled.ClassImg />
-    </Styled.PictureWrapper>
+      <Styled.LectureImage />
+      <Styled.LectureImage />
+      <Styled.LectureImage />
+    </Styled.LectureImageWrapper>
   );
 };
 
-export default ClassImages;
+export default LectureImages;

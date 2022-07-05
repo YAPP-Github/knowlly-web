@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Theme from '@styles/theme';
 
-export const ClassReviewContainer = styled.div`
+export const LectureReviewContainer = styled.div`
   margin-top: 4.8rem;
 `;
 
