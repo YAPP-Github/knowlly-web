@@ -1,9 +1,8 @@
-import { TextArea, Typograpy } from '@components/Common';
+import { Button, TextArea, Typograpy } from '@components/Common';
 import { matchingStepState, playerMatchingState } from '@store';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import * as Styled from './SecondStepStyle';
-import { MatchingButton } from '../MatchingStyle';
 import { Layout } from '@components/Common/Layout';
 
 const SecondStep = () => {
@@ -36,9 +35,17 @@ const SecondStep = () => {
         </Styled.TextWrapper>
         <TextArea value={introduction} maxLength={500} _onInputEntered={handleIntroductionText} />
       </Layout>
-      <MatchingButton _onClick={handleNextButtonClick} disabled={introduction.length === 0}>
-        매칭 신청 완료하기
-      </MatchingButton>
+      <Styled.ButtonWrapper>
+        <Typograpy variant="body-2" textColor="primary">
+          한번 신청한 매칭은 취소나 변경이 불가능해요.
+        </Typograpy>
+        <Typograpy variant="body-2" textColor="primary">
+          신중하게 선택해주세요.
+        </Typograpy>
+        <Button _onClick={handleNextButtonClick} disabled={introduction.length === 0}>
+          매칭 신청 완료하기
+        </Button>
+      </Styled.ButtonWrapper>
     </>
   );
 };

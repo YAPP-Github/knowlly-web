@@ -12,3 +12,16 @@ export const Alert = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 2.4rem;
+  margin: 0 1.8rem;
+
+  & > :nth-child(2) {
+    margin-bottom: 2rem;
+  }
+`;
