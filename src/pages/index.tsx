@@ -1,12 +1,14 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 import type { NextPage } from 'next';
 import { SearchBar, Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
 import { Category, LectureList, SearchModal } from '@components/Home';
 import useLectureInfo from '@hooks/home/useLectureInfo';
+import { useRecoilState } from 'recoil';
+import { isShowSearchModalAtom } from '@recoil/home/atoms';
 
 const Home: NextPage = () => {
-  const [isShowSearchModal, setIsShowSearchModal] = useState<boolean>(false);
+  const [isShowSearchModal, setIsShowSearchModal] = useRecoilState(isShowSearchModalAtom);
 
   const lectureInfoList = useLectureInfo();
 
