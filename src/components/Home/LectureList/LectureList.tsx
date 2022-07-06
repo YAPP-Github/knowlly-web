@@ -1,6 +1,4 @@
-import { useCallback } from 'react';
 import { GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
 
 import { LectureCard } from '@components/Home';
 import EmptyLectureList from '../EmptyLectureList/EmptyLectureList';
@@ -16,12 +14,6 @@ interface ILectureList {
 }
 
 const LectureList = ({ lectureInfoList }: ILectureList) => {
-  const router = useRouter();
-
-  const handleMoveToHomePage = useCallback(() => {
-    router.push('/');
-  }, [router]);
-
   return (
     <Styled.LectureListContainer>
       {lectureInfoList.data?.length > 0 ? (
@@ -31,7 +23,7 @@ const LectureList = ({ lectureInfoList }: ILectureList) => {
           ))}
         </>
       ) : (
-        <EmptyLectureList _onClickBackButton={handleMoveToHomePage} />
+        <EmptyLectureList />
       )}
     </Styled.LectureListContainer>
   );
