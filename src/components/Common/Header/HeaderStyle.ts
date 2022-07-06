@@ -1,9 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const HeaderStyle = styled.header`
-  position: relative;
-  width: 36rem;
-  height: 5.6rem;
+export const HeaderStyle = styled.header<{ hasLine?: boolean }>`
+  ${({ theme, hasLine }) => {
+    const { color } = theme;
+
+    return css`
+      position: relative;
+      width: 36rem;
+      height: 5.6rem;
+      border-bottom: ${hasLine && `1px solid ${color.gray['EF']}`};
+    `;
+  }}
 `;
 
 export const BackButton = styled.button`
