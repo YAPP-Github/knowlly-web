@@ -1,12 +1,11 @@
 import { Fragment, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { SearchBar } from '@components/Common';
+import { Header, SearchBar } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
+import LectureList from '../LectureList/LectureList';
 import useInfiniteLecture from '@hooks/home/useInfiniteLecture';
 import * as Styled from './SearchModalStyle';
 import { useInView } from 'react-intersection-observer';
-import LectureList from '../LectureList/LectureList';
-import Header from '@components/Common/Header/Header';
 
 interface ISearchModalProps {
   handleSearchModalDisplay: () => void;
@@ -36,7 +35,7 @@ const SearchModal = ({ handleSearchModalDisplay }: ISearchModalProps) => {
   return createPortal(
     <PageLayout isSpacing>
       <Styled.SearchModalStyle>
-        <Header hasBackButton _onClickBackButton={handleSearchModalDisplay}>
+        <Header hasBackButton hasLine _onClickBackButton={handleSearchModalDisplay}>
           <SearchBar placeholder="어떤 클래스를 찾고 싶으신가요?" setSearchValue={setSearchValue} />
         </Header>
         <Section isSpacing start={2}>
