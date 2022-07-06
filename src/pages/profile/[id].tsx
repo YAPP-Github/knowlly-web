@@ -1,14 +1,14 @@
 import type { NextPage } from 'next';
-import { Layout } from '@components/Common/Layout';
+import { PageLayout } from '@components/Common/Layout';
 import { LectureReview, Introduction, ProfileHeader } from '@components/Profile';
 
 const Profile: NextPage = () => {
   return (
-    <Layout isSpacing>
+    <PageLayout isSpacing>
       <ProfileHeader />
       <Introduction />
       <LectureReview />
-    </Layout>
+    </PageLayout>
   );
 };
 

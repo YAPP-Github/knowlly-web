@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { SvgIcon, Typograpy } from '@components/Common';
-import { Layout } from '@components/Common/Layout';
+import { PageLayout } from '@components/Common/Layout';
 import * as Styled from '@components/Review/ReviewStyle';
 import { useState } from 'react';
 
@@ -12,7 +12,7 @@ const Review: NextPage = () => {
 
   return (
     <>
-      <Layout isSpacing>
+      <PageLayout>
         <Typograpy variant="headline-3">$username님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
         <Styled.ReviewTextArea maxLength={500} placeholder="생생한 후기를 남겨주세요." />
@@ -24,7 +24,7 @@ const Review: NextPage = () => {
           )}
           <Typograpy variant="subtitle-4">전체 후기 노출에 동의합니다. </Typograpy>
         </Styled.CheckBox>
-      </Layout>
+      </PageLayout>
       <Styled.ReviewButton variant="contained" size="big">
         <Typograpy variant="button-1">후기 등록하기 </Typograpy>
       </Styled.ReviewButton>

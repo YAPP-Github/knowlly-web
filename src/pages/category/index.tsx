@@ -2,7 +2,7 @@ import { Fragment, useEffect, useMemo } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
-import { Layout, Section } from '@components/Common/Layout';
+import { PageLayout, Section } from '@components/Common/Layout';
 import { LectureCard } from '@components/Home';
 import useInfiniteLecture from '@hooks/home/useInfiniteLecture';
 import CATEGORY_LIST from '@constants/categoryList';
@@ -38,7 +38,7 @@ const Category: NextPage = () => {
   }
 
   return (
-    <Layout isSpacing>
+    <PageLayout isSpacing>
       <Typograpy variant="headline-3">{setCategoryTitle}</Typograpy>
       <Section start={2}>
         {/* TODO: fetching UI 변경 예정 */}
@@ -52,7 +52,7 @@ const Category: NextPage = () => {
             </Fragment>
           ))}
       </Section>
-    </Layout>
+    </PageLayout>
   );
 };
 
