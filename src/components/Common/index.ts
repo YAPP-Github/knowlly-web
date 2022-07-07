@@ -8,3 +8,4 @@ export { default as ContainedBadge } from './Badge/ContainedBadge';
 export { default as OutlinedBadge } from './Badge/OutlinedBadge';
 export { default as SvgIcon } from './Svg/SvgIcon';
 export { default as Typograpy } from './Typograpy/Typograpy';
+export { default as Image } from './Image/Image';
