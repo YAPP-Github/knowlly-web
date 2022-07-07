@@ -1,5 +1,5 @@
 import { SvgIcon } from '@components/Common';
-import { Layout } from '@components/Common/Layout';
+import { PageLayout } from '@components/Common/Layout';
 import { FirstStep, LastStep, SecondStep, Title } from '@components/Matching';
 import { matchingStepState } from '@recoil/matching/atoms';
 import { NextPage } from 'next';
@@ -47,7 +47,7 @@ const Matching: NextPage = () => {
 
   return (
     <>
-      <Layout isSpacing>{setHeader(matchingStep)}</Layout>
+      <PageLayout isSpacing>{setHeader(matchingStep)}</PageLayout>
       {setPage(matchingStep)}
     </>
   );
