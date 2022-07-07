@@ -13,7 +13,7 @@ const LectureCard = ({ lectureData }: ILectureCardProps) => {
       <Styled.LectureImageWrapper>
         <Image src="/img/profile.png" width={88} height={88} />
       </Styled.LectureImageWrapper>
-      <Styled.LectureInfoWrapper>
+      <div>
         <Styled.LectureIntroduce variant="subtitle-2">
           {lectureData.introduce}
         </Styled.LectureIntroduce>
@@ -21,7 +21,7 @@ const LectureCard = ({ lectureData }: ILectureCardProps) => {
           {lectureData.coach.user.username}
         </Styled.LectureCoachName>
         <ContainedBadge type="category">뱃지</ContainedBadge>
-      </Styled.LectureInfoWrapper>
+      </div>
     </Styled.LectureCardContainer>
   );
 };

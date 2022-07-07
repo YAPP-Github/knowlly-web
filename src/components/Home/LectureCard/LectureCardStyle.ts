@@ -17,8 +17,6 @@ export const LectureImageWrapper = styled.div`
   margin-right: 1.8rem;
 `;
 
-export const LectureInfoWrapper = styled.div``;
-
 export const LectureIntroduce = styled(Typograpy)`
   display: -webkit-box;
   -webkit-box-orient: vertical;
