@@ -1,13 +1,12 @@
-import { ContainedBadge, SvgIcon, Typograpy } from '@components/Common';
+import { ContainedBadge, SvgIcon, Typograpy, Image } from '@components/Common';
 import * as Styled from './ProfileHeaderStyle';
 import Link from 'next/link';
-
 const ProfileHeader = () => {
   const isCoach = true;
 
   return (
     <Styled.ProfileContainer>
-      <Styled.ProfileImg src={`/img/profile.png`} />
+      <Image type="profile" src="img/profile.png" alt="프로필 이미지" />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">유지민</Typograpy>
 
