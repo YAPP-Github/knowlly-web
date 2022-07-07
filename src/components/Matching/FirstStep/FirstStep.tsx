@@ -1,5 +1,5 @@
 import { Typograpy } from '@components/Common';
-import { Layout } from '@components/Common/Layout';
+import { PageLayout } from '@components/Common/Layout';
 import { useSelect } from '@hooks';
 import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
 import React from 'react';
@@ -31,7 +31,7 @@ const FirstStep = () => {
   };
 
   return (
-    <Layout isSpacing>
+    <PageLayout isSpacing>
       <Styled.TextWrapper>
         <Typograpy variant="subtitle-2">일정 선택</Typograpy>
         <Typograpy variant="body-2" textColor="gray8F">
@@ -46,7 +46,7 @@ const FirstStep = () => {
           _onClick={() => handleScheduleClick(schedule.id)}
         />
       ))}
-    </Layout>
+    </PageLayout>
   );
 };
 

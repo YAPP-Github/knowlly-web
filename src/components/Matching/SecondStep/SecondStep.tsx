@@ -3,7 +3,7 @@ import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
 import React, { useState } from 'react';
 import { useRecoilState } from 'recoil';
 import * as Styled from './SecondStepStyle';
-import { Layout } from '@components/Common/Layout';
+import { PageLayout } from '@components/Common/Layout';
 
 const SecondStep = () => {
   const [introduction, setIntroduction] = useState('');
@@ -26,7 +26,7 @@ const SecondStep = () => {
 
   return (
     <>
-      <Layout isSpacing>
+      <PageLayout isSpacing>
         <Styled.TextWrapper>
           <Typograpy variant="subtitle-2">소개 작성</Typograpy>
           <Typograpy variant="body-2" textColor="gray8F">
@@ -34,7 +34,7 @@ const SecondStep = () => {
           </Typograpy>
         </Styled.TextWrapper>
         <TextArea value={introduction} maxLength={500} _onInputEntered={handleIntroductionText} />
-      </Layout>
+      </PageLayout>
       <Styled.ButtonWrapper>
         <Typograpy variant="body-2" textColor="primary">
           한번 신청한 매칭은 취소나 변경이 불가능해요.
