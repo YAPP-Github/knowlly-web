@@ -3,6 +3,7 @@ export { default as FabButton } from './Button/Fab/FabButton';
 export { default as TextMoreButton } from './Button/TextMore/TextMoreButton';
 export { default as Input } from './Forms/Input/Input';
 export { default as TextArea } from './Forms/TextArea/TextArea';
+export { default as Header } from './Header/Header';
 export { default as SearchBar } from './SearchBar/SearchBar';
 export { default as ContainedBadge } from './Badge/ContainedBadge';
 export { default as OutlinedBadge } from './Badge/OutlinedBadge';
