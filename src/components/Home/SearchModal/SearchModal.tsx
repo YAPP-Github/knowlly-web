@@ -35,7 +35,7 @@ const SearchModal = ({ handleSearchModalDisplay }: ISearchModalProps) => {
   return createPortal(
     <PageLayout isSpacing>
       <Styled.SearchModalStyle>
-        <Header hasBackButton hasLine _onClickBackButton={handleSearchModalDisplay}>
+        <Header hasBackButton hasLine _onBackButtonClick={handleSearchModalDisplay}>
           <SearchBar placeholder="어떤 클래스를 찾고 싶으신가요?" setSearchValue={setSearchValue} />
         </Header>
         <Section isSpacing start={2}>

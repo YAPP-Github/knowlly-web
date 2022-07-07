@@ -5,19 +5,19 @@ import * as Styled from './HeaderStyle';
 interface IHeaderProps {
   hasBackButton?: boolean;
   hasLine?: boolean;
-  _onClickBackButton?: () => void;
+  _onBackButtonClick?: () => void;
 }
 
 const Header = ({
   hasBackButton,
   hasLine,
-  _onClickBackButton,
+  _onBackButtonClick,
   children,
 }: PropsWithChildren<IHeaderProps>) => {
   return (
     <Styled.HeaderStyle hasLine={hasLine}>
       {hasBackButton && (
-        <Styled.BackButton onClick={_onClickBackButton}>
+        <Styled.BackButton onClick={_onBackButtonClick}>
           <SvgIcon type="previous" />
         </Styled.BackButton>
       )}
