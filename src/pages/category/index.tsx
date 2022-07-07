@@ -3,7 +3,7 @@ import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
-import { LectureList } from '@components/Home';
+import { LectureList, LoadingList } from '@components/Home';
 import useInfiniteLecture from '@hooks/home/useInfiniteLecture';
 import CATEGORY_LIST from '@constants/categoryList';
 import { useInView } from 'react-intersection-observer';
@@ -34,16 +34,14 @@ const Category: NextPage = () => {
   }, [inView]);
 
   if (isLoading) {
-    // TODO: Loading UI 변경 예정
-    <div>Loading...</div>;
+    return <LoadingList isLoading title={setCategoryTitle} />;
   }
 
   return (
     <PageLayout isSpacing start={1} end={4}>
       <Typograpy variant="headline-3">{setCategoryTitle}</Typograpy>
       <Section start={2}>
-        {/* TODO: fetching UI 변경 예정 */}
-        {isFetching && <div>Loading...</div>}
+        {isFetching && <LoadingList isFetching />}
         {lectureInfoList &&
           lectureInfoList.pages.map((pageData) => (
             <Fragment key={pageData.currentPage}>
