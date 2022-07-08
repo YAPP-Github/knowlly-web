@@ -2,15 +2,21 @@ import React from 'react';
 import * as Styled from './LectureInfoStyles';
 import { ContainedBadge, Typograpy } from '@components/Common';
 import LectureImages from './LectureImages';
+import { ILectureDetailData } from '@/types/lectureDetail';
 
-const LectureInfo = () => {
+interface ILectureInfoProps {
+  lectureInfo: ILectureDetailData;
+}
+
+const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
+  const availableTime = lectureInfo.lectures.filter((lecture) => lecture.state === 'ONGOING');
+
   return (
     <Styled.LectureInfoContainer>
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 소개</Typograpy>
         <Typograpy variant="body-1" textColor="gray6B">
-          프랑스어를 완전 처음 접하시는 분들을 위해 함께 커리큘럼을 짜드려요. 간단하게 알파벳 연습도
-          해보려고 합니다.
+          {lectureInfo.introduce}
         </Typograpy>
       </Styled.Section>
 
@@ -26,14 +32,17 @@ const LectureInfo = () => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
-        <LectureImages />
+        <LectureImages images={lectureInfo.lectureImages} />
       </Styled.Section>
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 태그</Typograpy>
         <Styled.LectureTag>
-          <ContainedBadge type="keyword">#기초</ContainedBadge>
-          <ContainedBadge type="keyword">#프랑스어회화</ContainedBadge>
+          {lectureInfo.tags.map((tag) => (
+            <ContainedBadge type="keyword" key={tag.id}>
+              {tag.content}
+            </ContainedBadge>
+          ))}
         </Styled.LectureTag>
       </Styled.Section>
     </Styled.LectureInfoContainer>

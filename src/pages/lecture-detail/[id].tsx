@@ -14,23 +14,25 @@ const LectureDetail: NextPage = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
   const lectureDetail = useLectureDetail(lectureId);
-  console.log(lectureDetail);
+
   const category = lectureDetail.data.category.categoryName;
   const topic = lectureDetail.data.topic;
+  const coachProfile = lectureDetail.data.coach;
+  const lectureInfo = lectureDetail.data;
 
   return (
     <>
       <PageLayout isSpacing>
         <Styled.CategoryBadge type="category">{category}</Styled.CategoryBadge>
         <Typograpy variant="headline-3">{topic}</Typograpy>
-        <CoachProfile />
+        <CoachProfile coachProfile={coachProfile} />
       </PageLayout>
-      <LectureInfo />
+      <LectureInfo lectureInfo={lectureInfo} />
       <PageLayout isSpacing>
         <HowToUse />
       </PageLayout>
       <Guideline />
-      <Link href={{ pathname: '/matching', query: { id: 1 } }}>
+      <Link href={{ pathname: '/matching', query: { id: lectureId } }}>
         <a>
           <Styled.MatchingButton variant="contained" size="big">
             매칭 신청하기
