@@ -25,8 +25,11 @@ export interface ILectureDetailImages {
 }
 
 export interface ILectureDetailSchedule {
-  startAt: string;
   endAt: string;
+  id: number;
+  reviewWritten: false;
+  startAt: string;
+  state: string;
 }
 
 export interface ILectureDetailTags {
