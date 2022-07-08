@@ -3,6 +3,8 @@ import { SvgIcon, Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import * as Styled from '@components/Review/ReviewStyle';
 import { useState } from 'react';
+import useRegisterReview from '@hooks/review/useRegisterReview';
+import { useRouter } from 'next/router';
 
 const Review: NextPage = () => {
   const [checkBoxClicked, setCheckBoxClicked] = useState(false);
@@ -10,15 +12,26 @@ const Review: NextPage = () => {
     setCheckBoxClicked(!checkBoxClicked);
   };
 
-  const [review, setReview] = useState('');
+  const [reviewContent, setReviewContent] = useState('');
   const handleReviewInput = (value: string) => {
-    setReview(value);
+    setReviewContent(value);
   };
 
   const [publicReview, setPublicReview] = useState(false);
   const handlePublicReview = () => {
     setPublicReview(!publicReview);
   };
+
+  const router = useRouter();
+  const coachId = Number(router.query.idx);
+  const registerReview = useRegisterReview(coachId);
+
+  const handleReviewButtonClick = () => {
+    const payload = { public: publicReview, content: reviewContent };
+    registerReview.mutate(payload);
+  };
+
+  // TODO: 리뷰 등록이 성공적일 때 페이지 이동 (안드와 연동)
 
   return (
     <>
@@ -42,7 +55,7 @@ const Review: NextPage = () => {
           <Typograpy variant="subtitle-4">전체 후기 노출에 동의합니다. </Typograpy>
         </Styled.CheckBox>
       </PageLayout>
-      <Styled.ReviewButton variant="contained" size="big">
+      <Styled.ReviewButton variant="contained" size="big" _onClick={handleReviewButtonClick}>
         <Typograpy variant="button-1">후기 등록하기 </Typograpy>
       </Styled.ReviewButton>
     </>
