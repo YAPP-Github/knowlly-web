@@ -3,13 +3,13 @@ import * as Styled from './LectureInfoStyles';
 import { ContainedBadge, Typograpy } from '@components/Common';
 import LectureImages from './LectureImages';
 import { ILectureDetailData } from '@/types/lectureDetail';
-
+import { formatDate, formatTime, getLectureTime } from '@utils';
 interface ILectureInfoProps {
   lectureInfo: ILectureDetailData;
 }
 
 const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
-  const availableTime = lectureInfo.lectures.filter((lecture) => lecture.state === 'ONGOING');
+  const availableTimes = lectureInfo.lectures.filter((lecture) => lecture.state == 'ON_GOING');
 
   return (
     <Styled.LectureInfoContainer>
@@ -22,12 +22,15 @@ const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">가능한 시간</Typograpy>
-        <Styled.AvailableTime>
-          <Typograpy variant="button-1">5월 24일 (화)</Typograpy>
-          <Typograpy variant="body-2" textColor="gray6B">
-            오후 6:00 (3시간 수업)
-          </Typograpy>
-        </Styled.AvailableTime>
+        {availableTimes.map((availableTime) => (
+          <Styled.AvailableTime key={availableTime.id}>
+            <Typograpy variant="button-1">{formatDate(availableTime.startAt)}</Typograpy>
+            <Typograpy variant="body-2" textColor="gray6B">
+              {formatTime(availableTime.startAt)} (
+              {getLectureTime(availableTime.startAt, availableTime.endAt)}시간 수업)
+            </Typograpy>
+          </Styled.AvailableTime>
+        ))}
       </Styled.Section>
 
       <Styled.Section>
