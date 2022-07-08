@@ -6,6 +6,11 @@ class HttpAPI {
 
     return data;
   }
+
+  async fetchLectureDetail(lectureId: number) {
+    const { data } = await createAxiosWithTestToken(`lectureinfo/${lectureId}`).get('');
+    return data;
+  }
 }
 
 const api = new HttpAPI();

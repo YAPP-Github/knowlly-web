@@ -5,10 +5,13 @@ import { PageLayout } from '@components/Common/Layout';
 import * as Styled from '@components/LectureDetail/LectureDetailStyle';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import useLectureDetail from '@hooks/lecture/useLectureDetail';
 
 const LectureDetail: NextPage = () => {
   const router = useRouter();
-  const lectureId = router.query.id;
+  const lectureId = Number(router.query.id);
+
+  const lectureDetail = useLectureDetail(lectureId);
 
   return (
     <>
