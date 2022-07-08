@@ -10,18 +10,35 @@ const Review: NextPage = () => {
     setCheckBoxClicked(!checkBoxClicked);
   };
 
+  const [review, setReview] = useState('');
+  const handleReviewInput = (value: string) => {
+    setReview(value);
+  };
+
+  const [publicReview, setPublicReview] = useState(false);
+  const handlePublicReview = () => {
+    setPublicReview(!publicReview);
+  };
+
   return (
     <>
-      <PageLayout>
+      <PageLayout isSpacing>
         <Typograpy variant="headline-3">$username님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
-        <Styled.ReviewTextArea maxLength={500} placeholder="생생한 후기를 남겨주세요." />
+        <Styled.ReviewTextArea
+          maxLength={500}
+          placeholder="생생한 후기를 남겨주세요."
+          _onInputEntered={handleReviewInput}
+        />
         <Styled.CheckBox onClick={handleCheckBoxClick}>
-          {checkBoxClicked ? (
-            <SvgIcon type="checkbox-checked" size={20} />
-          ) : (
-            <SvgIcon type="checkbox-default" size={20} />
-          )}
+          <div onClick={handlePublicReview}>
+            {checkBoxClicked ? (
+              <SvgIcon type="checkbox-checked" size={20} />
+            ) : (
+              <SvgIcon type="checkbox-default" size={20} />
+            )}
+          </div>
+
           <Typograpy variant="subtitle-4">전체 후기 노출에 동의합니다. </Typograpy>
         </Styled.CheckBox>
       </PageLayout>
