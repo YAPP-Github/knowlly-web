@@ -8,8 +8,8 @@ class HttpAPI {
     return data;
   }
 
-  async postReview(coachId: number, payload: IReview) {
-    const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, payload);
+  async postReview(coachId: number, review: IReview) {
+    const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, review);
     return data;
   }
 }

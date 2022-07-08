@@ -31,8 +31,6 @@ const Review: NextPage = () => {
     registerReview.mutate(payload);
   };
 
-  // TODO: 리뷰 등록이 성공적일 때 페이지 이동 (안드와 연동)
-
   return (
     <>
       <PageLayout isSpacing>
