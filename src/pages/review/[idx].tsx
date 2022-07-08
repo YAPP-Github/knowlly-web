@@ -55,7 +55,12 @@ const Review: NextPage = () => {
           <Typograpy variant="subtitle-4">전체 후기 노출에 동의합니다. </Typograpy>
         </Styled.CheckBox>
       </PageLayout>
-      <Styled.ReviewButton variant="contained" size="big" _onClick={handleReviewButtonClick}>
+      <Styled.ReviewButton
+        variant="contained"
+        size="big"
+        _onClick={handleReviewButtonClick}
+        disabled={!publicReview}
+      >
         <Typograpy variant="button-1">후기 등록하기 </Typograpy>
       </Styled.ReviewButton>
     </>
