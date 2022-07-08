@@ -1,3 +1,4 @@
+import { IReview } from '@/types/review';
 import createAxiosWithTestToken from './customAxios';
 
 class HttpAPI {
@@ -7,10 +8,10 @@ class HttpAPI {
     return data;
   }
 
-  // async postReview(payload: any) {
-  //   const { data } = await createAxiosWithTestToken(`review/coach/1`).post(payload);
-  //   return data;
-  // }
+  async postReview(coachId: number, payload: IReview) {
+    const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, payload);
+    return data;
+  }
 }
 
 const api = new HttpAPI();
