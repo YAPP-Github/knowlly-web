@@ -7,7 +7,7 @@ const useLectureDetail = (lectureId: number): ILectureDetail => {
   const { data: lectureDetail } = useQuery(queryKeys.lectureDetail, () =>
     api.fetchLectureDetail(lectureId)
   );
-  console.log(lectureDetail);
+
   return lectureDetail;
 };
 
