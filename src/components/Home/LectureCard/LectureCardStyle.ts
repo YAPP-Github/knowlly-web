@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Typograpy } from '@components/Common';
 
-export const LectureCardContainer = styled.li`
+export const LectureCardContainer = styled.a`
   ${({ theme }) => {
     const { color } = theme;
 
