@@ -3,10 +3,10 @@ import React, { useRef, useState } from 'react';
 import * as Styled from './LectureInfoStyles';
 
 interface ILectureImagesProps {
-  images: ILectureDetailImages[];
+  lectureImages: ILectureDetailImages[];
 }
 
-const LectureImages = ({ images }: ILectureImagesProps) => {
+const LectureImages = ({ lectureImages }: ILectureImagesProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [drag, setDrag] = useState(false);
   const [X, setX] = useState(0);
@@ -35,8 +35,8 @@ const LectureImages = ({ images }: ILectureImagesProps) => {
       onMouseUp={onDragEnd}
       onMouseLeave={onDragEnd}
     >
-      {images.map((image) => (
-        <Styled.LectureImage src={image.lectureImgUrl} key={image.id} />
+      {lectureImages.map((lectureImage) => (
+        <Styled.LectureImage src={lectureImage.lectureImgUrl} key={lectureImage.id} />
       ))}
     </Styled.LectureImageWrapper>
   );

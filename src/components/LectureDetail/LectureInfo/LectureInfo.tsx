@@ -35,7 +35,7 @@ const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
-        <LectureImages images={lectureInfo.lectureImages} />
+        <LectureImages lectureImages={lectureInfo.lectureImages} />
       </Styled.Section>
 
       <Styled.Section>
