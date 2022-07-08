@@ -6,7 +6,31 @@ const Skeleton = styled.div`
     const { gray } = theme.color;
 
     return css`
+      position: relative;
+      overflow: hidden;
       background-color: ${gray['EF']};
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: skeleton-gradient 1.5s infinite ease-in-out;
+      }
+
+      @keyframes skeleton-gradient {
+        0% {
+          background-color: ${gray['EF']};
+        }
+        50% {
+          background-color: ${gray['CC']};
+        }
+        100% {
+          background-color: ${gray['EF']};
+        }
+      }
     `;
   }}
 `;
