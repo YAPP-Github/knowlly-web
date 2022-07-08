@@ -10,7 +10,6 @@ export const SearchBarContainer = styled.form`
       max-width: 31.2rem;
       height: 4.4rem;
       margin: 0 auto;
-      padding: 1.3rem 6.5rem 1.3rem 1.4rem;
       border-radius: 1rem;
       background-color: ${color.gray['F7']};
     `;
@@ -19,7 +18,8 @@ export const SearchBarContainer = styled.form`
 
 export const SearchBarStyle = styled.input`
   width: 100%;
-
+  height: 100%;
+  padding: 0 6.5rem 0 1.4rem;
   font-family: 'SUIT-Medium';
   font-size: 1.2rem;
   line-height: 1.6rem;

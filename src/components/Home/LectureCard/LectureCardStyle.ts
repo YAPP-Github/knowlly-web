@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Typograpy } from '@components/Common';
 
-export const LectureCardContainer = styled.li`
+export const LectureCardContainer = styled.a`
   ${({ theme }) => {
     const { color } = theme;
 
@@ -16,8 +16,6 @@ export const LectureCardContainer = styled.li`
 export const LectureImageWrapper = styled.div`
   margin-right: 1.8rem;
 `;
-
-export const LectureInfoWrapper = styled.div``;
 
 export const LectureIntroduce = styled(Typograpy)`
   display: -webkit-box;

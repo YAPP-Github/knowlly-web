@@ -44,7 +44,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery(queryKeys.lectureInfo, () => api.fetchLectureInfo());
 
-  return { props: { lectureInfoList: dehydrate(queryClient) } };
+  return { props: { dehydratedState: dehydrate(queryClient) } };
 };
 
 export default Home;
