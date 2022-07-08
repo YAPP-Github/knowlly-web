@@ -5,6 +5,7 @@ export interface ILectureInfo {
 }
 
 export interface ILectureInfoData {
+  id: number;
   topic: string;
   introduce: string;
   price: number;
