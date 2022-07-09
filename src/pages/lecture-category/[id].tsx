@@ -11,7 +11,7 @@ import { dehydrate, QueryClient } from 'react-query';
 import queryKeys from '@react-query/keys';
 import api from '@api';
 
-const Category: NextPage = () => {
+const LectureCategoryPage: NextPage = () => {
   const router = useRouter();
   const categoryId = router.query.id;
 
@@ -68,4 +68,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: { dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))) } };
 };
 
-export default Category;
+export default LectureCategoryPage;
