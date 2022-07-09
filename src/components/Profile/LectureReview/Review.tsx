@@ -1,17 +1,36 @@
 import { TextMoreButton, Typograpy } from '@components/Common';
+import { ICoachReviewData } from '@/types/profile';
 import { useState } from 'react';
+import dayjs from 'dayjs';
 import * as Styled from './LectureReviewStyle';
 
-const Review = () => {
-  const LENGTH = 110;
-  const text =
-    '모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다. 모바일에서는 최대 3줄까지 노출이 됩니다. 더 많아질 경우 더보기를 붙입니다.';
+interface IReviewProps {
+  coachReview: ICoachReviewData;
+}
 
-  const [review, setReview] = useState(text.slice(0, LENGTH) + '...');
-  const [isLong, setIsLong] = useState(false);
+const Review = ({ coachReview }: IReviewProps) => {
+  const LENGTH = 110;
+  const reviewContent = coachReview.content;
+  const reviewContentLength = reviewContent.length;
+
+  const [review, setReview] = useState(reviewContent.slice(0, LENGTH));
+  const [isLong, setIsLong] = useState(reviewContentLength < LENGTH);
+
+  const formatLongReviewContent = (review: string) => {
+    if (review.length > LENGTH) return review + '...';
+    else return review;
+  };
+
+  const formatWrittenDate = (time: string) => {
+    const day = dayjs(time);
+    const year = day.get('year');
+    const month = day.get('month') + 1;
+    const date = day.get('date');
+    return year + '년 ' + month + '월 ' + date + '일';
+  };
 
   const toggleTextMore = () => {
-    setReview(text);
+    setReview(reviewContent);
     setIsLong(!isLong);
   };
 
@@ -21,9 +40,9 @@ const Review = () => {
         <Styled.ProfileImg src={`/img/profile.png`} />
         <div>
           <Styled.NameDate>
-            <Typograpy variant="subtitle-4">민희진</Typograpy>
+            <Typograpy variant="subtitle-4">{coachReview.writer.username}</Typograpy>
             <Typograpy variant="body-2" textColor="gray8F">
-              2022년 5월 8일
+              {formatWrittenDate(coachReview.writtenDate)}
             </Typograpy>
           </Styled.NameDate>
           <Typograpy variant="body-2" textColor="gray44">
@@ -31,12 +50,10 @@ const Review = () => {
           </Typograpy>
         </div>
       </Styled.Profile>
-      <Styled.Contents>
-        <Typograpy variant="body-2" textColor="gray6B">
-          {review}
-        </Typograpy>
-        {!isLong && <TextMoreButton _onClick={toggleTextMore} />}
-      </Styled.Contents>
+      <Typograpy variant="body-2" textColor="gray6B">
+        {formatLongReviewContent(review)}
+      </Typograpy>
+      <Styled.Contents>{!isLong && <TextMoreButton _onClick={toggleTextMore} />}</Styled.Contents>
     </Styled.ReviewWrapper>
   );
 };

@@ -1,9 +1,10 @@
 import type { GetServerSideProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { dehydrate, QueryClient } from 'react-query';
 import { PageLayout } from '@components/Common/Layout';
 import { LectureReview, Introduction, ProfileHeader } from '@components/Profile';
-import { useRouter } from 'next/router';
 import useProfile from '@hooks/profile/useProfile';
-import { dehydrate, QueryClient } from 'react-query';
+import useCoachReview from '@hooks/profile/useCoachReview';
 import queryKeys from '@react-query/keys';
 import api from '@api';
 
@@ -15,7 +16,6 @@ const Profile: NextPage = () => {
   const userInfo = user.data.user;
   const userImage = user.data.userImage;
   const userIntro = user.data.coach.introduce;
-  console.log(user);
 
   return (
     <PageLayout isSpacing>
@@ -32,6 +32,10 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   await queryClient.prefetchQuery([queryKeys.userProfile, Number(id)], () =>
     api.fetchUserProfile(Number(id))
+  );
+
+  await queryClient.prefetchQuery([queryKeys.coachReview, Number(id)], () =>
+    api.fetchCoachReview(Number(id))
   );
 
   const dehydratedState = dehydrate(queryClient);
