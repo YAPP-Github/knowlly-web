@@ -29,3 +29,26 @@ export interface IProfile {
   };
   timestamp: number;
 }
+
+//유저의 코치 리뷰
+export interface ICoachReviewData {
+  public: boolean;
+  writer: IUserPlayer;
+  reviewee: {
+    id: number;
+    introduce: string;
+    user: IUserPlayer;
+  };
+  content: string;
+  writtenDate: string;
+}
+
+export interface ICoachReview {
+  message: string;
+  data: ICoachReviewData[];
+  currentPage: number;
+  totalPage: number;
+  pageSize: number;
+  timestamp: number;
+  totalElements: number;
+}
