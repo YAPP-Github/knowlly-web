@@ -2,6 +2,7 @@ export const lectureinfo = {
   message: 'ok',
   data: [
     {
+      id: 5,
       topic: '요리 클래스',
       introduce: '맛있는 요리 만들기',
       price: 1,
@@ -20,12 +21,18 @@ export const lectureinfo = {
           pushActive: true,
         },
       },
-      category: {
-        id: 6,
-        categoryName: '기타',
-      },
+      category: 'ETC',
+      lectureImages: [
+        {
+          id: 6,
+          lectureImgUrl: 'http://lecture5.img.url',
+        },
+      ],
+      tags: [],
+      lectures: [],
     },
     {
+      id: 3,
       topic: '그래픽 디자인',
       introduce: '그래픽을 그래그래',
       price: 1,
@@ -44,12 +51,31 @@ export const lectureinfo = {
           pushActive: true,
         },
       },
-      category: {
-        id: 2,
-        categoryName: '디자인',
-      },
+      category: 'DESIGN',
+      lectureImages: [
+        {
+          id: 4,
+          lectureImgUrl: 'http://lecture3.img.url',
+        },
+      ],
+      tags: [
+        {
+          id: 5,
+          content: '전문가',
+        },
+      ],
+      lectures: [
+        {
+          id: 5,
+          startAt: '2022-06-08T13:44:10',
+          endAt: '2022-06-13T14:44:04',
+          state: 'DONE',
+          reviewWritten: false,
+        },
+      ],
     },
     {
+      id: 2,
       topic: '자바 개발',
       introduce: '자바를 자바라',
       price: 1,
@@ -68,12 +94,39 @@ export const lectureinfo = {
           pushActive: false,
         },
       },
-      category: {
-        id: 3,
-        categoryName: '개발',
-      },
+      category: 'DEVELOP',
+      lectureImages: [
+        {
+          id: 3,
+          lectureImgUrl: 'http://lecture2.img.url',
+        },
+        {
+          id: 7,
+          lectureImgUrl: 'http://lecture2.img2.url',
+        },
+      ],
+      tags: [
+        {
+          id: 3,
+          content: '언어',
+        },
+        {
+          id: 4,
+          content: '자바개발',
+        },
+      ],
+      lectures: [
+        {
+          id: 4,
+          startAt: '2022-06-12T13:44:10',
+          endAt: '2022-06-12T14:44:04',
+          state: 'ON_BOARD',
+          reviewWritten: false,
+        },
+      ],
     },
     {
+      id: 1,
       topic: '마케팅 수업',
       introduce: '효과적인 마케팅에 대해 배웁니다',
       price: 1,
@@ -92,11 +145,55 @@ export const lectureinfo = {
           pushActive: true,
         },
       },
-      category: {
-        id: 4,
-        categoryName: '마케팅',
-      },
+      category: 'MARKETING',
+      lectureImages: [
+        {
+          id: 2,
+          lectureImgUrl: 'http://lecture1.img2.url',
+        },
+        {
+          id: 1,
+          lectureImgUrl: 'http://lecture1.img.url',
+        },
+      ],
+      tags: [
+        {
+          id: 1,
+          content: '마케팅전문',
+        },
+        {
+          id: 2,
+          content: '쉬워요',
+        },
+      ],
+      lectures: [
+        {
+          id: 1,
+          startAt: '2022-06-08T13:44:10',
+          endAt: '2022-06-08T14:44:04',
+          state: 'DONE',
+          reviewWritten: false,
+        },
+        {
+          id: 2,
+          startAt: '2022-06-09T13:44:10',
+          endAt: '2022-06-09T14:44:04',
+          state: 'ON_GOING',
+          reviewWritten: false,
+        },
+        {
+          id: 3,
+          startAt: '2022-06-10T13:44:10',
+          endAt: '2022-06-10T14:44:04',
+          state: 'ON_BOARD',
+          reviewWritten: false,
+        },
+      ],
     },
   ],
-  timestamp: 1656595992258,
+  timestamp: 1657368449333,
+  currentPage: 0,
+  totalPage: 1,
+  pageSize: 10,
+  totalElements: 4,
 };

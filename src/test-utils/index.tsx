@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider, setLogger } from 'react-query';
 import { generateQueryClient } from '../react-query/queryClient';
 import { ThemeProvider } from 'styled-components';
 import Theme from '@styles/theme';
+import { RecoilRoot } from 'recoil';
 
 setLogger({
   log: console.log,
@@ -25,17 +26,21 @@ export const renderWithQueryClient = (ui: ReactElement, client?: QueryClient): R
   const queryClient = client ?? generateTestQueryClient();
 
   return render(
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={Theme}>{ui}</ThemeProvider>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={Theme}>{ui}</ThemeProvider>
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 };
 
 export const createQueryClientWrapper = (): FC<{ children: ReactNode }> => {
   const queryClient = generateTestQueryClient();
   return ({ children }) => (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={Theme}>{children}</ThemeProvider>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider theme={Theme}>{children}</ThemeProvider>
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 };

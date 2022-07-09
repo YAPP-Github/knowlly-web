@@ -8,12 +8,7 @@ const Category = () => {
     <Styled.CategoryList>
       {CATEGORY_LIST.map((category) => (
         <Styled.CategoryItem key={category.id}>
-          <Link
-            href={{
-              pathname: '/category',
-              query: { id: category.id },
-            }}
-          >
+          <Link href={`/lecture-category/${category.id}`}>
             <a>
               <SvgIcon type={category.icon} size={36} />
               <Typograpy variant="subtitle-4" textColor="gray6B">

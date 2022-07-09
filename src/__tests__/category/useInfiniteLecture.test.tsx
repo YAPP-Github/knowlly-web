@@ -11,7 +11,7 @@ jest.mock('@hooks/home/useInfiniteLecture', () => ({
 }));
 
 test('개발 관련 클래스 목록 조회', async () => {
-  const { result, waitFor } = renderHook(() => useInfiniteLecture('3'), {
+  const { result, waitFor } = renderHook(() => useInfiniteLecture('?categoryId', '3'), {
     wrapper: createQueryClientWrapper(),
   });
 

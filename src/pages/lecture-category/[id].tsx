@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo } from 'react';
-import type { NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
@@ -7,8 +7,11 @@ import { LectureList, LoadingList } from '@components/Home';
 import useInfiniteLecture from '@hooks/home/useInfiniteLecture';
 import CATEGORY_LIST from '@constants/categoryList';
 import { useInView } from 'react-intersection-observer';
+import { dehydrate, QueryClient } from 'react-query';
+import queryKeys from '@react-query/keys';
+import api from '@api';
 
-const Category: NextPage = () => {
+const LectureCategoryPage: NextPage = () => {
   const router = useRouter();
   const categoryId = router.query.id;
 
@@ -53,4 +56,16 @@ const Category: NextPage = () => {
   );
 };
 
-export default Category;
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const categoryId = context.query.id;
+  const queryString = `?categoryId=${categoryId}&page=0&size=10`;
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchInfiniteQuery([queryKeys.lectureInfo, queryString], () =>
+    api.fetchLectureInfo(queryString)
+  );
+
+  return { props: { dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))) } };
+};
+
+export default LectureCategoryPage;

@@ -10,6 +10,7 @@ module.exports = {
     '^@page(.*)$': '<rootDir>/src/page$1',
     '^@react-query(.*)$': '<rootDir>/src/react-query$1',
     '^@styles(.*)$': '<rootDir>/src/styles$1',
+    '^@recoil(.*)$': '<rootDir>/src/recoil$1',
     '^@test-utils(.*)$': '<rootDir>/src/test-utils$1',
   },
 
