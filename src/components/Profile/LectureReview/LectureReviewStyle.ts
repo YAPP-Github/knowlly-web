@@ -17,7 +17,11 @@ export const NoReview = styled.div`
 `;
 
 export const ReviewWrapper = styled.div`
-  margin-top: 2.6rem;
+  margin-bottom: 1.6rem;
+  border-bottom: 1px solid ${Theme.color.gray['EF']};
+  & > :first-child {
+    margin-top: 2.6rem;
+  }
 `;
 
 export const ProfileImg = styled.img`
@@ -56,16 +60,13 @@ export const Contents = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  & > :first-child {
-    margin-bottom: 0.6rem;
-  }
+  margin-bottom: 2rem;
 `;
 
 export const ShowMore = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 8.8rem;
+  margin-bottom: 4rem;
   pointer: cursor;
 `;
