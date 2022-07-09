@@ -1,4 +1,4 @@
-import type { GetServerSideProps, GetStaticProps, NextPage } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import { PageLayout } from '@components/Common/Layout';
 import { LectureReview, Introduction, ProfileHeader } from '@components/Profile';
 import { useRouter } from 'next/router';
@@ -14,12 +14,13 @@ const Profile: NextPage = () => {
 
   const userInfo = user.data.user;
   const userImage = user.data.userImage;
+  const userIntro = user.data.coach.introduce;
   console.log(user);
 
   return (
     <PageLayout isSpacing>
       <ProfileHeader userInfo={userInfo} userImage={userImage} />
-      <Introduction />
+      <Introduction userIntro={userIntro} />
       <LectureReview />
     </PageLayout>
   );
