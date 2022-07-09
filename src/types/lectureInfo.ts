@@ -26,8 +26,26 @@ export interface ILectureInfoData {
   };
   category: {
     id: number;
-    categoryName: '기타';
+    categoryName: string;
   };
+  lectureImages: [
+    {
+      id: number;
+      lectureImgUrl: string;
+    }
+  ];
+  lectures: [
+    {
+      startAt: string;
+      endAt: string;
+    }
+  ];
+  tags: [
+    {
+      id: number;
+      content: string;
+    }
+  ];
 }
 
 export interface ILectureInfiniteList {
