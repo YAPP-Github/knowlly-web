@@ -14,7 +14,12 @@ export const LectureCardContainer = styled.a`
 `;
 
 export const LectureImageWrapper = styled.div`
-  margin-right: 1.8rem;
+  min-width: 8.8rem;
+  min-height: 8.8rem;
+`;
+
+export const LectureInfoWrapper = styled.div`
+  padding-left: 1.8rem;
 `;
 
 export const LectureIntroduce = styled(Typograpy)`
@@ -27,4 +32,10 @@ export const LectureIntroduce = styled(Typograpy)`
 
 export const LectureCoachName = styled(Typograpy)`
   margin-bottom: 2.4rem;
+`;
+
+export const LectureTags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 `;
