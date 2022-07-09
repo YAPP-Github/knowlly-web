@@ -6,11 +6,11 @@ const LoadingCard = () => {
       <Styled.SkeletonImageWrapper>
         <Styled.SkeletonImage />
       </Styled.SkeletonImageWrapper>
-      <div>
+      <Styled.SkeletonInfoWrapper>
         <Styled.SkeletonIntroduce />
         <Styled.SkeletonCoachName />
         <Styled.SkeletonContainedBadge />
-      </div>
+      </Styled.SkeletonInfoWrapper>
     </Styled.SkeletonCardContainer>
   );
 };
