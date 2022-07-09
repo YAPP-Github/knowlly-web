@@ -8,6 +8,11 @@ class HttpAPI {
     return data;
   }
 
+  async fetchLectureDetail(lectureId: number) {
+    const { data } = await createAxiosWithTestToken(`lectureinfo/${lectureId}`).get('');
+    return data;
+  }
+
   async postReview(coachId: number, review: IReview) {
     const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, review);
     return data;

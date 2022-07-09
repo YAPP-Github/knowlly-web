@@ -1,18 +1,23 @@
 import { Typograpy } from '@components/Common';
+import { ILectureDetailCoach } from '@/types/lectureDetail';
 import React from 'react';
 import * as Styled from './CoachProfileStyle';
-const CoachProfile = () => {
+
+interface ICoachProfileProps {
+  coachProfile: ILectureDetailCoach;
+}
+const CoachProfile = ({ coachProfile }: ICoachProfileProps) => {
+  const coach = coachProfile.user;
   return (
     <>
       <Styled.CoachProfileContainer>
         <Styled.CoachProfileImg src="abcd" />
         <Styled.CoachProfileContentWrapper>
           <Typograpy variant="subtitle-4" textColor="gray44">
-            하늘님
+            {coach.username}
           </Typograpy>
           <Typograpy variant="body-2" textColor="gray44">
-            프랑스에서 1년 동안 유학한 경험이 있어요. 다시 공부를 시작할 겸 해서 클래스를 열어보려
-            합니다. 프랑스에서 1년 동안 유학한 경험이 있어요.
+            {coach.intro}
           </Typograpy>
         </Styled.CoachProfileContentWrapper>
       </Styled.CoachProfileContainer>
