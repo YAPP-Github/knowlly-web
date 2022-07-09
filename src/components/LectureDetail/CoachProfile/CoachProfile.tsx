@@ -1,10 +1,11 @@
 import { Typograpy } from '@components/Common';
-import { ILectureDetailCoach } from '@/types/lectureDetail';
+import { IUserCoach } from '@/types/profile';
+
 import React from 'react';
 import * as Styled from './CoachProfileStyle';
 
 interface ICoachProfileProps {
-  coachProfile: ILectureDetailCoach;
+  coachProfile: IUserCoach;
 }
 const CoachProfile = ({ coachProfile }: ICoachProfileProps) => {
   const coach = coachProfile.user;
