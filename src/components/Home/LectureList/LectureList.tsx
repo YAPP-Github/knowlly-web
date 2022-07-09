@@ -12,8 +12,8 @@ const LectureList = ({ lectureInfoList }: ILectureList) => {
     <Styled.LectureListContainer>
       {lectureInfoList.data?.length > 0 ? (
         <>
-          {lectureInfoList.data.map((lecture, index) => (
-            <LectureCard key={index} lectureData={lecture} />
+          {lectureInfoList.data.map((lecture) => (
+            <LectureCard key={lecture.id} lectureData={lecture} />
           ))}
         </>
       ) : (
