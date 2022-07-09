@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { LectureCardContainer, LectureImageWrapper } from './LectureCardStyle';
+import { LectureCardContainer, LectureImageWrapper, LectureInfoWrapper } from './LectureCardStyle';
 
 const Skeleton = styled.div`
   ${({ theme }) => {
@@ -38,6 +38,8 @@ const Skeleton = styled.div`
 export const SkeletonCardContainer = styled(LectureCardContainer)``;
 
 export const SkeletonImageWrapper = styled(LectureImageWrapper)``;
+
+export const SkeletonInfoWrapper = styled(LectureInfoWrapper)``;
 
 export const SkeletonImage = styled(Skeleton)`
   width: 8.8rem;
