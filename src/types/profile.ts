@@ -26,7 +26,6 @@ export interface IProfile {
     user: IUserPlayer;
     currentLectureCount: number;
     reviewCount: number;
-    userImage: IUserImage;
   };
   timestamp: number;
 }

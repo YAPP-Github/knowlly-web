@@ -4,7 +4,6 @@ import { dehydrate, QueryClient } from 'react-query';
 import { PageLayout } from '@components/Common/Layout';
 import { LectureReview, Introduction, ProfileHeader } from '@components/Profile';
 import useProfile from '@hooks/profile/useProfile';
-import useCoachReview from '@hooks/profile/useCoachReview';
 import queryKeys from '@react-query/keys';
 import api from '@api';
 
