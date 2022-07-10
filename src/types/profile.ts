@@ -12,12 +12,15 @@ export interface IUserPlayer {
   kakaoId: string;
   portfolio: string;
   identifier: string;
+  userImgUrl: string;
 }
 
 export interface IUserCoach {
   id: number;
   introduce: string;
   user: IUserPlayer;
+  currentLectureCount: number;
+  reviewCount: number;
 }
 
 export interface IProfile {
@@ -25,6 +28,8 @@ export interface IProfile {
   data: {
     coach: IUserCoach;
     user: IUserPlayer;
+    currentLectureCount: number;
+    reviewCount: number;
     userImage: IUserImage;
   };
   timestamp: number;
