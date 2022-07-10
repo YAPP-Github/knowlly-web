@@ -20,7 +20,7 @@ const FirstStep = ({ lectureSchedule }: ILectureScheduleProps) => {
   const handleScheduleClick = (id: number) => {
     setSelectedIndex(id);
     setTimeout(() => setMatchingStep(matchingStep + 1), 300);
-    setPlayerMatching({ ...playerMatching, schedule: 'schedule' }); //TODO: 일정 parsing
+    setPlayerMatching({ ...playerMatching, scheduleId: id }); //TODO: 일정 parsing
   };
 
   return (

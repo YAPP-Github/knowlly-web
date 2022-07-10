@@ -1,27 +1,24 @@
 import { Button, TextArea, Typograpy } from '@components/Common';
-import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
+import { playerMatchingState } from '@recoil/matching/atoms';
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilValue } from 'recoil';
 import * as Styled from './SecondStepStyle';
 import { PageLayout } from '@components/Common/Layout';
+import useApplyMatching from '@hooks/matching/useApplyMatching';
 
 const SecondStep = () => {
-  const [introduction, setIntroduction] = useState('');
-  const [playerMatching, setPlayerMatching] = useRecoilState(playerMatchingState);
-  const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
+  const [content, setContent] = useState('');
+  const playerMatching = useRecoilValue(playerMatchingState);
 
-  const handleIntroductionText = (value: string) => {
-    setIntroduction(value);
+  const handleIntroductionContent = (value: string) => {
+    setContent(value);
   };
+
+  const applyMatching = useApplyMatching(playerMatching.scheduleId);
 
   const handleNextButtonClick = () => {
-    //nextStep();
-    setPlayerMatching({ ...playerMatching, introduction: introduction });
-    //TODO: 매칭신청서 POST 요청
-  };
-
-  const nextStep = () => {
-    setMatchingStep(matchingStep + 1);
+    const payload = { scheduleId: playerMatching.scheduleId, content: content };
+    applyMatching.mutate(payload);
   };
 
   return (
@@ -33,7 +30,7 @@ const SecondStep = () => {
             간단한 소개와 궁금한 내용을 적어주세요.
           </Typograpy>
         </Styled.TextWrapper>
-        <TextArea value={introduction} maxLength={500} _onInputEntered={handleIntroductionText} />
+        <TextArea value={content} maxLength={500} _onInputEntered={handleIntroductionContent} />
       </PageLayout>
       <Styled.ButtonWrapper>
         <Typograpy variant="body-2" textColor="primary">
@@ -42,7 +39,7 @@ const SecondStep = () => {
         <Typograpy variant="body-2" textColor="primary">
           신중하게 선택해주세요.
         </Typograpy>
-        <Button _onClick={handleNextButtonClick} disabled={introduction.length === 0}>
+        <Button _onClick={handleNextButtonClick} disabled={content.length === 0}>
           매칭 신청 완료하기
         </Button>
       </Styled.ButtonWrapper>

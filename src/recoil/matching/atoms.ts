@@ -6,14 +6,14 @@ export const matchingStepState = atom({
 });
 
 interface IPlayerMatching {
-  schedule: string;
-  introduction: string;
+  scheduleId: number;
+  content: string;
 }
 
 export const playerMatchingState = atom<IPlayerMatching>({
   key: 'playerMatching',
   default: {
-    schedule: '',
-    introduction: '',
+    scheduleId: 0,
+    content: '',
   },
 });

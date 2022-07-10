@@ -21,7 +21,7 @@ class HttpAPI {
 
   async postMatchingForm(scheduleId: number, matchingForm: IMatching) {
     const { data } = await createAxiosWithTestToken('').post(
-      `review/coach/${scheduleId}`,
+      `form/lecture/${scheduleId}`,
       matchingForm
     );
     return data;
