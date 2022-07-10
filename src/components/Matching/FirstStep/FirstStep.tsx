@@ -2,25 +2,18 @@ import { Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import { useSelect } from '@hooks';
 import { matchingStepState, playerMatchingState } from '@recoil/matching/atoms';
+import { ILectureDetailSchedule } from '@/types/lectureDetail';
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import ScheduleBox from '../ScheduleBox/ScheduleBox';
 import * as Styled from './FirstStepStyle';
 
-// API 연동 전 임시 Array Type
-export interface ISchedule {
-  id: number;
-  day: string;
-  time: string;
+interface ILectureScheduleProps {
+  lectureSchedule: ILectureDetailSchedule[];
 }
 
-const FirstStep = () => {
-  const schedules = [
-    { id: 0, day: '6월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
-    { id: 1, day: '5월 24일 (화)', time: '오후 6:00 (3시간 수업)' },
-  ];
-
-  const { selectedIndex, setSelectedIndex } = useSelect(schedules);
+const FirstStep = ({ lectureSchedule }: ILectureScheduleProps) => {
+  const { selectedIndex, setSelectedIndex } = useSelect(lectureSchedule);
   const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
   const [playerMatching, setPlayerMatching] = useRecoilState(playerMatchingState);
 
@@ -38,7 +31,7 @@ const FirstStep = () => {
           코치가 보낸 일정 중 한가지만 선택해주세요.
         </Typograpy>
       </Styled.TextWrapper>
-      {schedules.map((schedule) => (
+      {lectureSchedule.map((schedule) => (
         <ScheduleBox
           key={schedule.id}
           schedule={schedule}

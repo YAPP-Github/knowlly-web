@@ -5,14 +5,24 @@ import { matchingStepState } from '@recoil/matching/atoms';
 import { NextPage } from 'next';
 import { useRecoilValue } from 'recoil';
 import { IndicatorWrapper } from '@components/Matching/MatchingStyle';
+import useLectureDetail from '@hooks/lecture/useLectureDetail';
+import { useRouter } from 'next/router';
 
 const Matching: NextPage = () => {
   const matchingStep = useRecoilValue(matchingStepState);
 
+  const router = useRouter();
+  const lectureId = Number(router.query.id);
+
+  const lectureDetail = useLectureDetail(lectureId);
+  const lectureSchedule = lectureDetail.data.lectures.filter(
+    (lecture) => lecture.state == 'ON_GOING'
+  );
+
   const setPage = (step: number) => {
     switch (step) {
       case 0:
-        return <FirstStep />;
+        return <FirstStep lectureSchedule={lectureSchedule} />;
       case 1:
         return <SecondStep />;
       case 2:
