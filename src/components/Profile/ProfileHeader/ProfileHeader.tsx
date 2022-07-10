@@ -1,19 +1,19 @@
 import { ContainedBadge, SvgIcon, Typograpy, Image } from '@components/Common';
 import * as Styled from './ProfileHeaderStyle';
 import Link from 'next/link';
-import { IUserImage, IUserPlayer } from '@/types/profile';
+import { IUserCoach, IUserPlayer } from '@/types/profile';
 
-interface IUserInfoProps {
+interface IUserDataProps {
   userInfo: IUserPlayer;
-  userImage: IUserImage;
+  coachInfo: IUserCoach;
 }
 
-const ProfileHeader = ({ userInfo, userImage }: IUserInfoProps) => {
+const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
   const isCoach = userInfo.coach;
 
   return (
     <Styled.ProfileContainer>
-      <Image type="profile" src={userImage.userImgUrl} alt="프로필 이미지" />
+      <Image type="profile" src={userInfo.userImgUrl} alt="프로필 이미지" />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">{userInfo.username}</Typograpy>
 
@@ -25,14 +25,16 @@ const ProfileHeader = ({ userInfo, userImage }: IUserInfoProps) => {
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="k_class" size={18} />
-            <Typograpy variant="subtitle-4">운영중인 클래스 2개</Typograpy>
+            <Typograpy variant="subtitle-4">
+              운영중인 클래스 {coachInfo.currentLectureCount}개
+            </Typograpy>
           </Styled.IconWrapper>
         )}
 
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="review" size={18} />
-            <Typograpy variant="subtitle-4">후기 2개</Typograpy>
+            <Typograpy variant="subtitle-4">후기 {coachInfo.reviewCount}개</Typograpy>
           </Styled.IconWrapper>
         )}
 

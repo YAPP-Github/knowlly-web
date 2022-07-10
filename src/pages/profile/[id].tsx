@@ -14,12 +14,12 @@ const Profile: NextPage = () => {
   const user = useProfile(userId);
 
   const userInfo = user.data.user;
-  const userImage = user.data.userImage;
+  const coachInfo = user.data.coach;
   const userIntro = user.data.coach.introduce;
 
   return (
     <PageLayout isSpacing>
-      <ProfileHeader userInfo={userInfo} userImage={userImage} />
+      <ProfileHeader userInfo={userInfo} coachInfo={coachInfo} />
       <Introduction userIntro={userIntro} />
       <LectureReview />
     </PageLayout>

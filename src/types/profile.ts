@@ -1,7 +1,3 @@
-export interface IUserImage {
-  userImgUrl: string;
-}
-
 export interface IUserPlayer {
   coach: boolean;
   id: number;
