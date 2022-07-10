@@ -15,7 +15,7 @@ const SecondStep = () => {
   };
 
   const handleNextButtonClick = () => {
-    nextStep();
+    //nextStep();
     setPlayerMatching({ ...playerMatching, introduction: introduction });
     //TODO: 매칭신청서 POST 요청
   };
