@@ -1,19 +1,15 @@
+import { IPlayerMatchingState } from '@/types/matching';
 import { atom } from 'recoil';
 
-export const matchingStepState = atom({
+export const matchingStepState = atom<number>({
   key: 'matchingStep',
   default: 0,
 });
 
-interface IPlayerMatching {
-  schedule: string;
-  introduction: string;
-}
-
-export const playerMatchingState = atom<IPlayerMatching>({
+export const playerMatchingState = atom<IPlayerMatchingState>({
   key: 'playerMatching',
   default: {
-    schedule: '',
-    introduction: '',
+    scheduleId: 0,
+    content: '',
   },
 });

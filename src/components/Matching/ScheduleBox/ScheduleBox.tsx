@@ -1,9 +1,10 @@
 import { SvgIcon, Typograpy } from '@components/Common';
+import { ILectureDetailSchedule } from '@/types/lectureDetail';
+import { formatDate, formatTime, getLectureTime } from '@utils';
 import React from 'react';
-import { ISchedule } from '../FirstStep/FirstStep';
 import * as Styled from './ScheduleBoxStyle';
 interface IScheduleBoxProps {
-  schedule: ISchedule;
+  schedule: ILectureDetailSchedule;
   isSelected: boolean;
   _onClick: () => void;
 }
@@ -14,9 +15,10 @@ const ScheduleBox = (props: IScheduleBoxProps) => {
     <>
       <Styled.Container>
         <Styled.TextWrapper>
-          <Typograpy variant="button-1">{schedule.day}</Typograpy>
+          <Typograpy variant="button-1">{formatDate(schedule.startAt)}</Typograpy>
           <Typograpy variant="body-2" textColor="gray6B">
-            {schedule.time}
+            {formatTime(schedule.startAt)} ({getLectureTime(schedule.startAt, schedule.endAt)}시간
+            수업)
           </Typograpy>
         </Styled.TextWrapper>
         <div onClick={_onClick}>

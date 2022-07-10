@@ -1,4 +1,5 @@
 import { IReview } from '@/types/review';
+import { IPlayerMatchingForm } from '@/types/matching';
 import createAxiosWithTestToken from './customAxios';
 
 class HttpAPI {
@@ -25,6 +26,14 @@ class HttpAPI {
 
   async postReview(coachId: number, review: IReview) {
     const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, review);
+    return data;
+  }
+
+  async postMatchingForm(scheduleId: number, matchingForm: IPlayerMatchingForm) {
+    const { data } = await createAxiosWithTestToken('').post(
+      `form/lecture/${scheduleId}`,
+      matchingForm
+    );
     return data;
   }
 }
