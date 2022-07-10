@@ -1,19 +1,4 @@
-export interface ILectureDetailCoach {
-  id: number;
-  introduce: string;
-  user: {
-    coach: true;
-    id: number;
-    pushActive: true;
-    username: string;
-    ballCnt: number;
-    intro: string;
-    kakaoId: string;
-    portfolio: string;
-    identifier: string;
-  };
-}
-
+import { IUserCoach } from './profile';
 export interface ILectureDetailCategory {
   categoryName: string;
   id: number;
@@ -42,7 +27,7 @@ export interface ILectureDetailData {
   topic: string;
   introduce: string;
   price: number;
-  coach: ILectureDetailCoach;
+  coach: IUserCoach;
   category: ILectureDetailCategory;
   lectureImages: ILectureDetailImages[];
   lectures: ILectureDetailSchedule[];

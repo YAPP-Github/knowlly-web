@@ -1,14 +1,21 @@
 import { ContainedBadge, SvgIcon, Typograpy, Image } from '@components/Common';
 import * as Styled from './ProfileHeaderStyle';
 import Link from 'next/link';
-const ProfileHeader = () => {
-  const isCoach = true;
+import { IUserCoach, IUserPlayer } from '@/types/profile';
+
+interface IUserDataProps {
+  userInfo: IUserPlayer;
+  coachInfo: IUserCoach;
+}
+
+const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
+  const isCoach = userInfo.coach;
 
   return (
     <Styled.ProfileContainer>
-      <Image type="profile" src="img/profile.png" alt="프로필 이미지" />
+      <Image type="profile" src={userInfo.userImgUrl} alt="프로필 이미지" />
       <Styled.ProfileWrapper>
-        <Typograpy variant="subtitle-1">유지민</Typograpy>
+        <Typograpy variant="subtitle-1">{userInfo.username}</Typograpy>
 
         <Styled.PlayerType>
           <ContainedBadge type="player">플레이어</ContainedBadge>
@@ -18,27 +25,31 @@ const ProfileHeader = () => {
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="k_class" size={18} />
-            <Typograpy variant="subtitle-4">운영중인 클래스 2개</Typograpy>
+            <Typograpy variant="subtitle-4">
+              운영중인 클래스 {coachInfo.currentLectureCount}개
+            </Typograpy>
           </Styled.IconWrapper>
         )}
 
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="review" size={18} />
-            <Typograpy variant="subtitle-4">후기 2개</Typograpy>
+            <Typograpy variant="subtitle-4">후기 {coachInfo.reviewCount}개</Typograpy>
           </Styled.IconWrapper>
         )}
 
-        <Styled.IconWrapper>
-          <SvgIcon type="link" size={18}></SvgIcon>
-          <Link href={'https://www.knowlly.com/'} passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <Typograpy variant="body-1" textColor="gray44">
-                www.knowly.com
-              </Typograpy>
-            </a>
-          </Link>
-        </Styled.IconWrapper>
+        {userInfo.portfolio && (
+          <Styled.IconWrapper>
+            <SvgIcon type="link" size={18}></SvgIcon>
+            <Link href={`${userInfo.portfolio}`} passHref>
+              <a target="_blank" rel="noopener noreferrer">
+                <Typograpy variant="body-1" textColor="gray44">
+                  {userInfo.portfolio}
+                </Typograpy>
+              </a>
+            </Link>
+          </Styled.IconWrapper>
+        )}
       </Styled.ProfileWrapper>
     </Styled.ProfileContainer>
   );

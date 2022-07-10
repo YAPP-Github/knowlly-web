@@ -10,7 +10,7 @@ interface IImageProps {
 
 // loader의 경우 이미지가 어떻게 오는지에 따라 변동 가능
 const loader: ImageLoader = ({ src, width, quality = 75 }) => {
-  return `http://knowllydev-web.hkpark.net/${src}?w=${width}&q=${quality}`;
+  return `${src}?w=${width}&q=${quality}`;
 };
 
 const handleImgWidth = (type: string) => {
