@@ -36,6 +36,11 @@ class HttpAPI {
     );
     return data;
   }
+
+  async fetchCoachLectureForm(formId: string) {
+    const { data } = await createAxiosWithTestToken(`form`).get(`/${formId}`);
+    return data;
+  }
 }
 
 const api = new HttpAPI();
