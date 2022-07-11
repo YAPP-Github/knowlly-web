@@ -37,7 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const formId = context.query.id as string;
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery([queryKeys.coachLecture, formId], () =>
+  await queryClient.prefetchQuery([queryKeys.coachLectureForm, formId], () =>
     api.fetchCoachLectureForm(formId)
   );
 
