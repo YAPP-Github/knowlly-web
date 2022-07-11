@@ -8,7 +8,7 @@ const nextConfig = {
     TEST_TOKEN: process.env.NEXT_PUBLIC_TEST_TOKEN,
   },
   images: {
-    domains: ['knowllydev-web.hkpark.net'],
+    domains: ['knowllydev-media.hkpark.net'],
   },
 };
 
