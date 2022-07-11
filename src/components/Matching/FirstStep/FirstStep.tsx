@@ -12,7 +12,7 @@ interface ILectureScheduleProps {
   lectureSchedule: ILectureDetailSchedule[];
 }
 
-const FirstStep = ({ lectureSchedule }: ILectureScheduleProps) => {
+const FirstStep = ({ lectureSchedule = [] }: ILectureScheduleProps) => {
   const { selectedIndex, setSelectedIndex } = useSelect(lectureSchedule);
   const [matchingStep, setMatchingStep] = useRecoilState(matchingStepState);
   const [playerMatching, setPlayerMatching] = useRecoilState(playerMatchingState);

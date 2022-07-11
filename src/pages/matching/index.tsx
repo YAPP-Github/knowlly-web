@@ -15,7 +15,7 @@ const Matching: NextPage = () => {
   const lectureId = Number(router.query.id);
 
   const lectureDetail = useLectureDetail(lectureId);
-  const lectureSchedule = lectureDetail.data.lectures.filter(
+  const lectureSchedule = lectureDetail?.data?.lectures?.filter(
     (lecture) => lecture.state == 'ON_GOING'
   );
 
