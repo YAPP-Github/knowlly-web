@@ -15,15 +15,32 @@ const LectureDetail: NextPage = () => {
   const lectureId = Number(router.query.id);
   const lectureDetail = useLectureDetail(lectureId);
 
-  const category = lectureDetail.data.category.categoryName;
+  const category = lectureDetail.data.category;
   const topic = lectureDetail.data.topic;
   const coachProfile = lectureDetail.data.coach;
   const lectureInfo = lectureDetail.data;
 
+  const formatCategoryName = (category: string) => {
+    switch (category) {
+      case 'PM':
+        return '기획';
+      case 'DESIGN':
+        return '디자인';
+      case 'DEVELOP':
+        return '개발';
+      case 'MARKETING':
+        return '마케팅';
+      case 'LANGUAGE':
+        return '외국어';
+      case 'ETC':
+        return '기타';
+    }
+  };
+
   return (
     <>
       <PageLayout isSpacing>
-        <Styled.CategoryBadge type="category">{category}</Styled.CategoryBadge>
+        <Styled.CategoryBadge type="category">{formatCategoryName(category)}</Styled.CategoryBadge>
         <Typograpy variant="headline-3">{topic}</Typograpy>
         <CoachProfile coachProfile={coachProfile} />
       </PageLayout>

@@ -1,8 +1,4 @@
 import { IUserCoach } from './profile';
-export interface ILectureDetailCategory {
-  categoryName: string;
-  id: number;
-}
 
 export interface ILectureDetailImages {
   id: number;
@@ -28,7 +24,7 @@ export interface ILectureDetailData {
   introduce: string;
   price: number;
   coach: IUserCoach;
-  category: ILectureDetailCategory;
+  category: string;
   lectureImages: ILectureDetailImages[];
   lectures: ILectureDetailSchedule[];
   tags: ILectureDetailTags[];
