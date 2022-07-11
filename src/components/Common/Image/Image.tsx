@@ -2,7 +2,13 @@ import { default as NextImage, ImageLoader } from 'next/image';
 import { PropsWithChildren } from 'react';
 
 interface IImageProps {
-  type: 'lecture-list' | 'lecture-detail' | 'profile' | 'coach-profile' | 'review-profile';
+  type:
+    | 'lecture-list'
+    | 'lecture-detail'
+    | 'profile'
+    | 'form-profile'
+    | 'coach-profile'
+    | 'review-profile';
   src: string;
   alt?: string;
   priority?: boolean;
@@ -21,6 +27,8 @@ const handleImgWidth = (type: string) => {
       return 150;
     case 'profile':
       return 60;
+    case 'form-profile':
+      return 32;
     case 'coach-profile':
       return 48;
     case 'review-profile':
