@@ -60,7 +60,7 @@ export interface ILectures {
   matchedUser: IUserPlayer;
 }
 
-interface ICoachLectureData {
+export interface ICoachLectureData {
   id: number;
   topic: string;
   introduce: string;
