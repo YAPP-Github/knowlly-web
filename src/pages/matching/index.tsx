@@ -2,11 +2,14 @@ import { SvgIcon } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import { FirstStep, LastStep, SecondStep, Title } from '@components/Matching';
 import { matchingStepState } from '@recoil/matching/atoms';
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { useRecoilValue } from 'recoil';
 import { IndicatorWrapper } from '@components/Matching/MatchingStyle';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { useRouter } from 'next/router';
+import { dehydrate, QueryClient } from 'react-query';
+import queryKeys from '@react-query/keys';
+import api from '@api';
 
 const Matching: NextPage = () => {
   const matchingStep = useRecoilValue(matchingStepState);
@@ -15,7 +18,7 @@ const Matching: NextPage = () => {
   const lectureId = Number(router.query.id);
 
   const lectureDetail = useLectureDetail(lectureId);
-  const lectureSchedule = lectureDetail.data.lectures.filter(
+  const lectureSchedule = lectureDetail?.data?.lectures?.filter(
     (lecture) => lecture.state == 'ON_GOING'
   );
 
@@ -63,4 +66,18 @@ const Matching: NextPage = () => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const lectureId = context.query.id;
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery([queryKeys.lectureDetail, Number(lectureId)], () =>
+    api.fetchLectureDetail(Number(lectureId))
+  );
+
+  const dehydratedState = dehydrate(queryClient);
+
+  return {
+    props: { dehydratedState: dehydratedState },
+  };
+};
 export default Matching;
