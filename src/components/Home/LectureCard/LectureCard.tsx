@@ -15,7 +15,7 @@ const LectureCard = ({ lectureData }: ILectureCardProps) => {
           <Styled.LectureImageWrapper>
             <Image
               type="lecture-list"
-              src={lectureData.lectureImages[0].lectureImgUrl}
+              src={lectureData.coach.user.userImgUrl}
               alt={lectureData.introduce}
             />
           </Styled.LectureImageWrapper>
