@@ -22,6 +22,7 @@ export interface ILectureInfoData {
       identifier: string;
       coach: boolean;
       pushActive: boolean;
+      userImgUrl: string;
     };
   };
   category: {
