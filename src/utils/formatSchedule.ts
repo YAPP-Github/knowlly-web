@@ -1,14 +1,22 @@
 import dayjs from 'dayjs';
 const week = ['일', '월', '화', '수', '목', '금', '토'];
 
-export const formatDate = (schedule: string) => {
+export const formatDate = (schedule: string, type = 'month') => {
   const time = dayjs(schedule);
 
   const month = time.get('month') + 1;
   const date = time.get('date');
   const day = time.get('day');
 
-  return month + '월 ' + date + '일 (' + week[day] + ')';
+  let formatResult = month + '월 ' + date + '일 (' + week[day] + ')';
+
+  if (type === 'year') {
+    const year = time.get('year');
+
+    formatResult = year + '년 ' + formatResult;
+  }
+
+  return formatResult;
 };
 
 export const formatTime = (schedule: string) => {
