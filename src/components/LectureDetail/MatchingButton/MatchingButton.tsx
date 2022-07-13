@@ -1,12 +1,12 @@
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as Styled from './MatchingButtonStyle';
 
 const MatchingButton = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
-  const type = 'coach';
+  const type = 'player';
   const userId = 1;
 
   const lectureDetail = useLectureDetail(lectureId);
@@ -32,9 +32,20 @@ const MatchingButton = () => {
       //안드로이드에서 제공하는 함수 적용 예정
       console.log('');
     } else {
-      router.push(`/matching?id=${lectureId}`);
+      //안드로이드와 연동 예정
+      if (isMatched) console.log('후기 작성하러가기');
+      else router.push(`/matching?id=${lectureId}`);
     }
   };
+
+  const [disabled, setDisabled] = useState(false);
+
+  useEffect(() => {
+    if (type === String('player')) {
+      if (availableLecture.length === 0) setDisabled(true);
+      if (isMatched && myStatus[0].state !== 'DONE') setDisabled(true);
+    }
+  });
 
   const handleButtonText = () => {
     if (type === String('coach')) {
@@ -60,7 +71,12 @@ const MatchingButton = () => {
 
   return (
     <>
-      <Styled.StyledButton variant="contained" size="big" _onClick={handleMatchingButtonClick}>
+      <Styled.StyledButton
+        variant="contained"
+        size="big"
+        _onClick={handleMatchingButtonClick}
+        disabled={disabled}
+      >
         {handleButtonText()}
       </Styled.StyledButton>
     </>
