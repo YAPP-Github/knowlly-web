@@ -8,8 +8,8 @@ interface IUseMatchingForm {
 }
 
 const useMatchingForm = (formId: string): IUseMatchingForm => {
-  const { data: matchingFormData } = useQuery([queryKeys.coachLectureForm, formId], () =>
-    api.fetchCoachLectureForm(formId)
+  const { data: matchingFormData } = useQuery([queryKeys.coachLecture, formId], () =>
+    api.fetchCoachLecture(formId)
   );
 
   return { matchingFormData: matchingFormData.data };

@@ -1,6 +1,8 @@
-import { IUserImage } from './coachLecture';
 import { IUserCoach, IUserPlayer } from './profile';
 
+export interface IUserImage {
+  userImgUrl: string;
+}
 export interface ILectureDetailImages {
   id: number;
   lectureImgUrl: string;

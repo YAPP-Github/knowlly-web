@@ -37,18 +37,8 @@ class HttpAPI {
     return data;
   }
 
-  async fetchCoachLectureForm(formId: string) {
+  async fetchCoachLecture(formId: string) {
     const { data } = await createAxiosWithTestToken(`form`).get(`/${formId}`);
-    return data;
-  }
-
-  async fetchCoachLecture() {
-    const { data } = await createAxiosWithTestToken('coach/lecture/me').get('');
-    return data;
-  }
-
-  async fetchPlayerLecture() {
-    const { data } = await createAxiosWithTestToken('user/lecture/me').get('');
     return data;
   }
 }

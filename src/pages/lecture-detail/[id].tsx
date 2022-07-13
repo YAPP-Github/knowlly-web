@@ -1,5 +1,4 @@
-import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
-import Link from 'next/link';
+import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
 import { LectureInfo, CoachProfile, Guideline, HowToUse } from '@components/LectureDetail';
