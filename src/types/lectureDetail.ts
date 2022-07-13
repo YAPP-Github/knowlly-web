@@ -10,8 +10,11 @@ export interface ILectureDetailImages {
 
 export interface ILectureDetailSchedule {
   endAt: string;
+  forms: ILectureForm[];
   id: number;
-  reviewWritten: false;
+  matched: boolean;
+  matchedUser: IUserPlayer;
+  reviewWritten: boolean;
   startAt: string;
   state: string;
 }
