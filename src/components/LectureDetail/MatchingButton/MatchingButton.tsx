@@ -6,10 +6,12 @@ import * as Styled from './MatchingButtonStyle';
 const MatchingButton = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
-  const type = 'player';
-  const userId = 1;
+  const userId = 4;
 
   const lectureDetail = useLectureDetail(lectureId);
+
+  //player인지 coach인지
+  const userType = lectureDetail.data.coach.id === userId ? 'coach' : 'player';
 
   //신청 가능한 클래스
   const availableLecture = lectureDetail.data.lectures.filter(
@@ -17,18 +19,24 @@ const MatchingButton = () => {
   );
 
   //코치일 때 매칭 신청인 수
-  const requestCount = availableLecture
+  const request = availableLecture
     .map((lecture) => lecture.forms.filter((form) => form.state === 'REQUEST'))
     .reduce((acc, cur) => {
       return acc.concat(cur);
-    }).length;
+    });
 
+  const requestCount = request.length;
+
+  //플레이어 일 때 본인이 신청한 클래스 인지
+  const playerRequest = request.filter((user) => user.user.id === userId)[0];
+
+  //이미 매칭된 경우
   const matchedLecture = lectureDetail.data.lectures.filter((lecture) => lecture.matched === true);
   const myStatus = matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
   const isMatched = myStatus.length;
 
   const handleMatchingButtonClick = () => {
-    if (type === String('coach')) {
+    if (userType === String('coach')) {
       //안드로이드에서 제공하는 함수 적용 예정
       console.log('');
     } else {
@@ -41,14 +49,22 @@ const MatchingButton = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    if (type === String('player')) {
+    if (userType === String('player')) {
       if (availableLecture.length === 0) setDisabled(true);
-      if (isMatched && myStatus[0].state !== 'DONE') setDisabled(true);
+
+      //매칭 x request o
+      if (!isMatched && playerRequest && playerRequest.state === 'REQUEST') {
+        setDisabled(true);
+      }
+
+      if (isMatched && myStatus[0].state !== 'DONE')
+        //onboard && ongoing
+        setDisabled(true);
     }
   });
 
   const handleButtonText = () => {
-    if (type === String('coach')) {
+    if (userType === String('coach')) {
       return availableLecture.length === 0
         ? '가능한 시간을 등록해주세요.'
         : `매칭 신청인 보기 (${requestCount})`;
