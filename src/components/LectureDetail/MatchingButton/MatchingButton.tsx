@@ -32,8 +32,8 @@ const MatchingButton = () => {
 
   //이미 매칭된 경우
   const matchedLecture = lectureDetail.data.lectures.filter((lecture) => lecture.matched === true);
-  const myStatus = matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
-  const isMatched = myStatus.length;
+  const matchedStatus = matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
+  const isMatched = matchedStatus.length;
 
   const handleMatchingButtonClick = () => {
     if (userType === String('coach')) {
@@ -41,7 +41,7 @@ const MatchingButton = () => {
       console.log('');
     } else {
       //안드로이드와 연동 예정
-      if (isMatched) console.log('후기 작성하러가기');
+      if (isMatched && matchedStatus[0].state === 'DONE') router.push(`/review/${lectureId}`);
       else router.push(`/matching?id=${lectureId}`);
     }
   };
@@ -57,7 +57,7 @@ const MatchingButton = () => {
         setDisabled(true);
       }
 
-      if (isMatched && myStatus[0].state !== 'DONE')
+      if (isMatched && matchedStatus[0].state !== 'DONE')
         //onboard && ongoing
         setDisabled(true);
     }
@@ -74,10 +74,10 @@ const MatchingButton = () => {
       //가능한 시간이 있는 경우
       if (isMatched) {
         //2. 신청 중 && 진행 중
-        if (myStatus[0].state === 'ON_GOING' || myStatus[0].state == 'ON_BOARD')
+        if (matchedStatus[0].state === 'ON_GOING' || matchedStatus[0].state == 'ON_BOARD')
           return '매칭 신청하기';
         //3. 이미 참여한 클래스
-        if (myStatus[0].state === 'DONE') return '후기 작성하러가기';
+        if (matchedStatus[0].state === 'DONE') return '후기 작성하러가기';
       } else {
         //1. 매칭 신청 하지 않음
         return '매칭 신청하기';
