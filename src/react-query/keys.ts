@@ -4,6 +4,7 @@ const queryKeys = {
   userProfile: 'user-profile',
   coachReview: 'coach-review',
   coachLecture: 'coach-lecture',
+  auth: 'auth',
 };
 
 export default queryKeys;
