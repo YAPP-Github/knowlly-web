@@ -61,6 +61,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   await queryClient.prefetchQuery([queryKeys.lectureDetail, Number(id)], () =>
     api.fetchLectureDetail(Number(id))
   );
+  await queryClient.prefetchQuery(queryKeys.auth, () => api.fetchUser());
 
   const dehydratedState = dehydrate(queryClient);
 

@@ -1,3 +1,4 @@
+import useAuth from '@hooks/auth/useAuth';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -6,7 +7,9 @@ import * as Styled from './MatchingButtonStyle';
 const MatchingButton = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
-  const userId = 4;
+
+  const user = useAuth();
+  const userId = user.data.user.id;
 
   const lectureDetail = useLectureDetail(lectureId);
 
