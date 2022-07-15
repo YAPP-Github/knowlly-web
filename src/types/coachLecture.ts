@@ -1,3 +1,5 @@
+import { IUserImage } from './profile';
+
 export interface IPlayerUserMatchingForm {
   message: string;
   data: IPlayerUserMatchingForm;
@@ -30,9 +32,5 @@ export interface IPlayerUser {
   identifier: string;
   coach: true;
   pushActive: false;
-  userImgUrl: string;
-}
-
-export interface IUserImage {
   userImgUrl: string;
 }

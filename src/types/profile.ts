@@ -19,13 +19,16 @@ export interface IUserCoach {
   reviewCount: number;
 }
 
+export interface IUserImage {
+  userImgUrl: string;
+}
+
 export interface IProfile {
   message: string;
   data: {
     coach: IUserCoach;
     user: IUserPlayer;
-    currentLectureCount: number;
-    reviewCount: number;
+    userImage: IUserImage;
   };
   timestamp: number;
 }
