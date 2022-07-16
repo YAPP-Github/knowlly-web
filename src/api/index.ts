@@ -25,7 +25,10 @@ class HttpAPI {
   }
 
   async postReview(coachId: number, review: IReview) {
-    const { data } = await createAxiosWithTestToken('').post(`review/coach/${coachId}`, review);
+    const { data } = await createAxiosWithTestToken('').post(
+      `review/coach/lecture/${coachId}`,
+      review
+    );
     return data;
   }
 
