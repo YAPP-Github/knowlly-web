@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 import * as Styled from './ModalStyle';
 
 interface IModalProps {
-  buttonType?: string;
+  buttonType: string;
   _onClose: () => void;
   _onConfirm?: () => void;
 }
@@ -43,6 +43,10 @@ const Modal = ({ children, buttonType, _onClose, _onConfirm }: PropsWithChildren
     </>,
     document.body
   );
+};
+
+Modal.defaultProps = {
+  buttonType: 'confirm',
 };
 
 export default Modal;
