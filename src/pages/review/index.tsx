@@ -5,6 +5,7 @@ import * as Styled from '@components/Review/ReviewStyle';
 import { useState } from 'react';
 import useRegisterReview from '@hooks/review/useRegisterReview';
 import { useRouter } from 'next/router';
+import useProfile from '@hooks/profile/useProfile';
 
 const Review: NextPage = () => {
   const [checkBoxClicked, setCheckBoxClicked] = useState(false);
@@ -23,8 +24,10 @@ const Review: NextPage = () => {
   };
 
   const router = useRouter();
-  const coachId = Number(router.query.idx);
-  const registerReview = useRegisterReview(coachId);
+  const coachId = Number(router.query.coachId);
+  const lectureId = Number(router.query.lectureId);
+  const registerReview = useRegisterReview(lectureId);
+  const coach = useProfile(coachId);
 
   const handleReviewButtonClick = () => {
     const payload = { public: publicReview, content: reviewContent };
@@ -34,7 +37,7 @@ const Review: NextPage = () => {
   return (
     <>
       <PageLayout isSpacing>
-        <Typograpy variant="headline-3">$username님과의</Typograpy>
+        <Typograpy variant="headline-3">{coach?.data.user.username} 님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
         <Styled.ReviewTextArea
           maxLength={500}
