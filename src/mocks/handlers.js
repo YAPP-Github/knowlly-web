@@ -8,7 +8,7 @@ export const handlers = [
   }),
 
   rest.get(
-    'http://knowllydev.hkpark.net/api/lectureinfo?categoryId=3&page=0&size=10',
+    'http://knowllydev.hkpark.net/api/lectureinfo?categoryName=DEVELOP&page=0&size=10',
     (req, res, ctx) => {
       return res(ctx.status(200), ctx.json(categoryLecture));
     }

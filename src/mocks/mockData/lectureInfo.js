@@ -19,6 +19,8 @@ export const lectureinfo = {
           identifier: 'kakao_identifier1',
           coach: true,
           pushActive: true,
+          userImgUrl:
+            'https://knowllydev-media.hkpark.net/user-image/8/b44a0790-9565-42af-9acc-7dd145809bff_174ce802b5686c72.jpg',
         },
       },
       category: 'ETC',
@@ -49,6 +51,8 @@ export const lectureinfo = {
           identifier: 'identifier4',
           coach: true,
           pushActive: true,
+          userImgUrl:
+            'https://knowllydev-media.hkpark.net/user-image/8/b44a0790-9565-42af-9acc-7dd145809bff_174ce802b5686c72.jpg',
         },
       },
       category: 'DESIGN',
@@ -92,6 +96,8 @@ export const lectureinfo = {
           identifier: 'identifier3',
           coach: true,
           pushActive: false,
+          userImgUrl:
+            'https://knowllydev-media.hkpark.net/user-image/8/b44a0790-9565-42af-9acc-7dd145809bff_174ce802b5686c72.jpg',
         },
       },
       category: 'DEVELOP',
@@ -143,6 +149,8 @@ export const lectureinfo = {
           identifier: 'kakao_identifier1',
           coach: true,
           pushActive: true,
+          userImgUrl:
+            'https://knowllydev-media.hkpark.net/user-image/8/b44a0790-9565-42af-9acc-7dd145809bff_174ce802b5686c72.jpg',
         },
       },
       category: 'MARKETING',
