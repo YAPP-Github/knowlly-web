@@ -1,3 +1,4 @@
+import useAuth from '@hooks/auth/useAuth';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -6,7 +7,9 @@ import * as Styled from './MatchingButtonStyle';
 const MatchingButton = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
-  const userId = 4;
+
+  const user = useAuth();
+  const userId = 1;
 
   const lectureDetail = useLectureDetail(lectureId);
 
@@ -19,16 +22,22 @@ const MatchingButton = () => {
   );
 
   //코치일 때 매칭 신청인 수
-  const request = availableLecture
-    .map((lecture) => lecture.forms.filter((form) => form.state === 'REQUEST'))
-    .reduce((acc, cur) => {
-      return acc.concat(cur);
-    });
+  const request = availableLecture.map((lecture) =>
+    lecture.forms.filter((form) => form.state === 'REQUEST')
+  );
 
   const requestCount = request.length;
 
   //플레이어 일 때 본인이 신청한 클래스 인지
-  const playerRequest = request.filter((user) => user.user.id === userId)[0];
+  const totalRequest =
+    requestCount === 0
+      ? []
+      : request.reduce((acc, cur) => {
+          return acc.concat(cur);
+        });
+
+  const playerRequest = totalRequest.filter((user) => user.user.id === userId)[0];
+  const playerRequestState = playerRequest ? playerRequest.state : 'NONE';
 
   //이미 매칭된 경우
   const matchedLecture = lectureDetail.data.lectures.filter((lecture) => lecture.matched === true);
@@ -53,7 +62,7 @@ const MatchingButton = () => {
       if (availableLecture.length === 0) setDisabled(true);
 
       //매칭 x request o
-      if (!isMatched && playerRequest && playerRequest.state === 'REQUEST') {
+      if (!isMatched && playerRequestState === 'REQUEST') {
         setDisabled(true);
       }
 

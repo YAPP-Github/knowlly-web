@@ -41,6 +41,11 @@ class HttpAPI {
     const { data } = await createAxiosWithTestToken(`form`).get(`/${formId}`);
     return data;
   }
+
+  async fetchUser() {
+    const { data } = await createAxiosWithTestToken('user').get('me');
+    return data;
+  }
 }
 
 const api = new HttpAPI();
