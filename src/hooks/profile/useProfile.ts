@@ -4,8 +4,12 @@ import queryKeys from '@react-query/keys';
 import { IProfile } from '@/types/profile';
 
 const useProfile = (userId: number): IProfile => {
-  const { data: userProfile } = useQuery([queryKeys.userProfile, userId], () =>
-    api.fetchUserProfile(userId)
+  const { data: userProfile } = useQuery(
+    [queryKeys.userProfile, userId],
+    () => api.fetchUserProfile(userId),
+    {
+      enabled: !!userId,
+    }
   );
 
   return userProfile;
