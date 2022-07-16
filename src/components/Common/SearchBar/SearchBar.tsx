@@ -13,11 +13,10 @@ import * as Styled from './SearchBarStyle';
 interface ISearchBarProps {
   placeholder: string;
   setSearchValue?: Dispatch<SetStateAction<string>>;
-  _onClickSeachBar?: () => void;
 }
 
 const SearchBar = memo((props: ISearchBarProps) => {
-  const { setSearchValue, _onClickSeachBar, ...rest } = props;
+  const { setSearchValue, ...rest } = props;
   const [value, setValue] = useState<string>('');
 
   const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,7 +40,7 @@ const SearchBar = memo((props: ISearchBarProps) => {
   };
 
   return (
-    <Styled.SearchBarContainer onClick={_onClickSeachBar}>
+    <Styled.SearchBarContainer>
       <Styled.SearchBarStyle
         {...rest}
         value={value}
