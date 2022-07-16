@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import SvgIcon from '../Svg/SvgIcon';
 import * as Styled from './HeaderStyle';
 
@@ -9,14 +9,14 @@ interface IHeaderProps {
 }
 
 const Header = ({ hasBackButton, hasLine, children }: PropsWithChildren<IHeaderProps>) => {
+  const router = useRouter();
+
   return (
     <Styled.HeaderStyle hasLine={hasLine}>
       {hasBackButton && (
-        <Link href="/">
-          <Styled.BackButton>
-            <SvgIcon type="previous" />
-          </Styled.BackButton>
-        </Link>
+        <Styled.BackButton onClick={() => router.push('/')}>
+          <SvgIcon type="previous" />
+        </Styled.BackButton>
       )}
       {children && <Styled.ChildrenWapper>{children}</Styled.ChildrenWapper>}
     </Styled.HeaderStyle>
