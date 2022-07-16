@@ -32,6 +32,7 @@ declare module 'styled-components' {
       system: {
         red: string; //error
         blue: string; //success
+        dimmed: string; //dimmed
       };
     };
   }
