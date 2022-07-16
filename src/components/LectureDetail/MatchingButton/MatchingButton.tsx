@@ -40,8 +40,11 @@ const MatchingButton = () => {
   const playerRequestState = playerRequest ? playerRequest.state : 'NONE';
 
   //이미 매칭된 경우
-  const matchedLecture = lectureDetail.data.lectures.filter((lecture) => lecture.matched === true);
-  const matchedStatus = matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
+  const matchedLecture = lectureDetail.data.lectures.filter((lecture) => lecture.matched === true); //빈 배열이 리턴될 수 있음
+  const matchedStatus =
+    matchedLecture.length === 0
+      ? []
+      : matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
   const isMatched = matchedStatus.length;
 
   const handleMatchingButtonClick = () => {
