@@ -13,22 +13,22 @@ import api from '@api';
 
 const LectureCategoryPage: NextPage = () => {
   const router = useRouter();
-  const categoryId = router.query.id;
+  const categoryName = String(router.query.name);
 
   const { lectureInfoList, fetchNextPage, isLoading, isFetching } = useInfiniteLecture(
-    '?categoryId',
-    categoryId as string
+    '?categoryName',
+    categoryName
   );
 
   const { ref, inView } = useInView();
 
   const setCategoryTitle = useMemo(() => {
     const categoryTitle = CATEGORY_LIST?.filter((category) => {
-      return String(category.id) === categoryId;
+      return category.name === categoryName;
     });
 
-    return categoryTitle[0]?.name;
-  }, [categoryId]);
+    return categoryTitle[0]?.title;
+  }, [categoryName]);
 
   useEffect(() => {
     if (inView) {
