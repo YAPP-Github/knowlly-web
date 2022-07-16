@@ -1,23 +1,20 @@
 import { PropsWithChildren } from 'react';
+import { useRouter } from 'next/router';
 import SvgIcon from '../Svg/SvgIcon';
 import * as Styled from './HeaderStyle';
 
 interface IHeaderProps {
   hasBackButton?: boolean;
   hasLine?: boolean;
-  _onBackButtonClick?: () => void;
 }
 
-const Header = ({
-  hasBackButton,
-  hasLine,
-  _onBackButtonClick,
-  children,
-}: PropsWithChildren<IHeaderProps>) => {
+const Header = ({ hasBackButton, hasLine, children }: PropsWithChildren<IHeaderProps>) => {
+  const router = useRouter();
+
   return (
     <Styled.HeaderStyle hasLine={hasLine}>
       {hasBackButton && (
-        <Styled.BackButton onClick={_onBackButtonClick}>
+        <Styled.BackButton onClick={() => router.push('/')}>
           <SvgIcon type="previous" />
         </Styled.BackButton>
       )}

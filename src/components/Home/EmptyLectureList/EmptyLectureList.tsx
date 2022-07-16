@@ -3,20 +3,13 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Button, Typograpy } from '@components/Common';
 import * as Styled from './EmptyLectureListStyle';
-import { useRecoilState } from 'recoil';
-import { isShowSearchModalAtom } from '@recoil/home/atoms';
 
 const EmptyLectureList = () => {
   const router = useRouter();
-  const [isShowSearchModal, setIsShowSearchModal] = useRecoilState(isShowSearchModalAtom);
 
   const handleMoveToHomePage = useCallback(() => {
-    if (isShowSearchModal) {
-      setIsShowSearchModal(false);
-    } else {
-      router.push('/');
-    }
-  }, [isShowSearchModal, router]);
+    router.push('/');
+  }, [router]);
 
   return (
     <Styled.EmptyLectureListContainer>
