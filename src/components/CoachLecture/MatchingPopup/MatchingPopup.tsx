@@ -4,10 +4,10 @@ import * as Styled from './MatchingPopupStyle';
 
 interface IMatchingPopupProps {
   expirationDate: string;
-  _onShowModal: () => void;
+  _onModalOpen: () => void;
 }
 
-const MatchingPopup = ({ expirationDate, _onShowModal }: IMatchingPopupProps) => {
+const MatchingPopup = ({ expirationDate, _onModalOpen }: IMatchingPopupProps) => {
   return (
     <Styled.MatchingPopupContainer>
       <Styled.MatchingExpirationDate>
@@ -20,7 +20,7 @@ const MatchingPopup = ({ expirationDate, _onShowModal }: IMatchingPopupProps) =>
         </Typograpy>
       </Styled.MatchingAlertMessage>
       <Styled.MatchingButtonWrapper>
-        <Button variant="outlined" size="small" type="button" _onClick={_onShowModal}>
+        <Button variant="outlined" size="small" type="button" _onClick={_onModalOpen}>
           매칭 거절하기
         </Button>
         <Button variant="contained" size="small" type="button">

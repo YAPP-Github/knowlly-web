@@ -15,11 +15,11 @@ const CoachLecturePage: NextPage = () => {
 
   const { matchingFormData } = useMatchingForm(formId as string);
 
-  const [isShowModal, setIsShowModal] = useState<boolean>(false);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleShowModalClick = useCallback(() => {
-    setIsShowModal((prev) => !prev);
-  }, [isShowModal]);
+    setIsModalOpen((prev) => !prev);
+  }, [isModalOpen]);
 
   return (
     <PageLayout isSpacing start={1}>
@@ -37,10 +37,10 @@ const CoachLecturePage: NextPage = () => {
       </PlayerInfo>
       <MatchingPopup
         expirationDate={matchingFormData?.expirationDate}
-        _onShowModal={handleShowModalClick}
+        _onModalOpen={handleShowModalClick}
       />
-      {isShowModal && (
-        <Modal buttonText="거절하기" _onClose={handleShowModalClick}>
+      {isModalOpen && (
+        <Modal buttonType="거절하기" _onClose={handleShowModalClick}>
           <Typograpy variant="subtitle-3">매칭 신청을 거절하시겠어요?</Typograpy>
         </Modal>
       )}
