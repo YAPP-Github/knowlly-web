@@ -49,7 +49,7 @@ const handleSize = (size: string) => {
       `;
     case 'x-small':
       return css`
-        width: 12.9rem;
+        width: 12.4rem;
         height: 4rem;
       `;
     case 'small':
