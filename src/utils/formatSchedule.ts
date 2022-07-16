@@ -24,9 +24,15 @@ export const formatTime = (schedule: string) => {
 
   const hour = time.get('hour');
   const minute = time.get('minute');
+  let timeHeader = '';
+  let zero = '';
 
-  if (hour >= 0 && hour <= 11) return '오전 ' + hour + ':' + minute;
-  else return '오후 ' + (hour - 12) + ':' + minute;
+  if (hour >= 0 && hour <= 11) timeHeader = '오전 ';
+  else timeHeader = '오후 ';
+
+  if (minute < 10) zero += '0';
+
+  return timeHeader + hour + ':' + zero + minute;
 };
 
 export const getLectureTime = (startAt: string, endAt: string) => {
