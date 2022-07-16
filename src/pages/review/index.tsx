@@ -32,8 +32,6 @@ const Review: NextPage = () => {
   const handleReviewButtonClick = () => {
     const payload = { public: publicReview, content: reviewContent };
     registerReview.mutate(payload);
-    window.Android?.showToast('후기 등록이 완료되었습니다.');
-    window.Android?.navigateUp();
   };
 
   return (
