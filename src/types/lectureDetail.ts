@@ -1,5 +1,8 @@
-import { IUserCoach } from './profile';
+import { IUserCoach, IUserPlayer } from './profile';
 
+export interface IUserImage {
+  userImgUrl: string;
+}
 export interface ILectureDetailImages {
   id: number;
   lectureImgUrl: string;
@@ -7,8 +10,11 @@ export interface ILectureDetailImages {
 
 export interface ILectureDetailSchedule {
   endAt: string;
+  forms: ILectureForm[];
   id: number;
-  reviewWritten: false;
+  matched: boolean;
+  matchedUser: IUserPlayer;
+  reviewWritten: boolean;
   startAt: string;
   state: string;
 }
@@ -16,6 +22,28 @@ export interface ILectureDetailSchedule {
 export interface ILectureDetailTags {
   id: number;
   content: string;
+}
+
+export interface ILectureForm {
+  id: number;
+  userImage: IUserImage;
+  content: string;
+  user: IUserPlayer;
+  state: string;
+  expirationDate: string;
+  startAt: string;
+  endAt: string;
+}
+
+export interface ILectures {
+  id: number;
+  matched: boolean;
+  reviewWritten: boolean;
+  startAt: string;
+  endAt: string;
+  state: string;
+  forms: ILectureForm[];
+  matchedUser: IUserPlayer;
 }
 
 export interface ILectureDetailData {
@@ -26,7 +54,7 @@ export interface ILectureDetailData {
   coach: IUserCoach;
   category: string;
   lectureImages: ILectureDetailImages[];
-  lectures: ILectureDetailSchedule[];
+  lectures: ILectures[];
   tags: ILectureDetailTags[];
 }
 

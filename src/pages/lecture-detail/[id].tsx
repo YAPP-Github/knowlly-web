@@ -1,5 +1,4 @@
 import { GetServerSideProps, NextPage } from 'next';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { dehydrate, QueryClient } from 'react-query';
 import { LectureInfo, CoachProfile, Guideline, HowToUse } from '@components/LectureDetail';
@@ -9,16 +8,17 @@ import * as Styled from '@components/LectureDetail/LectureDetailStyle';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import queryKeys from '@react-query/keys';
 import api from '@api';
+import MatchingButton from '@components/LectureDetail/MatchingButton/MatchingButton';
 
 const LectureDetail: NextPage = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
   const lectureDetail = useLectureDetail(lectureId);
 
-  const category = lectureDetail.data.category;
-  const topic = lectureDetail.data.topic;
-  const coachProfile = lectureDetail.data.coach;
-  const lectureInfo = lectureDetail.data;
+  const category = lectureDetail?.data.category;
+  const topic = lectureDetail?.data.topic;
+  const coachProfile = lectureDetail?.data.coach;
+  const lectureInfo = lectureDetail?.data;
 
   const formatCategoryName = (category: string) => {
     switch (category) {
@@ -49,13 +49,7 @@ const LectureDetail: NextPage = () => {
         <HowToUse />
       </PageLayout>
       <Guideline />
-      <Link href={{ pathname: '/matching', query: { id: lectureId } }}>
-        <a>
-          <Styled.MatchingButton variant="contained" size="big">
-            매칭 신청하기
-          </Styled.MatchingButton>
-        </a>
-      </Link>
+      <MatchingButton />
     </>
   );
 };

@@ -9,7 +9,7 @@ interface ILectureInfoProps {
 }
 
 const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
-  const availableTimes = lectureInfo.lectures.filter((lecture) => lecture.state == 'ON_GOING');
+  const availableTimes = lectureInfo.lectures.filter((lecture) => lecture.matched == false);
 
   return (
     <Styled.LectureInfoContainer>

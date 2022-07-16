@@ -38,7 +38,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery([queryKeys.coachLecture, formId], () =>
-    api.fetchCoachLectureForm(formId)
+    api.fetchCoachLecture(formId)
   );
 
   return { props: { dehydratedState: dehydrate(queryClient) } };

@@ -9,7 +9,7 @@ interface IUseMatchingForm {
 
 const useMatchingForm = (formId: string): IUseMatchingForm => {
   const { data: matchingFormData } = useQuery([queryKeys.coachLecture, formId], () =>
-    api.fetchCoachLectureForm(formId)
+    api.fetchCoachLecture(formId)
   );
 
   return { matchingFormData: matchingFormData.data };
