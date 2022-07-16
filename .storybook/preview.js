@@ -1,10 +1,14 @@
-import GlobalStyle from '../src/styles/global-style';
+import { ThemeProvider } from 'styled-components';
+import Theme from '@styles/theme';
+import GlobalStyle from '@styles/global-style';
 
 export const decorators = [
   (Story) => (
     <>
-      <GlobalStyle />
-      <Story />
+      <ThemeProvider theme={Theme}>
+        <GlobalStyle />
+        <Story />
+      </ThemeProvider>
     </>
   ),
 ];

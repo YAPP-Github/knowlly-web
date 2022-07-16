@@ -31,6 +31,7 @@ const color = {
   system: {
     red: '#E72749', //error
     blue: '#779DFF', //success
+    dimmed: 'rgba(0, 0, 0, 0.6)', //dimmed
   },
 };
 

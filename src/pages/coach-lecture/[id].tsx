@@ -1,6 +1,7 @@
+import { useCallback, useState } from 'react';
 import { GetServerSideProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { Typograpy } from '@components/Common';
+import { Modal, Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import { MatchingPopup, PlayerInfo, PlayerUser, PlayerSchedule } from '@components/CoachLecture';
 import useMatchingForm from '@hooks/coachLecture/useMatchingForm';
@@ -13,6 +14,12 @@ const CoachLecturePage: NextPage = () => {
   const formId = router.query.id;
 
   const { matchingFormData } = useMatchingForm(formId as string);
+
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+  const handleShowModalClick = useCallback(() => {
+    setIsModalOpen((prev) => !prev);
+  }, [isModalOpen]);
 
   return (
     <PageLayout isSpacing start={1}>
@@ -28,7 +35,15 @@ const CoachLecturePage: NextPage = () => {
       <PlayerInfo title="플레이어가 보낸 일정">
         <PlayerSchedule schedules={matchingFormData?.lecture?.startAt} />
       </PlayerInfo>
-      <MatchingPopup expirationDate={matchingFormData?.expirationDate} />
+      <MatchingPopup
+        expirationDate={matchingFormData?.expirationDate}
+        _onModalOpen={handleShowModalClick}
+      />
+      {isModalOpen && (
+        <Modal buttonType="거절하기" _onClose={handleShowModalClick}>
+          <Typograpy variant="subtitle-3">매칭 신청을 거절하시겠어요?</Typograpy>
+        </Modal>
+      )}
     </PageLayout>
   );
 };
