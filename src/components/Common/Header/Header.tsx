@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react';
-import { useRouter } from 'next/router';
 import SvgIcon from '../Svg/SvgIcon';
 import * as Styled from './HeaderStyle';
 
@@ -9,12 +8,10 @@ interface IHeaderProps {
 }
 
 const Header = ({ hasBackButton, hasLine, children }: PropsWithChildren<IHeaderProps>) => {
-  const router = useRouter();
-
   return (
     <Styled.HeaderStyle hasLine={hasLine}>
       {hasBackButton && (
-        <Styled.BackButton onClick={() => router.push('/')}>
+        <Styled.BackButton onClick={() => window.Android?.navigateUp()}>
           <SvgIcon type="previous" />
         </Styled.BackButton>
       )}
