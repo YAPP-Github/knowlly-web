@@ -1,6 +1,6 @@
-import { IPlayerUser } from '@/types/coachLecture';
-import { Image, Typograpy } from '@components/Common';
 import { memo } from 'react';
+import { Image, Typograpy } from '@components/Common';
+import { IPlayerUser } from '@/types/coachLecture';
 import * as Styled from './PlayerUserStyle';
 
 interface IPlayerUserProps {
