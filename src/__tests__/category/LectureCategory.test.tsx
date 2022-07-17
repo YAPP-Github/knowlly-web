@@ -1,4 +1,4 @@
-import LectureCategoryPage from '@pages/lecture-category/[id]';
+import LectureCategoryPage from '@pages/lecture-category/[name]';
 import { screen, within } from '@testing-library/react';
 import { renderWithQueryClient } from '@test-utils';
 
@@ -7,7 +7,7 @@ jest.mock('next/router', () => ({
     return {
       route: '/lecture-category',
       pathname: '',
-      query: { id: '3' },
+      query: { name: 'DEVELOP' },
       asPath: '',
       push: jest.fn(),
       events: {

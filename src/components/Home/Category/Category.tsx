@@ -7,12 +7,12 @@ const Category = () => {
   return (
     <Styled.CategoryList>
       {CATEGORY_LIST.map((category) => (
-        <Styled.CategoryItem key={category.id}>
-          <Link href={`/lecture-category/${category.id}`}>
+        <Styled.CategoryItem key={category.name}>
+          <Link href={`/lecture-category/${category.name}`}>
             <a>
               <SvgIcon type={category.icon} size={36} />
               <Typograpy variant="subtitle-4" textColor="gray6B">
-                {category.name}
+                {category.title}
               </Typograpy>
             </a>
           </Link>
