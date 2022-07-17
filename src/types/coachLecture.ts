@@ -9,16 +9,11 @@ export interface IPlayerUserMatchingForm {
 export interface IPlayerUserForm {
   id: number;
   content: string;
-  lecture: {
-    id: number;
-    startAt: string;
-    endAt: string;
-    state: string;
-    reviewWritten: false;
-  };
   user: IPlayerUser;
   state: string;
   expirationDate: string;
+  startAt: string;
+  endAt: string;
   userImage: IUserImage;
 }
 
