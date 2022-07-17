@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { Typograpy } from '@components/Common';
 import { formatDate, formatTime, getLectureTime } from '@utils';
 import * as Styled from './PlayerScheduleStyle';
@@ -8,7 +8,7 @@ interface IPlayerScheduleProps {
   endAt: string;
 }
 
-const PlayerSchedule = ({ startAt, endAt }: IPlayerScheduleProps) => {
+const PlayerSchedule = memo(({ startAt, endAt }: IPlayerScheduleProps) => {
   const scheduleSentByPlayer = useMemo(() => {
     const startTime = formatTime(startAt);
     const lectureTime = getLectureTime(startAt, endAt);
@@ -29,6 +29,6 @@ const PlayerSchedule = ({ startAt, endAt }: IPlayerScheduleProps) => {
       </Styled.PlayerUserSchedule>
     </>
   );
-};
+});
 
 export default PlayerSchedule;
