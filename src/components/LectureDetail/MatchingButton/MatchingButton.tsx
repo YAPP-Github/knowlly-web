@@ -1,3 +1,4 @@
+import { Modal, Typograpy } from '@components/Common';
 import useAuth from '@hooks/auth/useAuth';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { useRouter } from 'next/router';
@@ -47,7 +48,14 @@ const MatchingButton = () => {
       : matchedLecture.filter((lecture) => lecture.matchedUser.id === userId);
   const isMatched = matchedStatus.length;
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const userBallCnt = user.data.user.ballCnt;
+
   const handleMatchingButtonClick = () => {
+    if (userBallCnt === 0) {
+      setIsModalOpen(true);
+      return;
+    }
     if (userType === String('coach')) {
       //안드로이드에서 제공하는 함수 적용 예정
       console.log('');
@@ -56,6 +64,10 @@ const MatchingButton = () => {
       if (isMatched && matchedStatus[0].state === 'DONE') router.push(`/review/${lectureId}`);
       else router.push(`/matching?id=${lectureId}`);
     }
+  };
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
   };
 
   const [disabled, setDisabled] = useState(false);
@@ -99,6 +111,15 @@ const MatchingButton = () => {
 
   return (
     <>
+      {isModalOpen && (
+        <Modal _onClose={handleModalClose}>
+          <Styled.ModalTextWrapper>
+            <Typograpy variant="subtitle-3">클래스 수강을 위한 볼이 없어요.</Typograpy>
+            <Typograpy variant="subtitle-3">클래스 코칭을 통해 볼을 얻고</Typograpy>
+            <Typograpy variant="subtitle-3">클래스 수강을 해보세요.</Typograpy>
+          </Styled.ModalTextWrapper>
+        </Modal>
+      )}
       <Styled.StyledButton
         variant="contained"
         size="big"
