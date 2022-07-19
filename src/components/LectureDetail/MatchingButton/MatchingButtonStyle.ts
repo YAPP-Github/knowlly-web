@@ -6,3 +6,10 @@ export const StyledButton = styled(Button)`
   bottom: 2.4rem;
   margin: 0 1.6rem;
 `;
+
+export const ModalTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: pre-line;
+`;
