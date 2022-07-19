@@ -22,6 +22,11 @@ const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">가능한 시간</Typograpy>
+        {availableTimes.length === 0 && (
+          <Typograpy variant="body-2" textColor="gray6B">
+            가능한 시간대가 없습니다.
+          </Typograpy>
+        )}
         {availableTimes.map((availableTime) => (
           <Styled.AvailableTime key={availableTime.id}>
             <Typograpy variant="button-1">{formatDate(availableTime.startAt)}</Typograpy>
