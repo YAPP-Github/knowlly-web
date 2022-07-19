@@ -33,7 +33,7 @@ const CoachLecturePage: NextPage = () => {
         </Typograpy>
       </PlayerInfo>
       <PlayerInfo title="플레이어가 보낸 일정">
-        <PlayerSchedule schedules={matchingFormData?.lecture?.startAt} />
+        <PlayerSchedule startAt={matchingFormData?.startAt} endAt={matchingFormData?.endAt} />
       </PlayerInfo>
       <MatchingPopup
         expirationDate={matchingFormData?.expirationDate}

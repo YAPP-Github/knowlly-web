@@ -1,12 +1,13 @@
-import { IPlayerUser } from '@/types/coachLecture';
+import { memo } from 'react';
 import { Image, Typograpy } from '@components/Common';
+import { IPlayerUser } from '@/types/coachLecture';
 import * as Styled from './PlayerUserStyle';
 
 interface IPlayerUserProps {
   userInfo: IPlayerUser;
 }
 
-const PlayerUser = ({ userInfo }: IPlayerUserProps) => {
+const PlayerUser = memo(({ userInfo }: IPlayerUserProps) => {
   return (
     <Styled.PlayerUserContainer>
       <Styled.PlayerUserProfileWrapper>
@@ -22,6 +23,6 @@ const PlayerUser = ({ userInfo }: IPlayerUserProps) => {
       </Typograpy>
     </Styled.PlayerUserContainer>
   );
-};
+});
 
 export default PlayerUser;
