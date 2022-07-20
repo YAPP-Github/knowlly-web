@@ -1,6 +1,12 @@
 import { Button } from '@components/Common';
 import styled from 'styled-components';
 
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const StyledButton = styled(Button)`
   position: fixed;
   bottom: 2.4rem;
