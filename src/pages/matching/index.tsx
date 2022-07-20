@@ -1,4 +1,4 @@
-import { SvgIcon } from '@components/Common';
+import { PageTransition, SvgIcon } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import { FirstStep, LastStep, SecondStep, Title } from '@components/Matching';
 import { matchingStepState } from '@recoil/matching/atoms';
@@ -56,10 +56,10 @@ const Matching: NextPage = () => {
   };
 
   return (
-    <>
+    <PageTransition>
       <PageLayout isSpacing>{setHeader(matchingStep)}</PageLayout>
       {setPage(matchingStep)}
-    </>
+    </PageTransition>
   );
 };
 
