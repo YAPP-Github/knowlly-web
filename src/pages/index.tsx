@@ -8,18 +8,19 @@ import useLectureInfo from '@hooks/home/useLectureInfo';
 import api from '@api';
 import { dehydrate, QueryClient } from 'react-query';
 import queryKeys from '@react-query/keys';
-import Link from 'next/link';
 
 const Home: NextPage = () => {
   const lectureInfoList = useLectureInfo();
 
+  const handleMoveToSearchPageClick = () => {
+    window.Android?.navigateToSearch();
+  };
+
   return (
     <PageLayout isSpacing start={1} end={4}>
-      <Link href="/lecture-search">
-        <a>
-          <SearchBar placeholder="어떤 클래스를 찾고 싶으신가요?" />
-        </a>
-      </Link>
+      <div onClick={handleMoveToSearchPageClick}>
+        <SearchBar placeholder="어떤 클래스를 찾고 싶으신가요?" />
+      </div>
       <Section start={2}>
         <Category />
       </Section>
