@@ -21,6 +21,16 @@ const SecondStep = () => {
     applyMatching.mutate(payload);
   };
 
+  const [isFocused, setIsFocused] = useState(false);
+
+  const onFocus = () => {
+    setIsFocused(true);
+  };
+
+  const onBlur = () => {
+    setIsFocused(false);
+  };
+
   return (
     <>
       <PageLayout isSpacing>
@@ -30,9 +40,15 @@ const SecondStep = () => {
             간단한 소개와 궁금한 내용을 적어주세요.
           </Typograpy>
         </Styled.TextWrapper>
-        <TextArea value={content} maxLength={500} _onInputEntered={handleIntroductionContent} />
+        <TextArea
+          onFocus={onFocus}
+          onBlur={onBlur}
+          value={content}
+          maxLength={500}
+          _onInputEntered={handleIntroductionContent}
+        />
       </PageLayout>
-      <Styled.ButtonWrapper>
+      <Styled.ButtonWrapper isFocused={isFocused}>
         <Typograpy variant="body-2" textColor="primary">
           한번 신청한 매칭은 취소나 변경이 불가능해요.
         </Typograpy>

@@ -13,8 +13,8 @@ export const Alert = styled.div`
   align-items: center;
 `;
 
-export const ButtonWrapper = styled.div`
-  display: flex;
+export const ButtonWrapper = styled.div<{ isFocused: boolean }>`
+  display: ${(props) => (props.isFocused ? 'none' : 'flex')};
   flex-direction: column;
   align-items: center;
   position: fixed;
