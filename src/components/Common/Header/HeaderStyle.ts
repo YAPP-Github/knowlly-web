@@ -6,7 +6,6 @@ export const HeaderStyle = styled.header<{ hasLine?: boolean }>`
 
     return css`
       position: relative;
-      width: 36rem;
       height: 5.6rem;
       border-bottom: ${hasLine && `1px solid ${color.gray['EF']}`};
     `;
