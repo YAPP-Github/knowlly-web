@@ -110,7 +110,7 @@ const MatchingButton = () => {
   };
 
   return (
-    <>
+    <Styled.ButtonWrapper>
       {isModalOpen && (
         <Modal _onClose={handleModalClose}>
           <Styled.ModalTextWrapper>
@@ -128,7 +128,7 @@ const MatchingButton = () => {
       >
         {handleButtonText()}
       </Styled.StyledButton>
-    </>
+    </Styled.ButtonWrapper>
   );
 };
 
