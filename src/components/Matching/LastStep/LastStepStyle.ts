@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const BackgroundImage = styled.div`
   position: fixed;
+  display: flex;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
   background-image: url('/img/matching.png');
