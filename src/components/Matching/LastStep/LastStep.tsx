@@ -2,10 +2,13 @@ import { Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import { MatchingButton } from '../MatchingStyle';
 import React from 'react';
-import Link from 'next/link';
 import * as Styled from './LastStepStyle';
 
 const LastStep = () => {
+  const handleMatchingSuccessBtnClick = () => {
+    window.Android?.navigateUp();
+  };
+
   return (
     <>
       <PageLayout isSpacing>
@@ -25,11 +28,7 @@ const LastStep = () => {
 
       <>
         <Styled.MatchingSuccessImg src={`/img/matching.png`} />
-        <Link href="/lecture-detail/1">
-          <a>
-            <MatchingButton>확인</MatchingButton>
-          </a>
-        </Link>
+        <MatchingButton _onClick={handleMatchingSuccessBtnClick}>확인</MatchingButton>
       </>
     </>
   );
