@@ -8,7 +8,6 @@ export const LectureReviewContainer = styled.div`
 export const NoReview = styled.div`
   display: flex;
   justify-content: center;
-  width: 31.2rem;
   height: 12rem;
   margin-top: 0.8rem;
   padding: 5rem 1.2rem;
