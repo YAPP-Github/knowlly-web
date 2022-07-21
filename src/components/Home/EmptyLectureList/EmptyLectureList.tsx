@@ -1,15 +1,11 @@
-import { useCallback } from 'react';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Button, Typograpy } from '@components/Common';
 import * as Styled from './EmptyLectureListStyle';
 
 const EmptyLectureList = () => {
-  const router = useRouter();
-
-  const handleMoveToHomePage = useCallback(() => {
-    router.push('/');
-  }, [router]);
+  const handleMoveToHomePage = () => {
+    window.Android?.navigateUp();
+  };
 
   return (
     <Styled.EmptyLectureListContainer>
