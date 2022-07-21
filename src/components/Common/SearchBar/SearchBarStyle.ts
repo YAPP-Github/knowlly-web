@@ -7,7 +7,6 @@ export const SearchBarContainer = styled.form`
     return css`
       position: relative;
       width: 100%;
-      max-width: 31.2rem;
       height: 4.4rem;
       margin: 0 auto;
       border-radius: 1rem;
