@@ -19,28 +19,21 @@ export const CategoryItem = styled.li`
     return css`
       width: calc(100% / 3 - 1.2rem);
 
-      & > a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 8.4rem;
-        border-radius: 1rem;
-        background-color: ${color.gray['F7']};
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 8.4rem;
+      border-radius: 1rem;
+      background-color: ${color.gray['F7']};
 
-        & > svg {
-          margin-bottom: 0.4rem;
-        }
+      & > svg {
+        margin-bottom: 0.4rem;
       }
 
       @media only screen and (max-width: 359px) {
         width: calc(50% - 1.2rem);
-
-        & > a {
-          width: 100%;
-          max-width: 15rem;
-        }
+        max-width: 15rem;
       }
     `;
   }}
