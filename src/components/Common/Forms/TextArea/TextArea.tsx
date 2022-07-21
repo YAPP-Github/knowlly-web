@@ -5,6 +5,8 @@ interface ITextAreaProps {
   value?: string;
   placeholder?: string;
   maxLength?: number;
+  onFocus?: () => void;
+  onBlur?: () => void;
   _onInputEntered?: (value: string) => void;
 }
 
