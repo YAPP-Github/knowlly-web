@@ -1,3 +1,4 @@
+import { Button } from '@components/Common';
 import styled from 'styled-components';
 
 export const TextWrapper = styled.div`
@@ -7,21 +8,25 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const Alert = styled.div`
+export const AlertText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: fixed;
+  bottom: 12rem;
 `;
 
 export const ButtonWrapper = styled.div<{ isFocused: boolean }>`
   display: ${(props) => (props.isFocused ? 'none' : 'flex')};
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  bottom: 2.4rem;
-  margin: 0 1.8rem;
-
   & > :nth-child(2) {
     margin-bottom: 2rem;
   }
+`;
+
+export const MatchingButton = styled(Button)`
+  position: fixed;
+  bottom: 2.4rem;
+  margin: 0 1.6rem;
 `;
