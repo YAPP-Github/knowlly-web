@@ -34,7 +34,7 @@ export const CategoryItem = styled.li`
         }
       }
 
-      @media only screen and (max-width: 360px) {
+      @media only screen and (max-width: 359px) {
         width: calc(50% - 1.2rem);
 
         & > a {
