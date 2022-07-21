@@ -38,10 +38,12 @@ const LectureInfo = ({ lectureInfo }: ILectureInfoProps) => {
         ))}
       </Styled.Section>
 
-      <Styled.Section>
-        <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
-        <LectureImages lectureImages={lectureInfo.lectureImages} />
-      </Styled.Section>
+      {lectureInfo.lectureImages.length !== 0 && (
+        <Styled.Section>
+          <Typograpy variant="subtitle-2">클래스 사진</Typograpy>
+          <LectureImages lectureImages={lectureInfo.lectureImages} />
+        </Styled.Section>
+      )}
 
       <Styled.Section>
         <Typograpy variant="subtitle-2">클래스 태그</Typograpy>
