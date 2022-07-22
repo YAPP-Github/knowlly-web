@@ -8,7 +8,7 @@ interface ILectureCardProps {
 
 const LectureCard = ({ lectureData }: ILectureCardProps) => {
   const handleMoveToLectureDetailPageClick = () => {
-    window.Android?.navigateToLecture({ lectureInfoId: lectureData.id });
+    if (window.Android) window.Android?.navigateToLecture(lectureData.id);
   };
 
   return (
