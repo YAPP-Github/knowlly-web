@@ -5,7 +5,7 @@ declare global {
     Android: {
       showToast: (message: string) => void;
       navigateUp: () => void;
-      navigateToLecture: ({ lectureInfoId: number }) => void;
+      navigateToLecture: (lectureInfoId: number) => void;
       navigateToCategory: (category: string) => void;
       navigateToSearch: () => void;
     };
