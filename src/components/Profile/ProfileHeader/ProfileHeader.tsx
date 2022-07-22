@@ -1,6 +1,5 @@
 import { ContainedBadge, SvgIcon, Typograpy, Image } from '@components/Common';
 import * as Styled from './ProfileHeaderStyle';
-import Link from 'next/link';
 import { IUserCoach, IUserPlayer } from '@/types/profile';
 
 interface IUserDataProps {
@@ -10,6 +9,8 @@ interface IUserDataProps {
 
 const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
   const isCoach = userInfo.coach;
+  const hasHttps = userInfo?.portfolio.slice(0, 4) === 'http';
+  const userPortfolio = hasHttps ? userInfo?.portfolio : 'https://' + userInfo?.portfolio;
 
   return (
     <Styled.ProfileContainer>
@@ -41,7 +42,7 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
         {userInfo.portfolio && (
           <Styled.IconWrapper>
             <SvgIcon type="link" size={18}></SvgIcon>
-            <a target="_blank" href={`https://${userInfo.portfolio}`} rel="noopener noreferrer">
+            <a target="_blank" href={`${userPortfolio}`} rel="noopener noreferrer">
               <Typograpy variant="body-1" textColor="gray44">
                 {userInfo.portfolio}
               </Typograpy>
