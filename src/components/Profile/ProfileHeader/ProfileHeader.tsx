@@ -26,7 +26,7 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="k_class" size={18} />
-            <Typograpy variant="subtitle-4">
+            <Typograpy variant="subtitle-4" textColor="gray6B">
               운영중인 클래스 {coachInfo.currentLectureCount}개
             </Typograpy>
           </Styled.IconWrapper>
@@ -35,7 +35,9 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
         {isCoach && (
           <Styled.IconWrapper>
             <SvgIcon type="review" size={18} />
-            <Typograpy variant="subtitle-4">후기 {coachInfo.reviewCount}개</Typograpy>
+            <Typograpy variant="subtitle-4" textColor="gray6B">
+              후기 {coachInfo.reviewCount}개
+            </Typograpy>
           </Styled.IconWrapper>
         )}
 
