@@ -6,7 +6,6 @@ import { useQuery } from 'react-query';
 
 interface IUseMatchingForm {
   lectureForms: IPlayerUserForm[];
-  isLoading: boolean;
   isFetching: boolean;
 }
 
@@ -18,23 +17,21 @@ const useLectureForms = (lectureInfoId: string): IUseMatchingForm => {
       (lecture: ICoachLectureData) => lecture.id === Number(lectureInfoId)
     );
 
-    return filterdLectures[0].forms;
+    return filterdLectures[0]?.forms ?? [];
   };
 
-  const { isLoading, isFetching } = useQuery(
-    [queryKeys.coachLecture, lectureInfoId],
-    () => api.fetchCoachLectureForms(),
-    {
-      enabled: !!lectureInfoId,
-      onSuccess: (data) => {
-        const forms = filteredCoachLectureForms(data.data[0].lectures);
+  const { isFetching } = useQuery(queryKeys.coachLectureForms, () => api.fetchCoachLectureForms(), {
+    staleTime: 0,
+    refetchOnMount: true,
+    enabled: !!lectureInfoId,
+    onSuccess: (data) => {
+      const forms = filteredCoachLectureForms(data.data[0].lectures);
 
-        setLectureForms(forms);
-      },
-    }
-  );
+      setLectureForms(forms);
+    },
+  });
 
-  return { lectureForms, isLoading, isFetching };
+  return { lectureForms, isFetching };
 };
 
 export default useLectureForms;
