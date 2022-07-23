@@ -46,7 +46,7 @@ class HttpAPI {
   }
 
   async fetchCoachLectureForms() {
-    const { data } = await createAxiosWithTestToken(`coach/lecture/me`).get(`?state=ON_BOARD`);
+    const { data } = await createAxiosWithTestToken('coach/lecture/me').get('?state=ON_BOARD');
     return data;
   }
 
