@@ -27,7 +27,7 @@ const Review: NextPage = () => {
   const coachId = Number(router.query.coachId);
   const lectureId = Number(router.query.lectureId);
   const registerReview = useRegisterReview(lectureId);
-  const coach = useProfile(coachId);
+  const { user } = useProfile(coachId);
 
   const handleReviewButtonClick = () => {
     const payload = { public: publicReview, content: reviewContent };
@@ -37,7 +37,7 @@ const Review: NextPage = () => {
   return (
     <>
       <PageLayout isSpacing>
-        <Typograpy variant="headline-3">{coach?.data.user.username} 님과의</Typograpy>
+        <Typograpy variant="headline-3">{user?.data.user.username} 님과의</Typograpy>
         <Typograpy variant="headline-3">클래스 어떠셨나요?</Typograpy>
         <Styled.ReviewTextArea
           maxLength={500}
