@@ -3,8 +3,13 @@ import { useQuery } from 'react-query';
 import queryKeys from '@react-query/keys';
 import { ILectureDetail } from '@/types/lectureDetail';
 
-const useLectureDetail = (lectureId: number): ILectureDetail => {
-  const { data: lectureDetail } = useQuery(
+interface IUseLectureDetail {
+  lectureDetail: ILectureDetail;
+  isFetching: boolean;
+}
+
+const useLectureDetail = (lectureId: number): IUseLectureDetail => {
+  const { data: lectureDetail, isFetching } = useQuery(
     [queryKeys.lectureDetail, lectureId],
     () => api.fetchLectureDetail(lectureId),
     {
@@ -12,7 +17,7 @@ const useLectureDetail = (lectureId: number): ILectureDetail => {
     }
   );
 
-  return lectureDetail;
+  return { lectureDetail, isFetching };
 };
 
 export default useLectureDetail;
