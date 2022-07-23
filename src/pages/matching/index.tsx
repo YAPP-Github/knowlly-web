@@ -14,7 +14,7 @@ const Matching: NextPage = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
 
-  const lectureDetail = useLectureDetail(lectureId);
+  const { lectureDetail } = useLectureDetail(lectureId);
   const lectureSchedule = lectureDetail?.data.lectures.filter(
     (lecture) => lecture.matched === false
   );
