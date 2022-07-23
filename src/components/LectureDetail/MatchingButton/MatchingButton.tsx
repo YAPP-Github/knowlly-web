@@ -12,7 +12,7 @@ const MatchingButton = () => {
   const user = useAuth();
   const userId = 1;
 
-  const lectureDetail = useLectureDetail(lectureId);
+  const { lectureDetail } = useLectureDetail(lectureId);
 
   //player인지 coach인지
   const userType = lectureDetail.data.coach.id === userId ? 'coach' : 'player';
@@ -49,7 +49,7 @@ const MatchingButton = () => {
   const isMatched = matchedStatus.length;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const userBallCnt = user.data.user.ballCnt;
+  const userBallCnt = user?.data.user.ballCnt;
 
   const handleMatchingButtonClick = () => {
     if (userBallCnt === 0) {
