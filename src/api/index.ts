@@ -1,5 +1,6 @@
 import { IReview } from '@/types/review';
 import { IPlayerMatchingForm } from '@/types/matching';
+import { IPatchFormStateData } from '@/types/coachLecture';
 import createAxiosWithTestToken from './customAxios';
 
 class HttpAPI {
@@ -47,6 +48,11 @@ class HttpAPI {
 
   async fetchCoachLectureForms() {
     const { data } = await createAxiosWithTestToken('coach/lecture/me').get('?state=ON_BOARD');
+    return data;
+  }
+
+  async patchCoachFormState(formId: string, state: IPatchFormStateData) {
+    const { data } = await createAxiosWithTestToken('coach/form').patch(`/${formId}/state`, state);
     return data;
   }
 
