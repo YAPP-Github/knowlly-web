@@ -9,7 +9,7 @@ interface IUserDataProps {
 
 const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
   const isCoach = userInfo.coach;
-  const hasHttps = userInfo?.portfolio.slice(0, 4) === 'http';
+  const hasHttps = userInfo.portfolio?.slice(0, 4) === 'http';
   const userPortfolio = hasHttps ? userInfo?.portfolio : 'https://' + userInfo?.portfolio;
 
   return (

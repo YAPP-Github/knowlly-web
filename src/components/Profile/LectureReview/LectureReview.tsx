@@ -10,9 +10,9 @@ const LectureReview = () => {
   const userId = Number(router.query.id);
 
   const [endIdx, setEndIdx] = useState(4);
-  const totalReviews = useCoachReview(userId).data;
-  const slicedReviews = useCoachReview(userId).data.slice(0, endIdx);
-  const totalReviewCount = totalReviews.length;
+  const totalReviews = useCoachReview(userId)?.data;
+  const slicedReviews = useCoachReview(userId)?.data.slice(0, endIdx);
+  const totalReviewCount = totalReviews?.length;
 
   const toggleReviewList = () => {
     setEndIdx(endIdx + 4);
