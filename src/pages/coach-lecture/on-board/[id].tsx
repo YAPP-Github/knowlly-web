@@ -13,7 +13,7 @@ const CoachLectureOnBoardPage = () => {
 
   return (
     <PageLayout isSpacing start={1} end={2}>
-      <Typograpy variant="headline-4">매칭신청인</Typograpy>
+      <Typograpy variant="headline-3">매칭 신청인</Typograpy>
       <Styled.OnBoardPageDescription variant="body-1" textColor="gray8F">
         가장 먼저 신청한 플레이어부터 차례로 노출됩니다.
       </Styled.OnBoardPageDescription>
