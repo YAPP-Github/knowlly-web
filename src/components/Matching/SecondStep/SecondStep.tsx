@@ -22,7 +22,7 @@ const SecondStep = () => {
   };
   const [isFocused, setIsFocused] = useState(false);
 
-  useEffect(() => {
+  const resizeViewportEvent = () => {
     window.visualViewport.addEventListener('resize', () => {
       if (window.visualViewport.height < 500) {
         //키보드가 열린 상태라고 판단
@@ -31,6 +31,13 @@ const SecondStep = () => {
         setIsFocused(false);
       }
     });
+  };
+
+  useEffect(() => {
+    resizeViewportEvent();
+    return () => {
+      window.visualViewport.removeEventListener('resize', resizeViewportEvent);
+    };
   }, [window.visualViewport.height]);
 
   return (
