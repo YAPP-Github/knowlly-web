@@ -26,10 +26,9 @@ const LastStep = () => {
         </Typograpy>
       </PageLayout>
 
-      <>
-        <Styled.MatchingSuccessImg src={`/img/matching.png`} />
+      <Styled.BackgroundImage>
         <MatchingButton _onClick={handleMatchingSuccessBtnClick}>확인</MatchingButton>
-      </>
+      </Styled.BackgroundImage>
     </>
   );
 };
