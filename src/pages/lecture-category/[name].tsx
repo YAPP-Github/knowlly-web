@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo } from 'react';
-import type { GetServerSideProps, NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
@@ -56,16 +56,28 @@ const LectureCategoryPage: NextPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const categoryId = context.query.id;
-  const queryString = `?categoryId=${categoryId}&page=0&size=10`;
+export const getStaticProps: GetStaticProps = async (context) => {
+  const categoryName = context.params?.name;
+  const queryString = `?categoryName=${categoryName}&page=0&size=10`;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchInfiniteQuery([queryKeys.lectureInfo, queryString], () =>
     api.fetchLectureInfo(queryString)
   );
 
-  return { props: { dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))) } };
+  return {
+    props: { dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))) },
+    revalidate: 60,
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = CATEGORY_LIST.map((category) => ({ params: { name: `${category.name}` } }));
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
 };
 
 export default LectureCategoryPage;
