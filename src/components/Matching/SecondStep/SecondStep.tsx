@@ -1,6 +1,6 @@
 import { TextArea, Typograpy } from '@components/Common';
 import { playerMatchingState } from '@recoil/matching/atoms';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import * as Styled from './SecondStepStyle';
 import { PageLayout } from '@components/Common/Layout';
@@ -20,16 +20,25 @@ const SecondStep = () => {
     const payload = { scheduleId: playerMatching.scheduleId, content: content };
     applyMatching.mutate(payload);
   };
-
   const [isFocused, setIsFocused] = useState(false);
 
-  const onFocus = () => {
-    setIsFocused(true);
+  const resizeViewportEvent = () => {
+    window.visualViewport.addEventListener('resize', () => {
+      if (window.visualViewport.height < 500) {
+        //키보드가 열린 상태라고 판단
+        setIsFocused(true);
+      } else {
+        setIsFocused(false);
+      }
+    });
   };
 
-  const onBlur = () => {
-    setIsFocused(false);
-  };
+  useEffect(() => {
+    resizeViewportEvent();
+    return () => {
+      window.visualViewport.removeEventListener('resize', resizeViewportEvent);
+    };
+  }, [window.visualViewport.height]);
 
   return (
     <>
@@ -40,13 +49,7 @@ const SecondStep = () => {
             간단한 소개와 궁금한 내용을 적어주세요.
           </Typograpy>
         </Styled.TextWrapper>
-        <TextArea
-          onFocus={onFocus}
-          onBlur={onBlur}
-          value={content}
-          maxLength={500}
-          _onInputEntered={handleIntroductionContent}
-        />
+        <TextArea value={content} maxLength={500} _onInputEntered={handleIntroductionContent} />
       </PageLayout>
       <Styled.ButtonWrapper isFocused={isFocused}>
         <Styled.AlertText>
