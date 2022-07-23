@@ -18,8 +18,8 @@ export const UserFormCardContainer = styled.li`
 `;
 
 export const userProfileWrapper = styled.div`
-  width: 6rem;
-  height: 6rem;
+  width: 4.8rem;
+  height: 4.8rem;
 `;
 
 export const userInfoWrapper = styled.div`

@@ -4,17 +4,18 @@ import { formatDate, formatTime, getLectureTime } from '@utils';
 import * as Styled from './PlayerScheduleStyle';
 
 interface IPlayerScheduleProps {
+  formId: number;
   startAt: string;
   endAt: string;
 }
 
-const PlayerSchedule = memo(({ startAt, endAt }: IPlayerScheduleProps) => {
+const PlayerSchedule = memo(({ formId, startAt, endAt }: IPlayerScheduleProps) => {
   const scheduleSentByPlayer = useMemo(() => {
     const startTime = formatTime(startAt);
     const lectureTime = getLectureTime(startAt, endAt);
 
     return `${startTime} (${lectureTime}시간 수업)`;
-  }, [startAt, endAt]);
+  }, [formId]);
 
   return (
     <>

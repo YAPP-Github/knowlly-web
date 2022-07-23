@@ -12,12 +12,7 @@ const UserFormList = ({ lectureForms }: IUserFormListProps) => {
       {lectureForms.length ? (
         <>
           {lectureForms?.map((userForm) => (
-            <UserFormCard
-              key={userForm.id}
-              formId={userForm.id}
-              user={userForm.user}
-              content={userForm.content}
-            />
+            <UserFormCard key={userForm.id} formId={userForm.id} userForm={userForm} />
           ))}
         </>
       ) : (
