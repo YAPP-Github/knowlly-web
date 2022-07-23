@@ -3,7 +3,8 @@ const queryKeys = {
   lectureDetail: 'lecture-detail',
   userProfile: 'user-profile',
   coachReview: 'coach-review',
-  coachLecture: 'coach-lecture',
+  coachLectureForms: 'coach-lecture-forms',
+  coachLectureFormDetail: 'coach-lecture-form-detail',
   auth: 'auth',
 };
 
