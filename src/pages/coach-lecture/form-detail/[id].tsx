@@ -10,17 +10,13 @@ const CoachLectureFormDetailPage: NextPage = () => {
   const router = useRouter();
   const formId = router.query.id;
 
-  const { matchingFormData, isLoading, isFetching } = useMatchingForm(formId as string);
+  const { matchingFormData, isFetching } = useMatchingForm(formId as string);
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   const handleShowModalClick = useCallback(() => {
     setIsModalOpen((prev) => !prev);
   }, [isModalOpen]);
-
-  if (isLoading) {
-    <div>Loading...</div>;
-  }
 
   return (
     <PageLayout isSpacing start={1}>
