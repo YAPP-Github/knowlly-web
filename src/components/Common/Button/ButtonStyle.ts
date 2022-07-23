@@ -42,10 +42,9 @@ const handleSize = (size: string) => {
   switch (size) {
     case 'xx-small':
       return css`
-        width: 8.5rem;
-        height: 2.4rem;
+        width: 11.7rem;
+        height: 3.2rem;
         font-size: 1.2rem !important;
-        border-radius: 20px !important;
       `;
     case 'x-small':
       return css`
