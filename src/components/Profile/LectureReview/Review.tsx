@@ -37,10 +37,10 @@ const Review = ({ coachReview }: IReviewProps) => {
   return (
     <Styled.ReviewWrapper>
       <Styled.Profile>
-        <Styled.ProfileImg src={`/img/profile.png`} />
+        <Styled.ProfileImg src={coachReview.reviewee.user.userImgUrl} />
         <div>
           <Styled.NameDate>
-            <Typograpy variant="subtitle-4">{coachReview.writer.username}</Typograpy>
+            <Typograpy variant="subtitle-4">{coachReview.reviewee.user.username}</Typograpy>
             <Typograpy variant="body-2" textColor="gray8F">
               {formatWrittenDate(coachReview.writtenDate)}
             </Typograpy>
