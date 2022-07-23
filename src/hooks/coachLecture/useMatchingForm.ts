@@ -1,17 +1,23 @@
-import { IPlayerUserMatchingForm } from '@/types/coachLecture';
+import { IPlayerUserForm } from '@/types/coachLecture';
 import api from '@api';
 import queryKeys from '@react-query/keys';
 import { useQuery } from 'react-query';
 
 interface IUseMatchingForm {
-  matchingFormData: IPlayerUserMatchingForm;
+  matchingFormData: IPlayerUserForm;
   isFetching: boolean;
 }
 
 const useMatchingForm = (formId: string): IUseMatchingForm => {
   const { data: matchingFormData, isFetching } = useQuery(
     [queryKeys.coachLectureFormDetail, formId],
-    () => api.fetchFormData(formId)
+    () => api.fetchFormData(formId),
+    {
+      enabled: !!formId,
+      select: (data) => {
+        return data.data;
+      },
+    }
   );
 
   return { matchingFormData, isFetching };
