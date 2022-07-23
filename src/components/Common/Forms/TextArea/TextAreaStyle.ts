@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from '@styles/theme';
 
 export const TextAreaStyle = styled.textarea`
-  width: 31.2rem;
+  width: 100%;
   height: 18.4rem;
   padding: 1.2rem 1.6rem;
   border: 0.1rem solid ${theme.color.gray['DD']};
@@ -24,7 +24,6 @@ export const TextAreaWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  width: 31.2rem;
 `;
 
 export const TextLength = styled.p`
