@@ -34,6 +34,7 @@ const CoachLectureFormDetailPage: NextPage = () => {
           </PlayerInfo>
           <PlayerInfo title="플레이어가 보낸 일정">
             <PlayerSchedule
+              formId={matchingFormData?.data.id}
               startAt={matchingFormData?.data.startAt}
               endAt={matchingFormData?.data.endAt}
             />
