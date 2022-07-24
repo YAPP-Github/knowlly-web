@@ -10,7 +10,7 @@ const Profile: NextPage = () => {
 
   const userInfo = user?.data.user;
   const coachInfo = user?.data.coach;
-  const userIntro = user?.data.coach.introduce;
+  const userIntro = user?.data.user.intro;
 
   return (
     <PageLayout isSpacing>
