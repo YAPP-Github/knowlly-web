@@ -1,8 +1,8 @@
+import { Image } from '@components/Common';
 import styled from 'styled-components';
 
-export const ProfileImg = styled.img`
-  width: 6rem;
-  height: 6rem;
+export const ProfileImg = styled(Image)`
+  border-radius: 50%;
 `;
 
 export const ProfileContainer = styled.div`

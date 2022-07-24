@@ -15,7 +15,7 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
 
   return (
     <Styled.ProfileContainer>
-      <Image type="profile" src={userProfileImg} alt="프로필 이미지" />
+      <Styled.ProfileImg type="profile" src={userProfileImg} alt="프로필 이미지" />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">{userInfo.username}</Typograpy>
 
