@@ -46,9 +46,9 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
           <Styled.IconWrapper>
             <SvgIcon type="link" size={18}></SvgIcon>
             <a target="_blank" href={`${userPortfolio}`} rel="noopener noreferrer">
-              <Typograpy variant="body-1" textColor="gray44">
+              <Styled.Portfolio variant="body-1" textColor="gray44">
                 {userInfo.portfolio}
-              </Typograpy>
+              </Styled.Portfolio>
             </a>
           </Styled.IconWrapper>
         )}

@@ -1,4 +1,4 @@
-import { Image } from '@components/Common';
+import { Image, Typograpy } from '@components/Common';
 import styled from 'styled-components';
 
 export const ProfileImg = styled(Image)`
@@ -34,4 +34,8 @@ export const IconWrapper = styled.div`
   &>: first-child {
     margin-right: 0.4rem;
   }
+`;
+
+export const Portfolio = styled(Typograpy)`
+  width: calc(100vw - 15rem);
 `;
