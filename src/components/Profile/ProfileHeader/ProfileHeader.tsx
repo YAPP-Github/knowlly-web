@@ -11,10 +11,11 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
   const isCoach = userInfo.coach;
   const hasHttps = userInfo.portfolio?.slice(0, 4) === 'http';
   const userPortfolio = hasHttps ? userInfo?.portfolio : 'https://' + userInfo?.portfolio;
+  const userProfileImg = userInfo.userImgUrl === null ? '/img/profile.png' : userInfo.userImgUrl;
 
   return (
     <Styled.ProfileContainer>
-      <Image type="profile" src={userInfo.userImgUrl} alt="프로필 이미지" />
+      <Image type="profile" src={userProfileImg} alt="프로필 이미지" />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">{userInfo.username}</Typograpy>
 
