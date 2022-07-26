@@ -4,7 +4,7 @@ import * as Styled from './LectureReviewStyle';
 import Review from './Review';
 import { useRouter } from 'next/router';
 import useCoachReview from '@hooks/profile/useCoachReview';
-
+import LoadingReview from './LoadingReview';
 const LectureReview = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
@@ -28,7 +28,8 @@ const LectureReview = () => {
       ) : (
         <>
           {totalReviewCount ? (
-            slicedReviews.map((review, id) => <Review key={id} coachReview={review} />)
+            // slicedReviews.map((review, id) => <Review key={id} coachReview={review} />)
+            <LoadingReview />
           ) : (
             <Styled.NoReview>
               <Typograpy variant="body-1" textColor="gray8F">

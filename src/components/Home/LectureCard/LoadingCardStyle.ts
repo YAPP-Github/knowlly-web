@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { LectureCardContainer, LectureImageWrapper, LectureInfoWrapper } from './LectureCardStyle';
 
-const Skeleton = styled.div`
+export const Skeleton = styled.div`
   ${({ theme }) => {
     const { gray } = theme.color;
 
