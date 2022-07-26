@@ -11,10 +11,11 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
   const isCoach = userInfo.coach;
   const hasHttps = userInfo.portfolio?.slice(0, 4) === 'http';
   const userPortfolio = hasHttps ? userInfo?.portfolio : 'https://' + userInfo?.portfolio;
+  const userProfileImg = userInfo.userImgUrl === null ? '/img/profile.png' : userInfo.userImgUrl;
 
   return (
     <Styled.ProfileContainer>
-      <Image type="profile" src={userInfo.userImgUrl} alt="프로필 이미지" />
+      <Styled.ProfileImg type="profile" src={userProfileImg} alt="프로필 이미지" />
       <Styled.ProfileWrapper>
         <Typograpy variant="subtitle-1">{userInfo.username}</Typograpy>
 
@@ -45,9 +46,9 @@ const ProfileHeader = ({ userInfo, coachInfo }: IUserDataProps) => {
           <Styled.IconWrapper>
             <SvgIcon type="link" size={18}></SvgIcon>
             <a target="_blank" href={`${userPortfolio}`} rel="noopener noreferrer">
-              <Typograpy variant="body-1" textColor="gray44">
+              <Styled.Portfolio variant="body-1" textColor="gray44">
                 {userInfo.portfolio}
-              </Typograpy>
+              </Styled.Portfolio>
             </a>
           </Styled.IconWrapper>
         )}
