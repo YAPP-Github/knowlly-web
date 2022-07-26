@@ -24,12 +24,14 @@ const LectureReview = () => {
       <Typograpy variant="subtitle-1">플레이어 후기</Typograpy>
       {/* TODO: skeleton UI 적용 */}
       {isFetching ? (
-        <div>fetching...</div>
+        <div>
+          <LoadingReview />
+          <LoadingReview />
+        </div>
       ) : (
         <>
           {totalReviewCount ? (
-            // slicedReviews.map((review, id) => <Review key={id} coachReview={review} />)
-            <LoadingReview />
+            slicedReviews.map((review, id) => <Review key={id} coachReview={review} />)
           ) : (
             <Styled.NoReview>
               <Typograpy variant="body-1" textColor="gray8F">
