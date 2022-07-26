@@ -4,7 +4,7 @@ import * as Styled from './LectureReviewStyle';
 import Review from './Review';
 import { useRouter } from 'next/router';
 import useCoachReview from '@hooks/profile/useCoachReview';
-
+import LoadingReview from './LoadingReview';
 const LectureReview = () => {
   const router = useRouter();
   const userId = Number(router.query.id);
@@ -24,7 +24,10 @@ const LectureReview = () => {
       <Typograpy variant="subtitle-1">플레이어 후기</Typograpy>
       {/* TODO: skeleton UI 적용 */}
       {isFetching ? (
-        <div>fetching...</div>
+        <div>
+          <LoadingReview />
+          <LoadingReview />
+        </div>
       ) : (
         <>
           {totalReviewCount ? (
