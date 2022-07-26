@@ -11,15 +11,17 @@ const PlayerUser = memo(({ userInfo }: IPlayerUserProps) => {
   return (
     <Styled.PlayerUserContainer>
       <Styled.PlayerUserProfileWrapper>
-        <Image
-          type="form-profile"
-          src={userInfo.userImgUrl}
-          alt={`${userInfo.username}님의 프로필 이미지`}
-        />
-        <Typograpy variant="subtitle-4">{userInfo.username}</Typograpy>
+        {userInfo?.userImgUrl && (
+          <Image
+            type="form-profile"
+            src={userInfo.userImgUrl}
+            alt={`${userInfo.username}님의 프로필 이미지`}
+          />
+        )}
+        <Typograpy variant="subtitle-4">{userInfo?.username}</Typograpy>
       </Styled.PlayerUserProfileWrapper>
       <Typograpy variant="body-1" textColor="gray6B">
-        {userInfo.intro}
+        {userInfo?.intro}
       </Typograpy>
     </Styled.PlayerUserContainer>
   );

@@ -67,3 +67,7 @@ export interface ICoachLectureData {
   startAt: string;
   state: string;
 }
+
+export interface IPatchFormStateData {
+  state: 'ACCEPT' | 'REJECT';
+}
