@@ -22,6 +22,7 @@ const usePatchFormState = (formId: string) => {
         }
 
         handleShowToast(formState);
+        window.Android?.navigateUp();
       },
     }
   );
