@@ -23,8 +23,6 @@ jobs:
         with:
           node-version: 14.x
       - name: Install packages
-        run: npm install
+        run: yarn install
       - name: ESLint
-        run: npm run lint
-      - name: Prettier
-        run: npm run prettier
+        run: yarn run lint
