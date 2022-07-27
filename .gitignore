@@ -1,19 +1,28 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# yarn
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
 
 # testing
-/coverage
+packages/**/coverage
 
 # next.js
-/.next/
-/out/
+packages/**/.next
+packages/**/out/
 
 # production
-/build
+packages/**/build
 
 # misc
 .DS_Store
@@ -27,9 +36,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
-# vercel
-.vercel
 
 # typescript
 *.tsbuildinfo
