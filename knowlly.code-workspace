@@ -1,0 +1,29 @@
+{
+  "folders": [
+    {
+      "path": "packages/common-styles"
+    },
+    {
+      "path": "packages/knowlly_landing"
+    },
+    {
+      "path": "packages/knowlly_webview"
+    }
+  ],
+  "settings": {
+    "search.exclude": {
+      "**/.yarn": true,
+      "**/.pnp.*": true,
+      "**/dist": true,
+      "**/node_modules": true,
+      "tsconfig.tsbuildinfo": true
+    },
+    "eslint.nodePath": "../../.yarn/sdks",
+    "typescript.tsdk": "../../.yarn/sdks/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "prettier.prettierPath": "../../.yarn/sdks/prettier/index.js"
+  },
+  "extensions": {
+    "recommendations": ["arcanis.vscode-zipfs", "dbaeumer.vscode-eslint", "esbenp.prettier-vscode"]
+  }
+}
