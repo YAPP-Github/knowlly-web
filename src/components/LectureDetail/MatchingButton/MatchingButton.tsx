@@ -89,9 +89,7 @@ const MatchingButton = () => {
 
   const handleButtonText = () => {
     if (userType === String('coach')) {
-      return availableLecture.length === 0
-        ? '가능한 시간을 등록해주세요.'
-        : `매칭 신청인 보기 (${requestCount})`;
+      return `매칭 신청인 보기 (${requestCount})`;
     } else {
       //가능한 시간대가 없는 경우
       if (availableLecture.length === 0) return '매칭 신청하기';
