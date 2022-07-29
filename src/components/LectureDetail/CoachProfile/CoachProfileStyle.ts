@@ -17,6 +17,7 @@ export const CoachProfileImg = styled(Image)`
 export const CoachProfileContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: calc(100vw - 12rem);
   margin: 0 0 1.8rem 2rem;
   color: ${theme.color.gray['44']};
 
