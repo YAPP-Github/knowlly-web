@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import theme from '@styles/theme';
+import { Image } from '@components/Common';
 
 export const CoachProfileContainer = styled.div`
   display: flex;
@@ -7,9 +8,10 @@ export const CoachProfileContainer = styled.div`
   margin-top: 2rem;
 `;
 
-export const CoachProfileImg = styled.img`
+export const CoachProfileImg = styled(Image)`
   width: 4.8rem;
   height: 4.8rem;
+  border-radius: 50%;
 `;
 
 export const CoachProfileContentWrapper = styled.div`

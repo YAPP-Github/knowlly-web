@@ -12,7 +12,7 @@ const CoachProfile = ({ coachProfile }: ICoachProfileProps) => {
   return (
     <>
       <Styled.CoachProfileContainer>
-        <Styled.CoachProfileImg src={coach.userImgUrl} />
+        <Styled.CoachProfileImg type="coach-profile" src={coach.userImgUrl} />
         <Styled.CoachProfileContentWrapper>
           <Typograpy variant="subtitle-4" textColor="gray44">
             {coach.username}
