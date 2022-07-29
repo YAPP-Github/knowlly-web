@@ -71,7 +71,7 @@ const MatchingButton = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    if (userType === String('player')) {
+    if (userType === 'player') {
       if (availableLecture.length === 0) setDisabled(true);
 
       //매칭 x request o
@@ -86,7 +86,7 @@ const MatchingButton = () => {
   });
 
   const handleButtonText = () => {
-    if (userType === String('coach')) {
+    if (userType === 'coach') {
       return `매칭 신청인 보기 (${requestCount})`;
     } else {
       //가능한 시간대가 없는 경우
