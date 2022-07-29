@@ -52,15 +52,13 @@ const MatchingButton = () => {
   const userBallCnt = user?.data.user.ballCnt;
 
   const handleMatchingButtonClick = () => {
-    if (userBallCnt === 0) {
+    if (userBallCnt === 0 && userType === 'player') {
       setIsModalOpen(true);
       return;
     }
-    if (userType === String('coach')) {
-      //안드로이드에서 제공하는 함수 적용 예정
-      console.log('');
+    if (userType === 'coach') {
+      window.Android?.navigateUp();
     } else {
-      //안드로이드와 연동 예정
       if (isMatched && matchedStatus[0].state === 'DONE') router.push(`/review/${lectureId}`);
       else router.push(`/matching?id=${lectureId}`);
     }
