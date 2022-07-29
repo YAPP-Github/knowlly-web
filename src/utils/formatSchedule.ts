@@ -38,5 +38,8 @@ export const formatTime = (schedule: string) => {
 export const getLectureTime = (startAt: string, endAt: string) => {
   const startHour = dayjs(startAt).get('hour');
   const endHour = dayjs(endAt).get('hour');
+
+  if (endHour - startHour < 0) return endHour - startHour + 24;
+
   return endHour - startHour;
 };
