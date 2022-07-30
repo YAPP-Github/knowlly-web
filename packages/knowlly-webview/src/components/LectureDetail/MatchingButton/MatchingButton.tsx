@@ -52,15 +52,13 @@ const MatchingButton = () => {
   const userBallCnt = user?.data.user.ballCnt;
 
   const handleMatchingButtonClick = () => {
-    if (userBallCnt === 0) {
+    if (userBallCnt === 0 && userType === 'player') {
       setIsModalOpen(true);
       return;
     }
-    if (userType === String('coach')) {
-      //안드로이드에서 제공하는 함수 적용 예정
-      console.log('');
+    if (userType === 'coach') {
+      window.Android?.navigateUp();
     } else {
-      //안드로이드와 연동 예정
       if (isMatched && matchedStatus[0].state === 'DONE') router.push(`/review/${lectureId}`);
       else router.push(`/matching?id=${lectureId}`);
     }
@@ -73,7 +71,7 @@ const MatchingButton = () => {
   const [disabled, setDisabled] = useState(false);
 
   useEffect(() => {
-    if (userType === String('player')) {
+    if (userType === 'player') {
       if (availableLecture.length === 0) setDisabled(true);
 
       //매칭 x request o
@@ -88,10 +86,8 @@ const MatchingButton = () => {
   });
 
   const handleButtonText = () => {
-    if (userType === String('coach')) {
-      return availableLecture.length === 0
-        ? '가능한 시간을 등록해주세요.'
-        : `매칭 신청인 보기 (${requestCount})`;
+    if (userType === 'coach') {
+      return `매칭 신청인 보기 (${requestCount})`;
     } else {
       //가능한 시간대가 없는 경우
       if (availableLecture.length === 0) return '매칭 신청하기';
