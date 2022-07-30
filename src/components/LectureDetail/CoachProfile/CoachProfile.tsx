@@ -3,14 +3,21 @@ import { IUserCoach } from '@/types/profile';
 
 import React from 'react';
 import * as Styled from './CoachProfileStyle';
+import { useRouter } from 'next/router';
 
 interface ICoachProfileProps {
   coachProfile: IUserCoach;
 }
 const CoachProfile = ({ coachProfile }: ICoachProfileProps) => {
   const coach = coachProfile.user;
+  const router = useRouter();
+
+  const handleCoachProfileClick = () => {
+    router.push(`/profile/${coach.id}`);
+  };
+
   return (
-    <>
+    <div onClick={handleCoachProfileClick}>
       <Styled.CoachProfileContainer>
         <Styled.CoachProfileImg src={coach.userImgUrl} />
         <Styled.CoachProfileContentWrapper>
@@ -23,7 +30,7 @@ const CoachProfile = ({ coachProfile }: ICoachProfileProps) => {
         </Styled.CoachProfileContentWrapper>
       </Styled.CoachProfileContainer>
       <Styled.Line />
-    </>
+    </div>
   );
 };
 
