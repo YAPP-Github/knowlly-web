@@ -9,10 +9,10 @@ COPY package-lock.json .
 
 # 필수 패키지 파일을 이미지 내부로 복사하고, npm 명령어로 설치합니다
 COPY package.json ./app
-RUN npm install --force
+RUN yarn install
 
 COPY . .
-RUN npx next build
+RUN yarn run webview build
 
 FROM node:16
 EXPOSE 3000
@@ -22,4 +22,4 @@ WORKDIR /app
 COPY --from=BUILD /app/ .
 
 # 앱 시작 명령어"를 시작합니다.
-ENTRYPOINT ["npx", "next", "start"]
+ENTRYPOINT ["yarn", "run", "webview", "start"]

@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-class-properties",
+    "babel-plugin-styled-components"
+  ],
+  "presets": [
+    ["@babel/env", { "shippedProposals": true }],
+    ["@babel/react", { "runtime": "automatic", "importSource": "styled-components" }],
+    ["@babel/typescript", { "onlyRemoveTypeImports": true }]
+  ]
+}

@@ -1,32 +1,25 @@
 {
-  "name": "my-app",
+  "name": "knowlly",
   "version": "0.1.0",
+  "packageManager": "yarn@3.2.2",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint src/* '*.{ts,tsx}'",
-    "lint:fix": "eslint --fix src/* '*.{js,jsx,ts,tsx}'",
-    "prettier": "prettier --check src/* '*.{js,ts,tsx}'",
-    "prettier:fix": "prettier --write src/* '*.{js,ts,tsx}'",
+    "common-styles": "yarn workspace @common/styles",
+    "landing": "yarn workspace knowlly-landing",
+    "webview": "yarn workspace knowlly-webview",
+    "lint": "eslint ./packages '*.{ts,tsx}'",
+    "lint:fix": "eslint --fix ./packages '*.{js,jsx,ts,tsx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest --watch"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "babel-plugin-styled-components": "^2.0.7",
-    "dayjs": "^1.11.3",
-    "framer-motion": "^6.5.1",
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-intersection-observer": "^9.3.5",
-    "react-query": "^3.39.0",
-    "recoil": "^0.7.2",
-    "styled-components": "^5.3.5",
-    "styled-reset": "^4.3.4"
+    "knowlly-landing": "workspace:^",
+    "knowlly-webview": "workspace:^",
+    "react-is": "^18.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.2",
@@ -64,18 +57,7 @@
     "typescript": "4.6.4",
     "webpack": "^5.73.0"
   },
-  "jest": {
-    "roots": [
-      "<rootDir>",
-      "src/components"
-    ],
-    "modulePaths": [
-      "<rootDir>",
-      "/src/components"
-    ]
-  },
-  "moduleDirectories": [
-    "node_modules",
-    "src"
-  ]
+  "installConfig": {
+    "pnp": true
+  }
 }
