@@ -23,6 +23,6 @@ jobs:
         with:
           node-version: 16.4.2
       - name: Install packages
-        run: yarn install
+        run: sudo apt install yarn
       - name: ESLint
         run: yarn run lint
