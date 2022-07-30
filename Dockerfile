@@ -12,7 +12,7 @@ COPY package.json ./app
 RUN yarn install
 
 COPY . .
-RUN yarn run knowlly-webview build
+RUN yarn run webview build
 
 FROM node:16
 EXPOSE 3000
@@ -22,4 +22,4 @@ WORKDIR /app
 COPY --from=BUILD /app/ .
 
 # 앱 시작 명령어"를 시작합니다.
-ENTRYPOINT ["yarn", "run", "knowlly-webview", "start"]
+ENTRYPOINT ["yarn", "run", "webview", "start"]
