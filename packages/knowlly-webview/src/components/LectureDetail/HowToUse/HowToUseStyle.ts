@@ -1,9 +1,9 @@
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-bottom: 4rem;
-  color: ${Theme.color.gray['44']};
+  color: ${theme.color.gray['44']};
 
   & > :first-child {
     margin-bottom: 1.2rem;

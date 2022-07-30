@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 
 export const LectureReviewContainer = styled.div`
   margin-top: 4.8rem;
@@ -11,13 +11,13 @@ export const NoReview = styled.div`
   height: 12rem;
   margin-top: 0.8rem;
   padding: 5rem 1.2rem;
-  border: 0.2rem dashed ${Theme.color.gray['EF']};
+  border: 0.2rem dashed ${theme.color.gray['EF']};
   border-radius: 1rem;
 `;
 
 export const ReviewWrapper = styled.div`
   margin-bottom: 1.6rem;
-  border-bottom: 1px solid ${Theme.color.gray['EF']};
+  border-bottom: 1px solid ${theme.color.gray['EF']};
   & > :first-child {
     margin-top: 2.6rem;
   }

@@ -1,4 +1,4 @@
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import styled from 'styled-components';
 
 export const GuidelineContainer = styled.div`

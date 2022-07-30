@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 
 export const ButtonStyle = styled.button<{ variant: string; size: string; disabled?: boolean }>`
   ${({ variant, size, disabled }) => {

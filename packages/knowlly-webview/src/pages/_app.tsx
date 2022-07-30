@@ -6,7 +6,8 @@ import { RecoilRoot } from 'recoil';
 
 import SvgSprite from '@components/Common/Svg/SvgSprite';
 import { ThemeProvider } from 'styled-components';
-import { Font, GlobalStyle, theme } from '@common/styles';
+import { Font, GlobalStyle } from '@common/styles';
+import theme from '@styles/theme';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

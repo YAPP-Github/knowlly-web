@@ -1,4 +1,4 @@
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import styled, { css } from 'styled-components';
 import Typograpy from '../Typograpy/Typograpy';
 

@@ -1,4 +1,4 @@
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 6.4rem;
   margin-bottom: 1.2rem;
   padding: 1.2rem 1.6rem;
-  border: 0.1rem solid ${Theme.color.gray['CC']};
+  border: 0.1rem solid ${theme.color.gray['CC']};
   border-radius: 0.8rem;
 `;
 

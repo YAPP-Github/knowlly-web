@@ -3,7 +3,7 @@ import { render, RenderResult } from '@testing-library/react';
 import { QueryClient, QueryClientProvider, setLogger } from 'react-query';
 import { generateQueryClient } from '../react-query/queryClient';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import { RecoilRoot } from 'recoil';
 
 setLogger({

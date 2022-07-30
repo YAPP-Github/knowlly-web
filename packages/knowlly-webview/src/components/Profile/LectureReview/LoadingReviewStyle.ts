@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '@common/styles';
 import { Skeleton } from '@components/Home/LectureCard/LoadingCardStyle';
 import { ReviewWrapper, Profile, NameDate, Contents } from './LectureReviewStyle';
 

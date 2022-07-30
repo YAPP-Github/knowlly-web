@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 import { ITypograpyProps } from './Typograpy';
 
 export const Headline1 = styled.h1`

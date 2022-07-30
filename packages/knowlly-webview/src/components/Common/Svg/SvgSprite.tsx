@@ -1,7 +1,7 @@
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 
 const SvgSprite = () => {
-  const { primary, gray } = Theme.color;
+  const { primary, gray } = theme.color;
 
   return (
     <svg xmlns="http://www.w3.org/2000/svg" display="none">

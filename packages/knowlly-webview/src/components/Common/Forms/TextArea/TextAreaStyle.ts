@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from '@common/styles';
+import theme from '@styles/theme';
 
 export const TextAreaStyle = styled.textarea`
   width: 100%;
