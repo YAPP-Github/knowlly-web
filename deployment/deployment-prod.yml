@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: knowlly-web-dev-deployment
+  name: knowlly-web-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: knowlly-web-dev
+      app: knowlly-web
   template:
     metadata:
       labels:
-        app: knowlly-web-dev
+        app: knowlly-web
     spec:
       containers:
-        - name: knowlly-web-dev
+        - name: knowlly-web
           image: <IMAGE>
           resources:
             requests:
