@@ -1,5 +1,5 @@
 # node.js 압축 이미지를 설치합니다
-FROM node:16.14.2-alpine
+FROM node:16.14.2-alpine as BUILD
 
 # 이미지 내부 작업 경로를 설정합니다
 WORKDIR /app
