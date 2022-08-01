@@ -18907,6 +18907,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.0.15"],\
             ["@types/react-dom", "npm:18.0.6"],\
             ["@types/styled-components", "npm:5.1.25"],\
+            ["babel-plugin-styled-components", "virtual:40d7f9ffaa138e49294e502d18f847b2aaeb51a6665ba0a769fdec13cf9a762aee6a9a5a420d2a584cce90475436035f01f6a8c3616d22bb5d11e1a9df569a89#npm:2.0.7"],\
             ["eslint", "npm:8.20.0"],\
             ["eslint-config-next", "virtual:40d7f9ffaa138e49294e502d18f847b2aaeb51a6665ba0a769fdec13cf9a762aee6a9a5a420d2a584cce90475436035f01f6a8c3616d22bb5d11e1a9df569a89#npm:12.2.3"],\
             ["next", "virtual:46751f8549fd71a645c19891a35d89a65ff15ead9f57dc52fb4ed72f56e0491513b40e0bd48cdaafc30430d2e301e15b3e6ab3e5866b2cb962c94e2b8fb46c3e#npm:12.2.3"],\
