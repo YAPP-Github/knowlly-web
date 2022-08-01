@@ -25,10 +25,7 @@ export interface ILectureInfoData {
       userImgUrl: string;
     };
   };
-  category: {
-    id: number;
-    categoryName: string;
-  };
+  category: string;
   lectureImages: [
     {
       id: number;
