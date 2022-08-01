@@ -25,6 +25,24 @@ const Font = createGlobalStyle`
   font-display: swap;
   src: url('/assets/fonts/SUIT-Bold.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'GmarketSansLight';
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/GmarketSansLight.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GmarketSansMedium';
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/GmarketSansMedium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'GmarketSansBold';
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/GmarketSansBold.woff2') format('woff2');
+}
 `;
 
 export default Font;
