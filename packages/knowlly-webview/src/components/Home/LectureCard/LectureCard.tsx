@@ -1,4 +1,4 @@
-import { ContainedBadge, Image } from '@components/Common';
+import { ContainedBadge, Image, SvgIcon } from '@components/Common';
 import { ILectureInfoData } from '@/types/lectureInfo';
 import * as Styled from './LectureCardStyle';
 
@@ -14,25 +14,23 @@ const LectureCard = ({ lectureData }: ILectureCardProps) => {
   return (
     <Styled.LectureCardContainer onClick={handleMoveToLectureDetailPageClick}>
       <Styled.LectureImageWrapper>
-        <Image
-          type="lecture-list"
-          src={lectureData.coach.user.userImgUrl}
-          alt={lectureData.introduce}
-        />
+        {lectureData.lectureImages.length ? (
+          <Image
+            type="lecture-list"
+            src={lectureData.lectureImages[0]?.lectureImgUrl}
+            alt={lectureData.introduce}
+          />
+        ) : (
+          <SvgIcon type="lecture-default" size={88} />
+        )}
       </Styled.LectureImageWrapper>
       <Styled.LectureInfoWrapper>
-        <Styled.LectureIntroduce variant="subtitle-2">
-          {lectureData.introduce}
-        </Styled.LectureIntroduce>
+        <Styled.LectureTopic variant="subtitle-2">{lectureData.topic}</Styled.LectureTopic>
         <Styled.LectureCoachName variant="body-2" textColor="gray8F">
           {lectureData.coach.user.username}
         </Styled.LectureCoachName>
         <Styled.LectureTags>
-          {lectureData.tags?.map((tag) => (
-            <ContainedBadge key={tag.id} type="category">
-              {tag.content}
-            </ContainedBadge>
-          ))}
+          <ContainedBadge type="category">{lectureData.category}</ContainedBadge>
         </Styled.LectureTags>
       </Styled.LectureInfoWrapper>
     </Styled.LectureCardContainer>
