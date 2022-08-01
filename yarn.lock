@@ -10858,6 +10858,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "knowlly-landing@workspace:packages/knowlly-landing"
   dependencies:
+    "@common/styles": "workspace:*"
     "@types/eslint": ^8
     "@types/node": 18.6.1
     "@types/react": 18.0.15
