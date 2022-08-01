@@ -14,6 +14,7 @@ const EmptyLectureList = () => {
         alt="검색한 클래스를 찾을 수 없습니다."
         width={208}
         height={170}
+        priority
       />
       <Typograpy variant="body-1">원하는 클래스를 찾을 수 없습니다.</Typograpy>
       <Button size="x-small" _onClick={handleMoveToHomePage}>
