@@ -55,10 +55,15 @@ const Feature = () => {
             />
           ))}
         </Styled.ImageWrapper>
-        <Styled.ContentsWrapper>
-          <Styled.Title>{CONTENTS[selectedMenu - 1].title}</Styled.Title>
-          <Styled.SubTitle>{CONTENTS[selectedMenu - 1].subtitle}</Styled.SubTitle>
-        </Styled.ContentsWrapper>
+        <>
+          $
+          {CONTENTS.map((content) => (
+            <Styled.ContentsWrapper isSelected={selectedMenu === content.id}>
+              <Styled.Title>{CONTENTS[content.id - 1].title}</Styled.Title>
+              <Styled.SubTitle>{CONTENTS[content.id - 1].subtitle}</Styled.SubTitle>
+            </Styled.ContentsWrapper>
+          ))}
+        </>
       </div>
     </Styled.FeatureContainer>
   );

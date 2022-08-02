@@ -75,10 +75,25 @@ export const ContentImage = styled.img<{ isSelected: boolean; selectedMenu: numb
   ${({ selectedMenu }) => handleImageMargin(selectedMenu)};
 `;
 
-export const ContentsWrapper = styled.div`
-  position: relative;
+const TextAnimation = keyframes`
+from {
+  transform: translateX(10rem);
+  opacity: 0;
+}
+
+to {
+  transform: translateX(0);
+  opacity: 1;
+}
+`;
+
+export const ContentsWrapper = styled.div<{ isSelected: boolean }>`
+  position: absolute;
   margin-left: 96rem;
   padding-top: 21.6rem;
+  opacity: ${(props) => (props.isSelected ? 1 : 0)};
+  animation: ${(props) => (props.isSelected ? TextAnimation : '')} 800ms linear;
+  transition: all 600ms ease;
 `;
 
 export const Title = styled.p`
