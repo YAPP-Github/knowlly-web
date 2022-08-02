@@ -12,14 +12,18 @@ const Guide = () => {
 
   return (
     <Styled.GuideContainer>
-      <div>지식 교환을 통해 볼을 쌓아보세요</div>
-      {GUIDELINES.map((guideline) => (
-        <>
-          <SvgIcon type="round-check" />
-          <span>{guideline.text}</span>
-        </>
-      ))}
-      <img src={'/img/how-to-get-ball.png'} />
+      <Styled.Title>지식 교환을 통해</Styled.Title>
+      <Styled.Title>볼을 쌓아보세요</Styled.Title>
+      <Styled.ContentContainer>
+        {GUIDELINES.map((guideline) => (
+          <Styled.ContentWrapper>
+            <SvgIcon type="round-check" />
+            <Styled.Content>{guideline.text}</Styled.Content>
+          </Styled.ContentWrapper>
+        ))}
+      </Styled.ContentContainer>
+
+      <Styled.GuideImage src={'/img/how-to-get-ball.png'} alt="볼 획득 방법" />
     </Styled.GuideContainer>
   );
 };
