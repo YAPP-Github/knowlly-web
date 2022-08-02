@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import theme from '@styles/theme';
 
 export const FeatureContainer = styled.section`
@@ -51,13 +51,28 @@ const handleImageMargin = (selectedMenu: number) => {
   }
 };
 
-export const ContentImage = styled.img<{ selectedMenu: number }>`
+export const ImageWrapper = styled.div`
   position: absolute;
-  ${({ selectedMenu }) => {
-    return css`
-      ${handleImageMargin(selectedMenu)}
-    `;
-  }}
+  top: 14rem;
+`;
+
+const fadeIn = keyframes`
+  from {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+`;
+
+export const ContentImage = styled.img<{ isSelected: boolean; selectedMenu: number }>`
+  position: absolute;
+  opacity: ${(props) => (props.isSelected ? 1 : 0)};
+  animation: ${(props) => (props.isSelected ? fadeIn : '')} 1s linear;
+  ${({ selectedMenu }) => handleImageMargin(selectedMenu)};
 `;
 
 export const ContentsWrapper = styled.div`

@@ -46,7 +46,15 @@ const Feature = () => {
         ))}
       </Styled.MenuContainer>
       <div>
-        <Styled.ContentImage selectedMenu={selectedMenu} src={CONTENTS[selectedMenu - 1].src} />
+        <Styled.ImageWrapper>
+          {CONTENTS.map((content) => (
+            <Styled.ContentImage
+              selectedMenu={selectedMenu}
+              isSelected={selectedMenu === content.id}
+              src={CONTENTS[content.id - 1].src}
+            />
+          ))}
+        </Styled.ImageWrapper>
         <Styled.ContentsWrapper>
           <Styled.Title>{CONTENTS[selectedMenu - 1].title}</Styled.Title>
           <Styled.SubTitle>{CONTENTS[selectedMenu - 1].subtitle}</Styled.SubTitle>
