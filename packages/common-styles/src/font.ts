@@ -33,13 +33,13 @@ const Font = createGlobalStyle`
 }
 @font-face {
   font-family: 'GmarketSansMedium';
-  font-weight: 500;
+  font-weight: 400;
   font-display: swap;
   src: url('/assets/fonts/GmarketSansMedium.woff2') format('woff2');
 }
 @font-face {
   font-family: 'GmarketSansBold';
-  font-weight: 700;
+  font-weight: 500;
   font-display: swap;
   src: url('/assets/fonts/GmarketSansBold.woff2') format('woff2');
 }

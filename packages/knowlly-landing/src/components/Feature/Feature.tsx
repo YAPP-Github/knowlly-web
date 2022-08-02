@@ -56,7 +56,6 @@ const Feature = () => {
           ))}
         </Styled.ImageWrapper>
         <>
-          $
           {CONTENTS.map((content) => (
             <Styled.ContentsWrapper isSelected={selectedMenu === content.id}>
               <Styled.Title>{CONTENTS[content.id - 1].title}</Styled.Title>
