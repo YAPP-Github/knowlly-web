@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { Modal, Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
-import { MatchingPopup, PlayerInfo, PlayerUser, PlayerSchedule } from '@components/CoachLecture';
+import { MatchingPopup, PlayerUser, PlayerSchedule } from '@components/CoachLecture';
 import useMatchingForm from '@hooks/coachLecture/useMatchingForm';
 import usePatchFormState from '@hooks/coachLecture/usePatchFormState';
 
@@ -33,32 +33,19 @@ const CoachLectureFormDetailPage: NextPage = () => {
   return (
     <PageLayout isSpacing start={1}>
       <Typograpy variant="headline-3">매칭 신청서</Typograpy>
-      {isFetching ? (
-        <div>Fethcing...</div>
-      ) : (
-        <>
-          <PlayerInfo title="플레이어 정보">
-            <PlayerUser userInfo={matchingFormData?.user} />
-          </PlayerInfo>
-          <PlayerInfo title="플레이어의 코멘트">
-            <Typograpy variant="body-1" textColor="gray6B">
-              {matchingFormData?.content}
-            </Typograpy>
-          </PlayerInfo>
-          <PlayerInfo title="플레이어가 보낸 일정">
-            <PlayerSchedule
-              formId={matchingFormData?.id}
-              startAt={matchingFormData?.startAt}
-              endAt={matchingFormData?.endAt}
-            />
-          </PlayerInfo>
-          <MatchingPopup
-            expirationDate={matchingFormData?.expirationDate}
-            _onModalOpen={handleModalOpen}
-            _onAccept={handleMatchingAcceptButtonClick}
-          />
-        </>
-      )}
+      <PlayerUser.Info userInfo={matchingFormData?.user} isFetching={isFetching} />
+      <PlayerUser.Comment comment={matchingFormData?.content} isFetching={isFetching} />
+      <PlayerSchedule
+        formId={matchingFormData?.id}
+        startAt={matchingFormData?.startAt}
+        endAt={matchingFormData?.endAt}
+        isFetching={isFetching}
+      />
+      <MatchingPopup
+        expirationDate={matchingFormData?.expirationDate}
+        _onModalOpen={handleModalOpen}
+        _onAccept={handleMatchingAcceptButtonClick}
+      />
       {isModalOpen && (
         <Modal
           buttonType="거절하기"
