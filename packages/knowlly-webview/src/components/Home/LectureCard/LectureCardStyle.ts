@@ -22,7 +22,7 @@ export const LectureInfoWrapper = styled.div`
   padding-left: 1.8rem;
 `;
 
-export const LectureIntroduce = styled(Typograpy)`
+export const LectureTopic = styled(Typograpy)`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;

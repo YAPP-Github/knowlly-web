@@ -24,7 +24,8 @@ export type SvgIconType =
   | 'category-marketing'
   | 'category-language'
   | 'category-etc'
-  | 'link';
+  | 'link'
+  | 'lecture-default';
 
 interface ISvgIconProps {
   type: SvgIconType;

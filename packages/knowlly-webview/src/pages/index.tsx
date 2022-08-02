@@ -1,16 +1,11 @@
 import type { NextPage } from 'next';
-import { GetStaticProps } from 'next';
 import { SearchBar, Typograpy } from '@components/Common';
 import { PageLayout, Section } from '@components/Common/Layout';
-import { Category, LectureList } from '@components/Home';
+import { Category, LectureList, LoadingList } from '@components/Home';
 import useLectureInfo from '@hooks/home/useLectureInfo';
 
-import api from '@api';
-import { dehydrate, QueryClient } from 'react-query';
-import queryKeys from '@react-query/keys';
-
 const Home: NextPage = () => {
-  const lectureInfoList = useLectureInfo();
+  const { lectureInfoList, isFetching } = useLectureInfo();
 
   const handleMoveToSearchPageClick = () => {
     window.Android?.navigateToSearch();
@@ -26,17 +21,14 @@ const Home: NextPage = () => {
       </Section>
       <Section start={4}>
         <Typograpy variant="headline-4">최근 등록된 클래스</Typograpy>
-        <LectureList lectureInfoList={lectureInfoList} />
+        {isFetching ? (
+          <LoadingList isFetching />
+        ) : (
+          <LectureList lectureInfoList={lectureInfoList} />
+        )}
       </Section>
     </PageLayout>
   );
-};
-
-export const getStaticProps: GetStaticProps = async () => {
-  const queryClient = new QueryClient();
-  await queryClient.prefetchQuery(queryKeys.lectureInfo, () => api.fetchLectureInfo());
-
-  return { props: { dehydratedState: dehydrate(queryClient) }, revalidate: 10 };
 };
 
 export default Home;
