@@ -2,6 +2,7 @@ import theme from '@styles/theme';
 import styled from 'styled-components';
 
 export const GuideContainer = styled.section`
+  position: relative;
   height: 66.4rem;
   padding: 11.2rem 0 0 37rem;
   background-color: ${theme.color.primary['light']};
