@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Styled from './FeatureStyle';
 
 const Feature = () => {
-  const MENU = ['수강클래스', '운영클래스', '후기'];
+  const MENU = [
+    { id: 1, title: '수강클래스' },
+    { id: 2, title: '운영클래스' },
+    { id: 3, title: '후기' },
+  ];
+  const [selectedMenu, setselectedMenu] = useState(1);
+
   return (
     <Styled.FeatureContainer>
-      <Styled.MenuContainer>
+      <Styled.MenuContainer selectedMenu={selectedMenu}>
         {MENU.map((menu) => (
-          <div>
-            <p>{menu}</p>
-          </div>
+          <Styled.Menu key={menu.id}>{menu.title}</Styled.Menu>
         ))}
       </Styled.MenuContainer>
     </Styled.FeatureContainer>
