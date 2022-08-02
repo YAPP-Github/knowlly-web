@@ -52,7 +52,6 @@ const handleImageMargin = (selectedMenu: number) => {
 };
 
 export const ImageWrapper = styled.div`
-  position: absolute;
   top: 14rem;
 `;
 
