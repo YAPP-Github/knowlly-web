@@ -71,7 +71,7 @@ const fadeIn = keyframes`
 export const ContentImage = styled.img<{ isSelected: boolean; selectedMenu: number }>`
   position: absolute;
   opacity: ${(props) => (props.isSelected ? 1 : 0)};
-  animation: ${(props) => (props.isSelected ? fadeIn : '')} 1s linear;
+  animation: ${(props) => props.isSelected && fadeIn} 1s linear;
   ${({ selectedMenu }) => handleImageMargin(selectedMenu)};
 `;
 
@@ -92,7 +92,7 @@ export const ContentsWrapper = styled.div<{ isSelected: boolean }>`
   margin-left: 96rem;
   padding-top: 21.6rem;
   opacity: ${(props) => (props.isSelected ? 1 : 0)};
-  animation: ${(props) => (props.isSelected ? TextAnimation : '')} 800ms linear;
+  animation: ${(props) => props.isSelected && TextAnimation} 800ms linear;
   transition: all 600ms ease;
 `;
 
@@ -100,6 +100,7 @@ export const Title = styled.p`
   margin-bottom: 3.4rem;
   font-family: 'GmarketSansBold';
   font-size: 6.2rem;
+  line-height: 130%;
   white-space: pre-line;
 `;
 
