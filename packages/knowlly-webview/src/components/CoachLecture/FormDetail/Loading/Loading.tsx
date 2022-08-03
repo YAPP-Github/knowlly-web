@@ -28,10 +28,6 @@ const PlayerSchedule = () => {
   );
 };
 
-const MachingPopup = () => {
-  return <div></div>;
-};
-
 const Text = () => {
   return (
     <Styled.SkeletonTextWrapper>
@@ -42,7 +38,6 @@ const Text = () => {
 
 const Loading = {
   PlayerUser,
-  MachingPopup,
   PlayerSchedule,
   Text,
 };
