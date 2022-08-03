@@ -16,7 +16,7 @@ const Guide = () => {
       <Styled.Title>볼을 쌓아보세요</Styled.Title>
       <Styled.ContentContainer>
         {GUIDELINES.map((guideline) => (
-          <Styled.ContentWrapper>
+          <Styled.ContentWrapper key={guideline.text}>
             <SvgIcon type="round-check" />
             <Styled.Content>{guideline.text}</Styled.Content>
           </Styled.ContentWrapper>
