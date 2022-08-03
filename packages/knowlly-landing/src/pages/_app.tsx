@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { Font, GlobalStyle } from '@common/styles';
+import { SvgSprite } from '@components/Common';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,6 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <Component {...pageProps} />
       <Font />
+      <SvgSprite />
     </>
   );
 }
