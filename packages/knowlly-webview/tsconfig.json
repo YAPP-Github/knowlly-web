@@ -11,5 +11,6 @@
       "@hooks/*": ["hooks/*"],
       "@types/*": ["types/*"]
     }
-  }
+  },
+  "exclude": ["../../packages/knowlly-landing/**"]
 }
