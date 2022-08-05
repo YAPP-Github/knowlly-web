@@ -5,12 +5,14 @@ import { Typograpy } from '@components/Common';
 import { PageLayout } from '@components/Common/Layout';
 import * as Styled from '@components/LectureDetail/LectureDetailStyle';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
+import useAuth from '@hooks/auth/useAuth';
 import MatchingButton from '@components/LectureDetail/MatchingButton/MatchingButton';
 
 const LectureDetail: NextPage = () => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
   const { lectureDetail, isFetching } = useLectureDetail(lectureId);
+  const user = useAuth();
 
   const category = lectureDetail?.data.category;
   const topic = lectureDetail?.data.topic;
@@ -36,7 +38,7 @@ const LectureDetail: NextPage = () => {
 
   return (
     <>
-      {!isFetching && lectureDetail && (
+      {!isFetching && lectureDetail && user && (
         <>
           <PageLayout isSpacing>
             <Styled.CategoryBadge type="category">
@@ -50,7 +52,7 @@ const LectureDetail: NextPage = () => {
             <HowToUse />
           </PageLayout>
           <Guideline />
-          <MatchingButton />
+          <MatchingButton user={user} />
         </>
       )}
     </>

@@ -1,15 +1,19 @@
 import { Modal, Typograpy } from '@components/Common';
 import useAuth from '@hooks/auth/useAuth';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
+import { IProfile } from '@/types/profile';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import * as Styled from './MatchingButtonStyle';
 
-const MatchingButton = () => {
+interface IUserProps {
+  user: IProfile;
+}
+
+const MatchingButton = ({ user }: IUserProps) => {
   const router = useRouter();
   const lectureId = Number(router.query.id);
 
-  const user = useAuth();
   const userId = user?.data.user.id;
 
   const { lectureDetail } = useLectureDetail(lectureId);
