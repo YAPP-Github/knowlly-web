@@ -10,7 +10,7 @@ const MatchingButton = () => {
   const lectureId = Number(router.query.id);
 
   const user = useAuth();
-  const userId = 1;
+  const userId = user?.data.user.id;
 
   const { lectureDetail } = useLectureDetail(lectureId);
 
