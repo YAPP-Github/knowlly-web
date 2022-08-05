@@ -27,6 +27,8 @@ const useScrollFadeIn = ({
     switch (name) {
       case 'none':
         return 'translate3d(0, 0, 0)';
+      case 'up-05':
+        return 'translate3d(0, 5%, 0)';
       case 'up-20':
         return 'translate3d(0, 20%, 0)';
       case 'up-40':

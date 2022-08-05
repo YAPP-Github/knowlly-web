@@ -5,7 +5,7 @@ import * as Styled from './AppStyle';
 const App = () => {
   const scrollFadeIn = {
     logo: useScrollFadeIn({ direction: 'none', duration: 1, delay: 0.1 }),
-    appImage: useScrollFadeIn({ direction: 'up-20', duration: 1, delay: 0.1 }),
+    appImage: useScrollFadeIn({ direction: 'up-05', duration: 1, delay: 0.1 }),
     title: useScrollFadeIn({ direction: 'up-20', duration: 1, delay: 0.5 }),
     description: useScrollFadeIn({ direction: 'up-40', duration: 1, delay: 0.7 }),
     download: useScrollFadeIn({ direction: 'none', duration: 1, delay: 0.9 }),
