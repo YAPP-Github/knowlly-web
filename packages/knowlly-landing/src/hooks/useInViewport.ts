@@ -21,7 +21,7 @@ const useInViewport = (targetRef: RefObject<HTMLDivElement>) => {
     }
 
     return () => observer && observer.disconnect();
-  }, [handleViewportScroll]);
+  }, [targetRef]);
 
   return isInViewport;
 };
