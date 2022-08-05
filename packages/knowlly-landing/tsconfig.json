@@ -7,5 +7,6 @@
       "@styles/*": ["styles/*"],
       "@components/*": ["components/*"]
     }
-  }
+  },
+  "exclude": ["../../packages/knowlly-webview/**"]
 }
