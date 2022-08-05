@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type SvgIconType = 'round-check' | 'checkbox-checked';
+export type SvgIconType = 'round-check' | 'checkbox-checked' | 'logo';
 
 interface ISvgIconProps {
   type: SvgIconType;
