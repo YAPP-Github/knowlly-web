@@ -1,5 +1,4 @@
 import { Modal, Typograpy } from '@components/Common';
-import useAuth from '@hooks/auth/useAuth';
 import useLectureDetail from '@hooks/lecture/useLectureDetail';
 import { IProfile } from '@/types/profile';
 import { useRouter } from 'next/router';
