@@ -100,6 +100,7 @@ export const Title = styled.p`
   font-family: 'GmarketSansBold';
   font-size: 6.2rem;
   line-height: 130%;
+  color: ${theme.color.gray['00']};
   white-space: pre-line;
 `;
 

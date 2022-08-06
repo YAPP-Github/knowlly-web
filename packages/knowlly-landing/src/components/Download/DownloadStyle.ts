@@ -4,7 +4,8 @@ import theme from '@styles/theme';
 export const DownloadContainer = styled.div`
   display: flex;
   height: 44.4rem;
-  padding: 12.6rem 0 0 46.2rem;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const Title = styled.p`
