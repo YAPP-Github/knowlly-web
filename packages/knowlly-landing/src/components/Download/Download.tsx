@@ -16,7 +16,7 @@ const Download = () => {
         <Styled.VerticalLine />
         <Styled.DownloadLinkWrapper>
           <Styled.DownloadLinkText>앱스토어 다운로드</Styled.DownloadLinkText>
-          <img src={'/img/google-play.png'} alt="널리 구글 플레이 다운로드" />
+          <img src={'/img/app-store.png'} alt="널리 구글 플레이 다운로드" />
         </Styled.DownloadLinkWrapper>
       </Styled.DownloadLinkContainer>
     </Styled.DownloadContainer>
