@@ -39,7 +39,10 @@ export const SkeletonCardContainer = styled(LectureCardContainer)``;
 
 export const SkeletonImageWrapper = styled(LectureImageWrapper)``;
 
-export const SkeletonInfoWrapper = styled(LectureInfoWrapper)``;
+export const SkeletonInfoWrapper = styled(LectureInfoWrapper)`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const SkeletonImage = styled(Skeleton)`
   width: 8.8rem;
@@ -48,21 +51,23 @@ export const SkeletonImage = styled(Skeleton)`
 `;
 
 export const SkeletonIntroduce = styled(Skeleton)`
-  width: 20.6rem;
-  height: 1.4rem;
-  margin-bottom: 1.4rem;
+  width: 15.6rem;
+  height: 1.6rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
   border-radius: 20px;
 `;
 
 export const SkeletonCoachName = styled(Skeleton)`
-  width: 20.6rem;
-  height: 1.05rem;
-  margin-bottom: 3.05rem;
+  width: 15.6rem;
+  height: 1.2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 2.6rem;
   border-radius: 15px;
 `;
 
 export const SkeletonContainedBadge = styled(Skeleton)`
-  width: 2.1rem;
-  height: 1.05rem;
+  width: 6rem;
+  height: 2.2rem;
   border-radius: 15px;
 `;
