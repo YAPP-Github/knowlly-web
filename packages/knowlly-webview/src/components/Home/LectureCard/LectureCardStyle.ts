@@ -31,11 +31,5 @@ export const LectureTopic = styled(Typograpy)`
 `;
 
 export const LectureCoachName = styled(Typograpy)`
-  margin-bottom: 2.4rem;
-`;
-
-export const LectureTags = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  margin-bottom: 2rem;
 `;
