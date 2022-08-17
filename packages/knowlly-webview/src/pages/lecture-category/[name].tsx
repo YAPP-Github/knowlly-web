@@ -12,7 +12,7 @@ const LectureCategoryPage: NextPage = () => {
   const router = useRouter();
   const categoryName = router.query.name;
 
-  const { lectureInfoList, fetchNextPage, isLoading, isFetching } = useInfiniteLecture(
+  const { lectureInfoList, fetchNextPage, hasNextPage, isLoading, isFetching } = useInfiniteLecture(
     '?categoryName',
     categoryName as string
   );
@@ -48,6 +48,11 @@ const LectureCategoryPage: NextPage = () => {
               <LectureList lectureInfoList={pageData} />
             </Fragment>
           ))}
+        {hasNextPage && (
+          <div ref={ref}>
+            <LoadingList isFetching />
+          </div>
+        )}
       </Section>
     </PageLayout>
   );

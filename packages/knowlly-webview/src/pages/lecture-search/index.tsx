@@ -9,7 +9,7 @@ import { useInView } from 'react-intersection-observer';
 const LectureSearchPage: NextPage = () => {
   const [searchVavlue, setSearchValue] = useState<string>('');
 
-  const { lectureInfoList, fetchNextPage, isFetching } = useInfiniteLecture(
+  const { lectureInfoList, fetchNextPage, hasNextPage, isFetching } = useInfiniteLecture(
     'search?keyword',
     searchVavlue
   );
@@ -35,6 +35,11 @@ const LectureSearchPage: NextPage = () => {
               <LectureList lectureInfoList={pageData} />
             </Fragment>
           ))}
+        {hasNextPage && (
+          <div ref={ref}>
+            <LoadingList isFetching />
+          </div>
+        )}
       </Section>
     </PageLayout>
   );
