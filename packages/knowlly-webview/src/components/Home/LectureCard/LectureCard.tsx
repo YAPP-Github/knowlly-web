@@ -29,9 +29,7 @@ const LectureCard = ({ lectureData }: ILectureCardProps) => {
         <Styled.LectureCoachName variant="body-2" textColor="gray8F">
           {lectureData.coach.user.username}
         </Styled.LectureCoachName>
-        <Styled.LectureTags>
-          <ContainedBadge type="category">{lectureData.category}</ContainedBadge>
-        </Styled.LectureTags>
+        <ContainedBadge type="category">{lectureData.category}</ContainedBadge>
       </Styled.LectureInfoWrapper>
     </Styled.LectureCardContainer>
   );
