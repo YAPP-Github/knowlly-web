@@ -35,7 +35,7 @@ const useInfiniteLecture = (queryKey: string, queryValue: string): IUseInfiniteL
     {
       enabled: !!queryValue,
       getNextPageParam: (lastPage) => {
-        if (lastPage.currentPage === lastPage.totalPage) {
+        if (lastPage.currentPage === lastPage.totalPage - 1) {
           return undefined;
         }
 
